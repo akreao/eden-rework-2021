@@ -1,0 +1,12 @@
+# Release zips are built by CI from eden-rework-2021/; never commit one.
+*.zip
+*.rar
+dist/
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~

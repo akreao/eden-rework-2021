@@ -1,0 +1,25 @@
+{
+  "name": "eden-rework-2021",
+  "version": "0.2.6",
+  "author": "akreao",
+  "description": "Eden Group as kRO reworked it in April 2021: new gear quests and Administrators, six mission boards with champion hunts and deliveries, cave shortcuts, Odin's Past, and English quest text. Replaces the old Eden gear and mission NPCs while on.",
+  "requires": { "app": ">=1.4.3", "era": "renewal" },
+  "settings": [
+    {
+      "key": "shadow_permanent",
+      "type": "boolean",
+      "default": false,
+      "label": "Permanent shadow gear",
+      "description": "Administrator Emil hands out shadow gear permanently instead of renting it, as kRO does."
+    },
+    {
+      "key": "shadow_rental_hours",
+      "type": "number",
+      "default": 72,
+      "min": 1,
+      "max": 8760,
+      "label": "Shadow gear rental (hours)",
+      "description": "How long Administrator Emil's shadow gear rentals last. Ignored while shadow gear is permanent."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+//===== rAthena Script =======================================
+//= Eden Group: building warps
+//===== Description: =========================================
+//= Part of the Ragnarok Offline mod "eden-rework-2021".
+//= kRO replaced the dialog of the door to the dining hall corridor
+//= (#warp_2_pass at 47,39, members only) with a plain portal at
+//= 48,39 leading to 106,14. Source: the kRO
+//= client's navigation table (navi_link_krpri.lub row 2286,
+//= "warp_2_pass" 48,39 -> moc_para01 106,14, type 200 = warp),
+//= matching Divine Pride's map data.
+//= Two stock warps land a little off kRO's targets (same table),
+//= so they are replaced too:
+//=   #warp_2_din_2  107,12 -> 48,35  (rAthena: 47,37; kRO row 2279)
+//=   #warp_2_pass_2 102,92 -> 111,33 (rAthena: 109,33; kRO row 2283)
+//============================================================
+
+moc_para01,48,39,0	warp2	#eden_rw_pass	1,1,moc_para01,106,14
+moc_para01,107,12,0	warp2	#eden_rw_din_2	1,1,moc_para01,48,35
+moc_para01,102,92,0	warp2	#eden_rw_pass_2	1,1,moc_para01,111,33
+
+-	script	#eden_rework_warps	-1,{
+	end;
+OnInit:
+	// Only the click dialog: #warp_2_pass is an invisible NPC (111,
+	// HIDDEN_NPC) on the door, which is part of the map, so it stays.
+	disablenpc "#warp_2_pass";
+	disablenpc "#warp_2_din_2";
+	disablenpc "#warp_2_pass_2";
+	end;
+}

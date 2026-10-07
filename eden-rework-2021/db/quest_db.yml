@@ -1,0 +1,2297 @@
+# Eden Group 2021 rework: the board, cooldown, gear and champion hunt
+# quests the mod's NPCs hand out. Kill counts follow the kRO client
+# (Dec 2025). Added to the server's quest_db through db/import.
+
+Header:
+  Type: QUEST_DB
+  Version: 3
+
+Body:
+  - Id: 17528
+    Title: Eden Group Basic Gear
+  - Id: 17529
+    Title: Eden Group Basic Gear
+  - Id: 17530
+    Title: Eden Group Basic Gear
+  - Id: 17531
+    Title: Eden Group Basic Gear
+  - Id: 17532
+    Title: Eden Group Shadow Gear
+  - Id: 17533
+    Title: Eden Group Shadow Gear
+  - Id: 17534
+    Title: Eden Group Shadow Gear
+  - Id: 17535
+    Title: Eden Group Basic Gear
+  - Id: 17536
+    Title: Eden Group Advanced Gear (Armor)
+  - Id: 17537
+    Title: Eden Group Advanced Gear (Weapon)
+  - Id: 19000
+    Title: The Land Where Flowers Bloomed
+    Targets:
+      - Id: 1
+        Count: 60
+        Location: ecl_fild01
+        MapName: The Land Where Flowers Bloomed
+  - Id: 19002
+    Title: Grand Bath Meditatio
+    Targets:
+      - Id: 1
+        Count: 60
+        Location: ba_bath
+        MapName: Grand Bath Meditatio
+  - Id: 19004
+    Title: "Library: Corridor of Memories"
+    Targets:
+      - Id: 1
+        Count: 60
+        Location: ba_lib
+        MapName: "Library: Corridor of Memories"
+  - Id: 19006
+    Title: Sewage Treatment Plant
+    Targets:
+      - Id: 1
+        Count: 60
+        Location: ba_pw02
+        MapName: Sewage Treatment Plant
+  - Id: 19008
+    Title: First Power Plant
+    Targets:
+      - Id: 1
+        Count: 60
+        Location: ba_pw01
+        MapName: First Power Plant
+  - Id: 19010
+    Title: "Dragon's Nest, 2F"
+    Targets:
+      - Id: 1
+        Count: 60
+        Location: lasa_dun02
+        MapName: "Dragon's Nest, 2F"
+  - Id: 19012
+    Title: Bifrost Tower
+    Targets:
+      - Mob: CENERE
+        Count: 30
+      - Mob: ANTIQUE_BOOK
+        Count: 30
+  - Id: 19014
+    Title: "Dragon's Nest, 3F"
+    Targets:
+      - Id: 1
+        Count: 120
+        Location: lasa_dun03
+        MapName: "Dragon's Nest, 3F"
+  - Id: 19016
+    Title: Prontera Underground Prison
+    Targets:
+      - Id: 1
+        Count: 120
+        Location: prt_prison
+        MapName: Prontera Underground Prison
+  - Id: 19018
+    Title: Invaded Prontera
+    Targets:
+      - Id: 1
+        Count: 120
+        Location: prt_q
+        MapName: Invaded Prontera
+        MapMobTargets:
+          HUNTER_FLY: true
+  - Id: 19020
+    Title: Rock Ridge Mine
+    Targets:
+      - Id: 1
+        Count: 120
+        Location: rockmi1
+        MapName: Rock Ridge Mine
+  - Id: 19022
+    Title: Second Floor Corridor
+    Targets:
+      - Mob: NG_WANDER_MAN
+        Count: 30
+  - Id: 19024
+    Title: Underground Bunker
+    Targets:
+      - Mob: GHOUL_H
+        Count: 30
+  - Id: 19026
+    Title: Lab Building OPTATIO
+    Targets:
+      - Mob: REPAIR_ROBOT_T
+        Count: 20
+      - Mob: CENERE_G
+        Count: 30
+  - Id: 19028
+    Title: "Twisted Clock Tower, 2F"
+    Targets:
+      - Mob: BIG_BEN
+        Count: 40
+      - Mob: NEO_PUNK
+        Count: 40
+  - Id: 19029
+    Title: Twisted time clock tower 2nd floor - Waiting
+    TimeLimit: 4h
+  - Id: 19030
+    Title: "Breeding Ground: Lost Valley"
+    Targets:
+      - Id: 1
+        Count: 160
+        Location: ba_lost
+        MapName: "Breeding Ground: Lost Valley"
+  - Id: 19032
+    Title: "Twisted Clock Tower, 3F"
+    Targets:
+      - Mob: BIG_BELL
+        Count: 50
+  - Id: 19034
+    Title: Oz Canyon and the Ida Plains
+    Targets:
+      - Mob: EP18_GREY_GOAT
+        Count: 40
+      - Mob: EP18_GREY_WOLF_BABY
+        Count: 40
+  - Id: 19036
+    Title: "Ludus Disposal Site, 2F"
+    Targets:
+      - Id: 1
+        Count: 80
+        Location: sp_rudus2
+        MapName: "Ludus Disposal Site, 2F"
+  - Id: 19038
+    Title: East Juperos Ruins
+    Targets:
+      - Mob: RECON_ROBOT
+        Count: 50
+  - Id: 19040
+    Title: Verus City
+    Targets:
+      - Mob: EXPLORATION_ROVER
+        Count: 40
+      - Mob: EXPLORATION_ROVER_T
+        Count: 40
+  - Id: 19042
+    Title: "Tartarus Storage, Upper Level"
+    Targets:
+      - Id: 1
+        Count: 160
+        Location: ba_2whs01
+        MapName: "Tartarus Storage, Upper Level"
+  - Id: 19044
+    Title: "Oz Labyrinth, 1F"
+    Targets:
+      - Id: 1
+        Count: 80
+        Location: oz_dun01
+        MapName: "Oz Labyrinth, 1F"
+  - Id: 19046
+    Title: "Ludus Disposal Site, 3F"
+    Targets:
+      - Id: 1
+        Count: 160
+        Location: sp_rudus3
+        MapName: "Ludus Disposal Site, 3F"
+  - Id: 19048
+    Title: "Nogg Road, 3F"
+    Targets:
+      - Id: 1
+        Count: 160
+        Location: mag_dun03
+        MapName: "Nogg Road, 3F"
+  - Id: 19050
+    Title: "Tartarus Storage, Lower Level"
+    Targets:
+      - Id: 1
+        Count: 160
+        Location: ba_2whs02
+        MapName: "Tartarus Storage, Lower Level"
+  - Id: 19052
+    Title: "Glast Heim Abyss, 1F"
+    Targets:
+      - Id: 1
+        Count: 160
+        Location: gl_cas01_
+        MapName: "Glast Heim Abyss, 1F"
+  - Id: 19054
+    Title: Grey Wolf Forest (West)
+    Targets:
+      - Id: 1
+        Count: 80
+        Location: gw_fild01
+        MapName: Grey Wolf Forest (West)
+  - Id: 19056
+    Title: Grey Wolf Forest (East)
+    Targets:
+      - Id: 1
+        Count: 80
+        Location: gw_fild02
+        MapName: Grey Wolf Forest (East)
+  - Id: 19058
+    Title: "Einbech Mine, 3F"
+    Targets:
+      - Id: 1
+        Count: 160
+        Location: ein_dun03
+        MapName: "Einbech Mine, 3F"
+  - Id: 19060
+    Title: Ancient Odin Temple
+    Targets:
+      - Id: 1
+        Count: 240
+        Location: odin_past
+        MapName: Ancient Odin Temple
+  - Id: 19062
+    Title: "Abyss Lake Underground Cave, 4F"
+    Targets:
+      - Id: 1
+        Count: 240
+        Location: abyss_04
+        MapName: "Abyss Lake Underground Cave, 4F"
+  - Id: 19064
+    Title: Second Power Plant
+    Targets:
+      - Id: 1
+        Count: 240
+        Location: ba_pw03
+        MapName: Second Power Plant
+  - Id: 21015
+    Title: The Undead War
+    Targets:
+      - Mob: ZOMBIE
+        Count: 10
+      - Mob: SKELETON
+        Count: 20
+  - Id: 21017
+    Title: Soul Cleansing Ritual
+    Targets:
+      - Mob: MUNAK
+        Count: 15
+      - Mob: BON_GUN
+        Count: 15
+  - Id: 21019
+    Title: Sorrow Soothed with a Drink
+  - Id: 21021
+    Title: Traces of Great Magic
+    Targets:
+      - Mob: SOHEE
+        Count: 12
+    Drops:
+      - Mob: SOHEE
+        Item: Handkerchief_of_Girl
+        Rate: 3000
+  - Id: 21028
+    Title: A Cushy Job
+    Targets:
+      - Mob: WILOW
+        Count: 5
+  - Id: 21031
+    Title: Pro Snake Hunter
+    Targets:
+      - Mob: SNAKE
+        Count: 5
+  - Id: 21034
+    Title: That Onion Is Harmful
+    Targets:
+      - Mob: WORM_TAIL
+        Count: 5
+  - Id: 21037
+    Title: "Before It's All Mushrooms"
+    Targets:
+      - Mob: SPORE
+        Count: 10
+  - Id: 21040
+    Title: Prisoners Dreaming of Escape
+    Targets:
+      - Mob: ZOMBIE_PRISONER
+        Count: 10
+      - Mob: SKEL_PRISONER
+        Count: 10
+  - Id: 21042
+    Title: The Vicious Torturer
+    Targets:
+      - Mob: RYBIO
+        Count: 10
+  - Id: 21044
+    Title: Refined Tastes
+    Targets:
+      - Mob: INJUSTICE
+        Count: 20
+  - Id: 21047
+    Title: "Moscovia's Nightmare"
+    Targets:
+      - Mob: UZHAS
+        Count: 20
+  - Id: 21049
+    Title: A Beautiful Doll
+    Targets:
+      - Mob: MIYABI_NINGYO
+        Count: 20
+  - Id: 21051
+    Title: "A Rice Cake Made of Sand?"
+    Targets:
+      - Mob: INCREASE_SOIL
+        Count: 20
+  - Id: 21053
+    Title: The Headless Mule
+    Targets:
+      - Mob: HEADLESS_MULE
+        Count: 20
+  - Id: 21055
+    Title: The Temple Lion
+    Targets:
+      - Mob: TAMRUAN
+        Count: 20
+  - Id: 21057
+    Title: The Bird with a Rainbow
+    Targets:
+      - Mob: TOUCAN
+        Count: 20
+  - Id: 21059
+    Title: "Broom, Cauldron and Grandma"
+    Targets:
+      - Mob: VAVAYAGA
+        Count: 20
+  - Id: 21061
+    Title: "The Fallen, the Victor and the Rest"
+    Targets:
+      - Mob: ANTIQUE_FIRELOCK
+        Count: 20
+  - Id: 21063
+    Title: The Celestial Maiden
+    Targets:
+      - Mob: WICKED_NYMPH
+        Count: 20
+  - Id: 21065
+    Title: The Tomb Where Secrets Sleep
+    Targets:
+      - Mob: HYEGUN
+        Count: 15
+      - Mob: LI_ME_MANG_RYANG
+        Count: 15
+  - Id: 21067
+    Title: The Walls Have Ears
+    Targets:
+      - Mob: SHINOBI
+        Count: 20
+  - Id: 21069
+    Title: Sun Wukong Hopefuls
+    Targets:
+      - Mob: LIVE_PEACH_TREE
+        Count: 20
+  - Id: 21071
+    Title: The Old Man Above the Clouds
+    Targets:
+      - Mob: EVIL_CLOUD_HERMIT
+        Count: 20
+  - Id: 21103
+    Title: Hunter Fly Hunt
+    Targets:
+      - Mob: HUNTER_FLY
+        Count: 10
+  - Id: 21106
+    Title: Ghoul and Jakk Hunt
+    Targets:
+      - Mob: GHOUL
+        Count: 10
+      - Mob: JAKK
+        Count: 10
+  - Id: 21109
+    Title: Marionette and Deviruchi Hunt
+    Targets:
+      - Mob: MARIONETTE
+        Count: 10
+      - Mob: DEVIRUCHI
+        Count: 10
+  - Id: 21112
+    Title: The Horse That Runs in Nightmares
+    Targets:
+      - Mob: NIGHTMARE
+        Count: 10
+  - Id: 21115
+    Title: Cute Sky Petites
+    Targets:
+      - Mob: PETIT_
+        Count: 10
+  - Id: 21118
+    Title: Cute Earth Petites
+    Targets:
+      - Mob: PETIT
+        Count: 10
+  - Id: 21122
+    Title: Rescue Your Friend
+    Targets:
+      - Mob: PIRATE_SKEL
+        Count: 20
+  - Id: 21127
+    Title: Kukre Liver for Dinner
+    Targets:
+      - Mob: KUKRE
+        Count: 10
+  - Id: 21130
+    Title: "Treasure, Made to Order"
+  - Id: 21136
+    Title: "Clean Up the Wreck, 1F"
+    Targets:
+      - Mob: HYDRA
+        Count: 10
+  - Id: 21138
+    Title: "Clean Up the Wreck, 2F"
+    Targets:
+      - Mob: WHISPER
+        Count: 10
+      - Mob: C1_SAILOR_SKELETON
+        Count: 1
+  - Id: 21142
+    Title: A Peaceful Pilgrimage
+    Targets:
+      - Mob: ROWEEN
+        Count: 30
+  - Id: 21145
+    Title: Guardian of Beauty
+    Targets:
+      - Mob: SIROMA
+        Count: 30
+  - Id: 21148
+    Title: Stones That Swallow Stones
+    Targets:
+      - Mob: STAPO
+        Count: 30
+  - Id: 21151
+    Title: Touring Turtle Island
+    Targets:
+      - Mob: DRAGON_TAIL
+        Count: 10
+      - Mob: SPRING_RABBIT
+        Count: 10
+  - Id: 21153
+    Title: Clear the Turtle Swarm 1
+    Targets:
+      - Mob: SOLIDER
+        Count: 10
+      - Mob: PERMETER
+        Count: 10
+  - Id: 21155
+    Title: Clear the Turtle Swarm 2
+    Targets:
+      - Mob: FREEZER
+        Count: 10
+      - Mob: HEATER
+        Count: 10
+  - Id: 21160
+    Title: Assaulter Hunt
+    Targets:
+      - Mob: ASSULTER
+        Count: 10
+  - Id: 21202
+    Title: In the Way
+    Targets:
+      - Mob: SAND_MAN
+        Count: 10
+  - Id: 21203
+    Title: In the Way (Standby)
+    TimeLimit: 4h
+  - Id: 21205
+    Title: "Can't Sleep"
+    Targets:
+      - Mob: VERIT
+        Count: 10
+      - Mob: MINOROUS
+        Count: 10
+  - Id: 21206
+    Title: "Can't Sleep (Standby)"
+    TimeLimit: 4h
+  - Id: 21213
+    Title: Defeat Isis
+    Targets:
+      - Mob: ISIS
+        Count: 20
+  - Id: 21214
+    Title: Defeat Isis (Standby)
+    TimeLimit: 4h
+  - Id: 21215
+    Title: "The Sphinx's Workers"
+    Targets:
+      - Mob: ZEROM
+        Count: 15
+      - Mob: REQUIEM
+        Count: 15
+  - Id: 21216
+    Title: "The Sphinx's Workers (Standby)"
+    TimeLimit: 4h
+  - Id: 21217
+    Title: "The Sphinx's Secret"
+    Targets:
+      - Mob: MARDUK
+        Count: 15
+      - Mob: PASANA
+        Count: 15
+    Drops:
+      - Mob: MARDUK
+        Item: Worn_Out_Papyrus
+        Rate: 3000
+  - Id: 21218
+    Title: "The Sphinx's Secret (Standby)"
+    TimeLimit: 4h
+  - Id: 21219
+    Title: Mummies and the Blue Box
+    Targets:
+      - Mob: MUMMY
+        Count: 10
+  - Id: 21220
+    Title: Mummies and the Blue Box (Standby)
+    TimeLimit: 4h
+  - Id: 21222
+    Title: Noisy Ones
+    Targets:
+      - Mob: PECOPECO
+        Count: 10
+      - Mob: MUKA
+        Count: 10
+  - Id: 21223
+    Title: Noisy Ones (Standby)
+    TimeLimit: 4h
+  - Id: 21225
+    Title: Eggs and Grasshoppers
+    Targets:
+      - Mob: MAGNOLIA
+        Count: 10
+      - Mob: METALLER
+        Count: 10
+  - Id: 21226
+    Title: Eggs and Grasshoppers (Standby)
+    TimeLimit: 4h
+  - Id: 21228
+    Title: Sampling Is the Hard Part
+    Targets:
+      - Mob: MARINA
+        Count: 10
+      - Mob: PLANKTON
+        Count: 10
+  - Id: 21229
+    Title: Sampling Is the Hard Part (Standby)
+    TimeLimit: 4h
+  - Id: 21231
+    Title: Make Hay While the Sun Shines
+    Targets:
+      - Mob: VADON
+        Count: 10
+  - Id: 21232
+    Title: Make Hay While the Sun Shines (Standby)
+    TimeLimit: 4h
+  - Id: 21235
+    Title: The Woman of His Dreams
+    Targets:
+      - Mob: OBEAUNE
+        Count: 10
+  - Id: 21237
+    Title: For a Friend
+    Targets:
+      - Mob: SWORD_FISH
+        Count: 10
+      - Mob: MARC
+        Count: 10
+  - Id: 21238
+    Title: For a Friend (Standby)
+    TimeLimit: 4h
+  - Id: 21239
+    Title: Cooking Supplies
+    Targets:
+      - Mob: MARSE
+        Count: 20
+  - Id: 21240
+    Title: Cooking Supplies (Standby)
+    TimeLimit: 4h
+  - Id: 21242
+    Title: Pesky Guards
+    Targets:
+      - Mob: STROUF
+        Count: 10
+      - Mob: MERMAN
+        Count: 10
+  - Id: 21243
+    Title: Pesky Guards (Standby)
+    TimeLimit: 4h
+  - Id: 21244
+    Title: The Woman of His Dreams (Standby)
+    TimeLimit: 4h
+  - Id: 21249
+    Title: "Playground Cleanup: Hornets"
+    Targets:
+      - Mob: HORNET
+        Count: 10
+  - Id: 21250
+    Title: "Playground Cleanup: Rockers"
+    Targets:
+      - Mob: ROCKER
+        Count: 10
+  - Id: 21251
+    Title: The Legendary Knight Ambernite
+    Targets:
+      - Mob: AMBERNITE
+        Count: 10
+  - Id: 21252
+    Title: "Playground Cleanup: Hornets (Standby)"
+    TimeLimit: 4h
+  - Id: 21253
+    Title: "Playground Cleanup: Rockers (Standby)"
+    TimeLimit: 4h
+  - Id: 21254
+    Title: The Legendary Knight Ambernite (Standby)
+    TimeLimit: 4h
+  - Id: 21256
+    Title: Round Up the Orcs
+    Targets:
+      - Mob: ORK_WARRIOR
+        Count: 15
+      - Mob: ORC_LADY
+        Count: 15
+      - Mob: ORC_BABY
+        Count: 10
+  - Id: 21257
+    Title: Round Up the Orcs (Standby)
+    TimeLimit: 4h
+  - Id: 21258
+    Title: Those Wretched Orcs
+    Targets:
+      - Mob: ORC_SKELETON
+        Count: 20
+      - Mob: ORC_ZOMBIE
+        Count: 20
+  - Id: 21259
+    Title: Those Wretched Orcs (Standby)
+    TimeLimit: 4h
+  - Id: 21260
+    Title: Greedy Guts
+    Targets:
+      - Mob: ZENORC
+        Count: 20
+  - Id: 21261
+    Title: Greedy Guts (Standby)
+    TimeLimit: 4h
+  - Id: 21262
+    Title: Fierce Goblins
+    Targets:
+      - Mob: GOBLIN_3
+        Count: 10
+      - Mob: GOBLIN_2
+        Count: 10
+  - Id: 21263
+    Title: Fierce Goblins (Standby)
+    TimeLimit: 4h
+  - Id: 21264
+    Title: Nimble Goblins
+    Targets:
+      - Mob: GOBLIN_4
+        Count: 10
+      - Mob: GOBLIN_1
+        Count: 10
+  - Id: 21265
+    Title: Nimble Goblins (Standby)
+    TimeLimit: 4h
+  - Id: 21269
+    Title: A Troublesome Bunch
+    Targets:
+      - Mob: GOBLIN_5
+        Count: 10
+      - Mob: GOBLIN_ARCHER
+        Count: 10
+  - Id: 21270
+    Title: A Troublesome Bunch (Standby)
+    TimeLimit: 4h
+  - Id: 21272
+    Title: Purify the Monastery
+    Targets:
+      - Mob: WRAITH
+        Count: 15
+      - Mob: EVIL_DRUID
+        Count: 15
+  - Id: 21273
+    Title: Purify the Monastery (Standby)
+    TimeLimit: 4h
+  - Id: 21274
+    Title: Calm the Catacombs
+    Targets:
+      - Mob: DARK_PRIEST
+        Count: 10
+      - Mob: C4_DARK_PRIEST
+        Count: 1
+  - Id: 21275
+    Title: Calm the Catacombs (Standby)
+    TimeLimit: 4h
+  - Id: 21277
+    Title: Border Checkpoint Duty
+    Targets:
+      - Mob: GEOGRAPHER
+        Count: 10
+      - Mob: MANTIS
+        Count: 10
+  - Id: 21278
+    Title: Border Checkpoint Duty (Standby)
+    TimeLimit: 4h
+  - Id: 21280
+    Title: Academy Security
+    Targets:
+      - Mob: HARPY
+        Count: 15
+      - Mob: SLEEPER
+        Count: 15
+  - Id: 21281
+    Title: Academy Security (Standby)
+    TimeLimit: 4h
+  - Id: 21282
+    Title: A Groundbreaking Business Idea
+  - Id: 21283
+    Title: A Groundbreaking Business Idea (Standby)
+    TimeLimit: 4h
+  - Id: 21284
+    Title: A Proper Finish
+    Targets:
+      - Mob: GOAT
+        Count: 20
+      - Mob: GRAND_PECO
+        Count: 20
+  - Id: 21285
+    Title: A Proper Finish (Standby)
+    TimeLimit: 4h
+  - Id: 21286
+    Title: Clock Tower 1F Cleanup
+    Targets:
+      - Mob: RIDEWORD
+        Count: 20
+      - Mob: PUNK
+        Count: 15
+  - Id: 21287
+    Title: Clock Tower 1F Cleanup (Standby)
+    TimeLimit: 4h
+  - Id: 21288
+    Title: Living Clocks 1
+    Targets:
+      - Mob: CLOCK
+        Count: 15
+  - Id: 21289
+    Title: Living Clocks 1 (Standby)
+    TimeLimit: 4h
+  - Id: 21290
+    Title: Living Clocks 2
+    Targets:
+      - Mob: ALARM
+        Count: 20
+  - Id: 21291
+    Title: Living Clocks 2 (Standby)
+    TimeLimit: 4h
+  - Id: 21292
+    Title: Laughter from Below
+    Targets:
+      - Mob: BATHORY
+        Count: 20
+  - Id: 21293
+    Title: Laughter from Below (Standby)
+    TimeLimit: 4h
+  - Id: 21294
+    Title: A Noble War
+    Targets:
+      - Mob: ASTER
+        Count: 10
+      - Mob: CRAB
+        Count: 10
+  - Id: 21295
+    Title: Clam Digging
+    Targets:
+      - Mob: SHELLFISH
+        Count: 10
+  - Id: 21296
+    Title: Behind the Broken Water Pipes
+    Targets:
+      - Mob: NOVUS_
+        Count: 10
+      - Mob: NOVUS
+        Count: 10
+  - Id: 21297
+    Title: A Noble War (Standby)
+    TimeLimit: 4h
+  - Id: 21298
+    Title: Clam Digging (Standby)
+    TimeLimit: 4h
+  - Id: 21299
+    Title: Behind the Broken Water Pipes (Standby)
+    TimeLimit: 4h
+  - Id: 21302
+    Title: Tidy Up Around Here
+    Targets:
+      - Mob: METALING
+        Count: 20
+      - Mob: MOLE
+        Count: 10
+  - Id: 21303
+    Title: Tidy Up Around Here (Standby)
+    TimeLimit: 4h
+  - Id: 21305
+    Title: Shadow Miners
+    Targets:
+      - Mob: PITMAN
+        Count: 20
+  - Id: 21306
+    Title: Shadow Miners (Standby)
+    TimeLimit: 4h
+  - Id: 21307
+    Title: "Why Does That Thing Move?!"
+    Targets:
+      - Mob: WASTE_STOVE
+        Count: 15
+  - Id: 21308
+    Title: "Why Does That Thing Move?! (Standby)"
+    TimeLimit: 4h
+  - Id: 21309
+    Title: Jumping Minerals
+    Targets:
+      - Mob: MINERAL
+        Count: 15
+      - Mob: OBSIDIAN
+        Count: 5
+  - Id: 21310
+    Title: Jumping Minerals (Standby)
+    TimeLimit: 4h
+  - Id: 21312
+    Title: Floating Toxic Gas 1
+    Targets:
+      - Mob: VENOMOUS
+        Count: 20
+  - Id: 21313
+    Title: Floating Toxic Gas 1 (Standby)
+    TimeLimit: 4h
+  - Id: 21314
+    Title: Floating Toxic Gas 2
+    Targets:
+      - Mob: NOXIOUS
+        Count: 20
+  - Id: 21315
+    Title: Floating Toxic Gas 2 (Standby)
+    TimeLimit: 4h
+  - Id: 21316
+    Title: Cute and Creepy
+    Targets:
+      - Mob: TEDDY_BEAR
+        Count: 15
+  - Id: 21317
+    Title: Cute and Creepy (Standby)
+    TimeLimit: 4h
+  - Id: 21319
+    Title: "A Pool That Big, and Still?!"
+    Targets:
+      - Mob: RAFFLESIA
+        Count: 20
+  - Id: 21320
+    Title: "A Pool That Big, and Still?! (Standby)"
+    TimeLimit: 4h
+  - Id: 21321
+    Title: Slapping at the Ankles
+    Targets:
+      - Mob: STEM_WORM
+        Count: 20
+  - Id: 21322
+    Title: Slapping at the Ankles (Standby)
+    TimeLimit: 4h
+  - Id: 21323
+    Title: The Valley of the Reaper
+    Targets:
+      - Mob: BREEZE
+        Count: 20
+  - Id: 21324
+    Title: The Valley of the Reaper (Standby)
+    TimeLimit: 4h
+  - Id: 21351
+    Title: Swarm of Iron Ants 1
+    Targets:
+      - Mob: VENATU_1
+        Count: 20
+      - Mob: VENATU_2
+        Count: 20
+  - Id: 21352
+    Title: Swarm of Iron Ants 1 (Standby)
+    TimeLimit: 4h
+  - Id: 21353
+    Title: Swarm of Iron Ants 2
+    Targets:
+      - Mob: VENATU_3
+        Count: 20
+      - Mob: VENATU_4
+        Count: 20
+  - Id: 21354
+    Title: Swarm of Iron Ants 2 (Standby)
+    TimeLimit: 4h
+  - Id: 21355
+    Title: Colorful Dimiks 1
+    Targets:
+      - Mob: DIMIK_1
+        Count: 10
+      - Mob: DIMIK_2
+        Count: 10
+  - Id: 21356
+    Title: Colorful Dimiks 1 (Standby)
+    TimeLimit: 4h
+  - Id: 21357
+    Title: Colorful Dimiks 2
+    Targets:
+      - Mob: DIMIK_3
+        Count: 10
+      - Mob: DIMIK_4
+        Count: 10
+  - Id: 21358
+    Title: Colorful Dimiks 2 (Standby)
+    TimeLimit: 4h
+  - Id: 21363
+    Title: Cleansing the Nameless Island
+    Targets:
+      - Mob: RAGGED_ZOMBIE
+        Count: 30
+      - Mob: ZOMBIE_SLAUGHTER
+        Count: 30
+  - Id: 21364
+    Title: Cleansing the Nameless Island (Standby)
+    TimeLimit: 4h
+  - Id: 21365
+    Title: Crying and Crying Again
+    Targets:
+      - Mob: BANSHEE
+        Count: 30
+  - Id: 21366
+    Title: Crying and Crying Again (Standby)
+    TimeLimit: 4h
+  - Id: 21367
+    Title: Master of Dead Marionettes
+    Targets:
+      - Mob: NECROMANCER
+        Count: 20
+  - Id: 21368
+    Title: Master of Dead Marionettes (Standby)
+    TimeLimit: 4h
+  - Id: 21369
+    Title: Purify the West Sanctuary
+    Targets:
+      - Mob: VANBERK
+        Count: 20
+      - Mob: ISILLA
+        Count: 20
+  - Id: 21370
+    Title: Purify the West Sanctuary (Standby)
+    TimeLimit: 4h
+  - Id: 21371
+    Title: Purify the East Sanctuary
+    Targets:
+      - Mob: HODREMLIN
+        Count: 30
+  - Id: 21372
+    Title: Purify the East Sanctuary (Standby)
+    TimeLimit: 4h
+  - Id: 21373
+    Title: Purify the South Sanctuary
+    Targets:
+      - Mob: AGAV
+        Count: 20
+      - Mob: ECHIO
+        Count: 20
+  - Id: 21374
+    Title: Purify the South Sanctuary (Standby)
+    TimeLimit: 4h
+  - Id: 21375
+    Title: "Grassland Brawl: Kobolds"
+    Targets:
+      - Mob: KOBOLD_1
+        Count: 20
+      - Mob: KOBOLD_2
+        Count: 20
+      - Mob: KOBOLD_3
+        Count: 20
+  - Id: 21376
+    Title: "Grassland Brawl: Kobolds (Standby)"
+    TimeLimit: 4h
+  - Id: 21377
+    Title: "Grassland Brawl: Hill Wind"
+    Targets:
+      - Mob: HILL_WIND
+        Count: 30
+  - Id: 21378
+    Title: "Grassland Brawl: Hill Wind (Standby)"
+    TimeLimit: 4h
+  - Id: 21379
+    Title: Never Any Dog Hair When You Need It
+  - Id: 21380
+    Title: Never Any Dog Hair When You Need It (Standby)
+    TimeLimit: 4h
+  - Id: 21381
+    Title: The Weed War
+    Targets:
+      - Mob: MUSCIPULAR
+        Count: 30
+      - Mob: DROSERA
+        Count: 30
+  - Id: 21382
+    Title: The Weed War (Standby)
+    TimeLimit: 4h
+  - Id: 21383
+    Title: Volcanic Mutants
+    Targets:
+      - Mob: MAGMARING
+        Count: 30
+  - Id: 21384
+    Title: Volcanic Mutants (Standby)
+    TimeLimit: 4h
+  - Id: 21385
+    Title: "Grassland Brawl: Desert Wolves"
+    Targets:
+      - Mob: DESERT_WOLF
+        Count: 30
+  - Id: 21386
+    Title: "Grassland Brawl: Desert Wolves (Standby)"
+    TimeLimit: 4h
+  - Id: 21387
+    Title: "Cold Heart, Cool Dish"
+  - Id: 21388
+    Title: "Cold Heart, Cool Dish (Standby)"
+    TimeLimit: 4h
+  - Id: 21389
+    Title: "The Yeti Who Won't Listen"
+    Targets:
+      - Mob: SNOWIER
+        Count: 30
+  - Id: 21390
+    Title: "The Yeti Who Won't Listen (Standby)"
+    TimeLimit: 4h
+  - Id: 21391
+    Title: "How Hard Is an Ice Crystal?"
+    Targets:
+      - Mob: ICE_TITAN
+        Count: 30
+      - Mob: GAZETI
+        Count: 10
+  - Id: 21392
+    Title: "How Hard Is an Ice Crystal? (Standby)"
+    TimeLimit: 4h
+  - Id: 21393
+    Title: Nightmare Research
+    Targets:
+      - Mob: INCUBUS
+        Count: 5
+      - Mob: SUCCUBUS
+        Count: 5
+  - Id: 21394
+    Title: Nightmare Research (Standby)
+    TimeLimit: 4h
+  - Id: 21410
+    Title: "Barbie Q's Cooking Hell (Standby)"
+    TimeLimit: 4h
+  - Id: 21411
+    Title: "Barbie Q's Cooking Hell"
+    Targets:
+      - Mob: THARA_FROG
+        Count: 10
+  - Id: 21412
+    Title: Honey Skin for Bunny Q (Standby)
+    TimeLimit: 4h
+  - Id: 21413
+    Title: Honey Skin for Bunny Q
+    Targets:
+      - Mob: HYDRA
+        Count: 10
+  - Id: 21414
+    Title: Que Sera Cosera (Standby)
+    TimeLimit: 4h
+  - Id: 21415
+    Title: Que Sera Cosera
+    Targets:
+      - Mob: MEGALODON
+        Count: 10
+  - Id: 21416
+    Title: Cute Ones
+    Targets:
+      - Mob: FUR_SEAL
+        Count: 10
+      - Mob: SEE_OTTER
+        Count: 10
+  - Id: 21417
+    Title: Cute Ones (Standby)
+    TimeLimit: 4h
+  - Id: 21418
+    Title: Hard Ones
+    Targets:
+      - Mob: STALACTIC_GOLEM
+        Count: 10
+      - Mob: TRI_JOINT
+        Count: 5
+      - Mob: MEGALITH
+        Count: 5
+  - Id: 21419
+    Title: Hard Ones (Standby)
+    TimeLimit: 4h
+  - Id: 21420
+    Title: Creepy Ones
+    Targets:
+      - Mob: GREEN_IGUANA
+        Count: 15
+      - Mob: ALLIGATOR
+        Count: 10
+  - Id: 21421
+    Title: Creepy Ones (Standby)
+    TimeLimit: 4h
+  - Id: 21422
+    Title: "Eden Group Delivery: Sticky Webfoot (Standby)"
+    TimeLimit: +1h
+  - Id: 21423
+    Title: "Eden Group Delivery: Grasshopper's Leg (Standby)"
+    TimeLimit: +1h
+  - Id: 21424
+    Title: "Eden Group Delivery: Snail's Shell (Standby)"
+    TimeLimit: +1h
+  - Id: 21425
+    Title: "Eden Group Delivery: Bill of Birds (Standby)"
+    TimeLimit: +1h
+  - Id: 21426
+    Title: "Eden Group Delivery: Bear's Footskin (Standby)"
+    TimeLimit: +1h
+  - Id: 21427
+    Title: "Eden Group Delivery: Resin (Standby)"
+    TimeLimit: +1h
+  - Id: 21428
+    Title: "Eden Group Delivery: Yoyo Tail (Standby)"
+    TimeLimit: +1h
+  - Id: 21429
+    Title: "Eden Group Delivery: Lantern (Standby)"
+    TimeLimit: +1h
+  - Id: 21430
+    Title: "Eden Group Delivery: Conch (Standby)"
+    TimeLimit: +1h
+  - Id: 21431
+    Title: "Eden Group Delivery: Heart of Mermaid (Standby)"
+    TimeLimit: +1h
+  - Id: 21432
+    Title: "Eden Group Delivery: Mane (Standby)"
+    TimeLimit: +1h
+  - Id: 21433
+    Title: "Eden Group Delivery: Black Hair (Standby)"
+    TimeLimit: +1h
+  - Id: 21434
+    Title: "Eden Group Delivery: Horseshoe (Standby)"
+    TimeLimit: +1h
+  - Id: 21435
+    Title: "Eden Group Delivery: Bug Leg (Standby)"
+    TimeLimit: +1h
+  - Id: 21436
+    Title: "Eden Group Delivery: Sand Clump (Standby)"
+    TimeLimit: +1h
+  - Id: 21437
+    Title: "Eden Group Delivery: Dry Sand (Standby)"
+    TimeLimit: +1h
+  - Id: 21438
+    Title: "Eden Group Delivery: Turtle Shell (Standby)"
+    TimeLimit: +1h
+  - Id: 21439
+    Title: "Eden Group Delivery: Little Evil Horn (Standby)"
+    TimeLimit: +1h
+  - Id: 21440
+    Title: "Eden Group Delivery: Glacial Heart (Standby)"
+    TimeLimit: +1h
+  - Id: 21441
+    Title: "Eden Group Delivery: Fluff (Standby)"
+    TimeLimit: +1h
+  - Id: 21501
+    Title: Elusive Hornet Hunt
+    Targets:
+      - Mob: C5_HORNET
+        Count: 1
+  - Id: 21502
+    Title: Elusive Hornet Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21503
+    Title: Elusive Rocker Hunt
+    Targets:
+      - Mob: C5_ROCKER
+        Count: 1
+  - Id: 21504
+    Title: Elusive Rocker Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21505
+    Title: Elusive Ambernite Hunt
+    Targets:
+      - Mob: C5_AMBERNITE
+        Count: 1
+  - Id: 21506
+    Title: Elusive Ambernite Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21507
+    Title: Muka Ringleader Hunt
+    Targets:
+      - Mob: C3_MUKA
+        Count: 1
+  - Id: 21508
+    Title: Muka Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21509
+    Title: Bigfoot Ringleader Hunt
+    Targets:
+      - Mob: C3_BIGFOOT
+        Count: 1
+  - Id: 21510
+    Title: Bigfoot Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21511
+    Title: Solid Horn Hunt
+    Targets:
+      - Mob: C2_HORN
+        Count: 1
+  - Id: 21512
+    Title: Solid Horn Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21513
+    Title: Swift Elder Willow Hunt
+    Targets:
+      - Mob: C1_ELDER_WILOW
+        Count: 1
+  - Id: 21514
+    Title: Swift Elder Willow Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21515
+    Title: Solid Coco Hunt
+    Targets:
+      - Mob: C2_COCO
+        Count: 1
+  - Id: 21516
+    Title: Solid Coco Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21517
+    Title: Swift Yoyo Hunt
+    Targets:
+      - Mob: C1_YOYO
+        Count: 1
+  - Id: 21518
+    Title: Swift Yoyo Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21519
+    Title: Elusive Magnolia Hunt
+    Targets:
+      - Mob: C5_MAGNOLIA
+        Count: 1
+  - Id: 21520
+    Title: Elusive Magnolia Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21521
+    Title: Furious Orc Warrior Hunt
+    Targets:
+      - Mob: C4_ORK_WARRIOR
+        Count: 1
+  - Id: 21522
+    Title: Furious Orc Warrior Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21523
+    Title: Swift Goblin Hunt
+    Targets:
+      - Mob: C1_GOBLIN_1
+        Count: 1
+  - Id: 21524
+    Title: Swift Goblin Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21525
+    Title: Elusive Goblin Hunt
+    Targets:
+      - Mob: C5_GOBLIN_1
+        Count: 1
+  - Id: 21526
+    Title: Elusive Goblin Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21527
+    Title: Swift Petite Hunt
+    Targets:
+      - Mob: C1_PETIT
+        Count: 1
+  - Id: 21528
+    Title: Swift Petite Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21529
+    Title: Solid Petite Hunt
+    Targets:
+      - Mob: C2_PETIT
+        Count: 1
+  - Id: 21530
+    Title: Solid Petite Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21531
+    Title: Furious Sandman Hunt
+    Targets:
+      - Mob: C4_SAND_MAN
+        Count: 1
+  - Id: 21532
+    Title: Furious Sandman Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21533
+    Title: Swift Seal Hunt
+    Targets:
+      - Mob: C1_FUR_SEAL
+        Count: 1
+  - Id: 21534
+    Title: Swift Seal Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21535
+    Title: Elusive Grove Hunt
+    Targets:
+      - Mob: C5_GREEN_IGUANA
+        Count: 1
+  - Id: 21536
+    Title: Elusive Grove Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21537
+    Title: Solid Alligator Hunt
+    Targets:
+      - Mob: C2_ALLIGATOR
+        Count: 1
+  - Id: 21538
+    Title: Solid Alligator Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21539
+    Title: Furious Wootan Fighter Hunt
+    Targets:
+      - Mob: C4_WOOTAN_FIGHTER
+        Count: 1
+  - Id: 21540
+    Title: Furious Wootan Fighter Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21541
+    Title: Swift Dryad Hunt
+    Targets:
+      - Mob: C1_DRYAD
+        Count: 1
+  - Id: 21542
+    Title: Swift Dryad Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21543
+    Title: Swift Shellfish Hunt
+    Targets:
+      - Mob: C1_SHELLFISH
+        Count: 1
+  - Id: 21544
+    Title: Swift Shellfish Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21545
+    Title: Solid Geographer Hunt
+    Targets:
+      - Mob: C2_GEOGRAPHER
+        Count: 1
+  - Id: 21546
+    Title: Solid Geographer Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21547
+    Title: Grand Peco Ringleader Hunt
+    Targets:
+      - Mob: C3_GRAND_PECO
+        Count: 1
+  - Id: 21548
+    Title: Grand Peco Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21549
+    Title: Goat Ringleader Hunt
+    Targets:
+      - Mob: C3_GOAT
+        Count: 1
+  - Id: 21550
+    Title: Goat Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21551
+    Title: Swift Sleeper Hunt
+    Targets:
+      - Mob: C1_SLEEPER
+        Count: 1
+  - Id: 21552
+    Title: Swift Sleeper Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21553
+    Title: Swift Stem Worm Hunt
+    Targets:
+      - Mob: C1_STEM_WORM
+        Count: 1
+  - Id: 21554
+    Title: Swift Stem Worm Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21555
+    Title: Solid Holden Hunt
+    Targets:
+      - Mob: C2_MOLE
+        Count: 1
+  - Id: 21556
+    Title: Solid Holden Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21557
+    Title: Swift Rafflesia Hunt
+    Targets:
+      - Mob: C1_RAFFLESIA
+        Count: 1
+  - Id: 21558
+    Title: Swift Rafflesia Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21559
+    Title: Venomous Ringleader Hunt
+    Targets:
+      - Mob: C3_VENOMOUS
+        Count: 1
+  - Id: 21560
+    Title: Venomous Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21561
+    Title: Furious Noxious Hunt
+    Targets:
+      - Mob: C4_NOXIOUS
+        Count: 1
+  - Id: 21562
+    Title: Furious Noxious Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21563
+    Title: Elusive Novus Hunt
+    Targets:
+      - Mob: C5_NOVUS
+        Count: 1
+  - Id: 21564
+    Title: Elusive Novus Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21565
+    Title: Solid Roween Hunt
+    Targets:
+      - Mob: C2_ROWEEN
+        Count: 1
+  - Id: 21566
+    Title: Solid Roween Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21567
+    Title: Stapo Ringleader Hunt
+    Targets:
+      - Mob: C3_STAPO
+        Count: 1
+  - Id: 21568
+    Title: Stapo Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21569
+    Title: Furious Smokie Hunt
+    Targets:
+      - Mob: C4_SMOKIE
+        Count: 1
+  - Id: 21570
+    Title: Furious Smokie Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21571
+    Title: Dumpling Child Ringleader Hunt
+    Targets:
+      - Mob: C3_RICE_CAKE_BOY
+        Count: 1
+  - Id: 21572
+    Title: Dumpling Child Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21573
+    Title: Furious Toucan Hunt
+    Targets:
+      - Mob: C4_TOUCAN
+        Count: 1
+  - Id: 21574
+    Title: Furious Toucan Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21575
+    Title: Solid Side Winder Hunt
+    Targets:
+      - Mob: C2_SIDE_WINDER
+        Count: 1
+  - Id: 21576
+    Title: Solid Side Winder Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21577
+    Title: Swift Karakasa Hunt
+    Targets:
+      - Mob: C1_KARAKASA
+        Count: 1
+  - Id: 21578
+    Title: Swift Karakasa Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21579
+    Title: Elusive Mi Gao Hunt
+    Targets:
+      - Mob: C5_INCREASE_SOIL
+        Count: 1
+  - Id: 21580
+    Title: Elusive Mi Gao Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21582
+    Title: Take Out the Radio Operators First
+    Targets:
+      - Mob: SKOGUL
+        Count: 20
+  - Id: 21583
+    Title: Take Out the Radio Operators First (Standby)
+    TimeLimit: 4h
+  - Id: 21585
+    Title: Purify the Demons
+    Targets:
+      - Mob: FRUS
+        Count: 20
+  - Id: 21586
+    Title: Purify the Demons (Standby)
+    TimeLimit: 4h
+  - Id: 21588
+    Title: "Before You're Bewitched"
+    Targets:
+      - Mob: SKEGGIOLD
+        Count: 5
+      - Mob: SKEGGIOLD_
+        Count: 5
+  - Id: 21589
+    Title: "Before You're Bewitched (Standby)"
+    TimeLimit: 4h
+  - Id: 21592
+    Title: Egnigem Cenia
+    Targets:
+      - Mob: YGNIZEM
+        Count: 30
+  - Id: 21593
+    Title: Egnigem Cenia (Standby)
+    TimeLimit: 4h
+  - Id: 21595
+    Title: Armeyer Dinze
+    Targets:
+      - Mob: ARMAIA
+        Count: 30
+  - Id: 21596
+    Title: Armeyer Dinze (Standby)
+    TimeLimit: 4h
+  - Id: 21598
+    Title: Wickebine Tres
+    Targets:
+      - Mob: WHIKEBAIN
+        Count: 30
+  - Id: 21599
+    Title: Wickebine Tres (Standby)
+    TimeLimit: 4h
+  - Id: 21601
+    Title: Kavach Icarus
+    Targets:
+      - Mob: KAVAC
+        Count: 30
+  - Id: 21602
+    Title: Kavach Icarus (Standby)
+    TimeLimit: 4h
+  - Id: 21604
+    Title: Errende Ebecee
+    Targets:
+      - Mob: EREND
+        Count: 30
+  - Id: 21605
+    Title: Errende Ebecee (Standby)
+    TimeLimit: 4h
+  - Id: 21607
+    Title: Laurell Weinder
+    Targets:
+      - Mob: RAWREL
+        Count: 30
+  - Id: 21608
+    Title: Laurell Weinder (Standby)
+    TimeLimit: 4h
+  - Id: 21610
+    Title: Cecil Damon
+    Targets:
+      - Mob: SHECIL
+        Count: 2
+  - Id: 21611
+    Title: Cecil Damon (Standby)
+    TimeLimit: 4h
+  - Id: 21613
+    Title: Kathryne Keyron
+    Targets:
+      - Mob: KATRINN
+        Count: 2
+  - Id: 21614
+    Title: Kathryne Keyron (Standby)
+    TimeLimit: 4h
+  - Id: 21616
+    Title: Margaretha Sorin
+    Targets:
+      - Mob: MAGALETA
+        Count: 2
+  - Id: 21617
+    Title: Margaretha Sorin (Standby)
+    TimeLimit: 4h
+  - Id: 21619
+    Title: Seyren Windsor
+    Targets:
+      - Mob: SEYREN
+        Count: 2
+  - Id: 21620
+    Title: Seyren Windsor (Standby)
+    TimeLimit: 4h
+  - Id: 21622
+    Title: Eremes Guile
+    Targets:
+      - Mob: EREMES
+        Count: 2
+  - Id: 21623
+    Title: Eremes Guile (Standby)
+    TimeLimit: 4h
+  - Id: 21625
+    Title: Howard Alt-Eisen
+    Targets:
+      - Mob: HARWORD
+        Count: 2
+  - Id: 21626
+    Title: Howard Alt-Eisen (Standby)
+    TimeLimit: 4h
+  - Id: 21629
+    Title: Catch Nightmare Terrors
+    Targets:
+      - Mob: NIGHTMARE_TERROR
+        Count: 30
+  - Id: 21630
+    Title: Catch Nightmare Terrors (Standby)
+    TimeLimit: 4h
+  - Id: 21632
+    Title: Catch Deleters
+    Targets:
+      - Mob: DELETER
+        Count: 30
+      - Mob: DELETER_
+        Count: 30
+  - Id: 21633
+    Title: Catch Deleters (Standby)
+    TimeLimit: 4h
+  - Id: 21635
+    Title: Collect Hardened Lava
+  - Id: 21636
+    Title: Collect Hardened Lava (Standby)
+    TimeLimit: 4h
+  - Id: 21640
+    Title: Dragons of the Lake
+    Targets:
+      - Mob: FERUS
+        Count: 30
+      - Mob: FERUS_
+        Count: 30
+  - Id: 21641
+    Title: Dragons of the Lake (Standby)
+    TimeLimit: 4h
+  - Id: 21643
+    Title: Wyverns of the Lake
+    Targets:
+      - Mob: ACIDUS
+        Count: 30
+      - Mob: ACIDUS_
+        Count: 30
+  - Id: 21644
+    Title: Wyverns of the Lake (Standby)
+    TimeLimit: 4h
+  - Id: 21646
+    Title: "The Lake's Three-Headed Dragon"
+    Targets:
+      - Mob: HYDRO
+        Count: 1
+  - Id: 21647
+    Title: "The Lake's Three-Headed Dragon (Standby)"
+    TimeLimit: 4h
+  - Id: 21651
+    Title: "Inside the Mimic's Box"
+    Targets:
+      - Mob: ANCIENT_MIMIC
+        Count: 30
+  - Id: 21652
+    Title: "Inside the Mimic's Box (Standby)"
+    TimeLimit: 4h
+  - Id: 21654
+    Title: Old Wisdom Adrift
+    Targets:
+      - Mob: DEATHWORD
+        Count: 30
+  - Id: 21655
+    Title: Old Wisdom Adrift (Standby)
+    TimeLimit: 4h
+  - Id: 21657
+    Title: The Baron of the Old Castle
+    Targets:
+      - Mob: OWL_BARON
+        Count: 20
+  - Id: 21658
+    Title: The Baron of the Old Castle (Standby)
+    TimeLimit: 4h
+  - Id: 21660
+    Title: Loose Pages of Knowledge
+  - Id: 21661
+    Title: Loose Pages of Knowledge (Standby)
+    TimeLimit: 4h
+  - Id: 21663
+    Title: Records of Old Magic
+  - Id: 21664
+    Title: Records of Old Magic (Standby)
+    TimeLimit: 4h
+  - Id: 21666
+    Title: Recycling Drive
+  - Id: 21667
+    Title: Recycling Drive (Standby)
+    TimeLimit: 4h
+  - Id: 21669
+    Title: Watch and Punish
+    Targets:
+      - Mob: RETRIBUTION
+        Count: 30
+  - Id: 21670
+    Title: Watch and Punish (Standby)
+    TimeLimit: 4h
+  - Id: 21672
+    Title: Sweet Poison
+    Targets:
+      - Mob: SOLACE
+        Count: 30
+  - Id: 21673
+    Title: Sweet Poison (Standby)
+    TimeLimit: 4h
+  - Id: 21675
+    Title: Rest Through Death
+    Targets:
+      - Mob: SHELTER
+        Count: 30
+  - Id: 21676
+    Title: Rest Through Death (Standby)
+    TimeLimit: 4h
+  - Id: 21678
+    Title: Seeds of Control
+    Targets:
+      - Mob: OBSERVATION
+        Count: 30
+  - Id: 21679
+    Title: Seeds of Control (Standby)
+    TimeLimit: 4h
+  - Id: 21683
+    Title: The Pitiful Clown
+    Targets:
+      - Mob: CARAT
+        Count: 30
+  - Id: 21684
+    Title: The Pitiful Clown (Standby)
+    TimeLimit: 4h
+  - Id: 21686
+    Title: One Little Bug
+    Targets:
+      - Mob: ARCLOUSE
+        Count: 30
+  - Id: 21687
+    Title: One Little Bug (Standby)
+    TimeLimit: 4h
+  - Id: 21689
+    Title: "To Heaven, If Still Alive"
+    Targets:
+      - Mob: ANOLIAN
+        Count: 30
+  - Id: 21690
+    Title: "To Heaven, If Still Alive (Standby)"
+    TimeLimit: 4h
+  - Id: 21692
+    Title: Have No Doubt
+    Targets:
+      - Mob: STING
+        Count: 30
+  - Id: 21693
+    Title: Have No Doubt (Standby)
+    TimeLimit: 4h
+  - Id: 21695
+    Title: "A Tasty... Er, Pitiful Soul"
+    Targets:
+      - Mob: MAJORUROS
+        Count: 30
+  - Id: 21696
+    Title: "A Tasty... Er, Pitiful Soul (Standby)"
+    TimeLimit: 4h
+  - Id: 21698
+    Title: Nothing but Empty Armor
+    Targets:
+      - Mob: RAYDRIC
+        Count: 30
+  - Id: 21699
+    Title: Nothing but Empty Armor (Standby)
+    TimeLimit: 4h
+  - Id: 21701
+    Title: Perhaps an Upright Soul
+    Targets:
+      - Mob: KHALITZBURG
+        Count: 30
+  - Id: 21702
+    Title: Perhaps an Upright Soul (Standby)
+    TimeLimit: 4h
+  - Id: 21704
+    Title: Bane of Knights
+    Targets:
+      - Mob: WANDER_MAN
+        Count: 30
+  - Id: 21705
+    Title: Bane of Knights (Standby)
+    TimeLimit: 4h
+  - Id: 21707
+    Title: A Worthy Opponent
+    Targets:
+      - Mob: KNIGHT_OF_ABYSS
+        Count: 10
+  - Id: 21708
+    Title: A Worthy Opponent (Standby)
+    TimeLimit: 4h
+  - Id: 21713
+    Title: The Girl Draped in Leaves
+    Targets:
+      - Mob: PINGUICULA
+        Count: 30
+  - Id: 21714
+    Title: The Girl Draped in Leaves (Standby)
+    TimeLimit: 4h
+  - Id: 21716
+    Title: Electrifying Beauty
+    Targets:
+      - Mob: LUCIOLA_VESPA
+        Count: 30
+  - Id: 21717
+    Title: Electrifying Beauty (Standby)
+    TimeLimit: 4h
+  - Id: 21719
+    Title: King of the Other World
+    Targets:
+      - Mob: TENDRILRION
+        Count: 1
+  - Id: 21720
+    Title: King of the Other World (Standby)
+    TimeLimit: 4h
+  - Id: 21722
+    Title: The Lady Draped in Leaves
+    Targets:
+      - Mob: PINGUICULA_D
+        Count: 30
+  - Id: 21723
+    Title: The Lady Draped in Leaves (Standby)
+    TimeLimit: 4h
+  - Id: 21725
+    Title: Pressed Flower Bookmarks
+    Targets:
+      - Mob: NEPENTHES
+        Count: 30
+  - Id: 21726
+    Title: Pressed Flower Bookmarks (Standby)
+    TimeLimit: 4h
+  - Id: 21728
+    Title: "Nice... Muscles!"
+    Targets:
+      - Mob: NAGA
+        Count: 30
+  - Id: 21729
+    Title: "Nice... Muscles! (Standby)"
+    TimeLimit: 4h
+  - Id: 21731
+    Title: Straight Out of a Fairy Tale
+    Targets:
+      - Mob: CORNUS
+        Count: 30
+  - Id: 21732
+    Title: Straight Out of a Fairy Tale (Standby)
+    TimeLimit: 4h
+  - Id: 21734
+    Title: A Stimulating Charm
+    Targets:
+      - Mob: CENTIPEDE_LARVA
+        Count: 20
+  - Id: 21735
+    Title: A Stimulating Charm (Standby)
+    TimeLimit: 4h
+  - Id: 21737
+    Title: Horns Full of Mana
+  - Id: 21738
+    Title: Horns Full of Mana (Standby)
+    TimeLimit: 4h
+  - Id: 21740
+    Title: Venomous Bugs
+    Targets:
+      - Mob: CENTIPEDE
+        Count: 20
+  - Id: 21741
+    Title: Venomous Bugs (Standby)
+    TimeLimit: 4h
+  - Id: 21743
+    Title: The Useless Slacker
+    Targets:
+      - Mob: TATACHO
+        Count: 20
+  - Id: 21744
+    Title: The Useless Slacker (Standby)
+    TimeLimit: 4h
+  - Id: 21746
+    Title: Looks Are Only a Shell
+    Targets:
+      - Mob: DOLOMEDES
+        Count: 30
+  - Id: 21747
+    Title: Looks Are Only a Shell (Standby)
+    TimeLimit: 4h
+  - Id: 21749
+    Title: Snap the Single Horn
+    Targets:
+      - Mob: HORN_SCARABA
+        Count: 30
+  - Id: 21750
+    Title: Snap the Single Horn (Standby)
+    TimeLimit: 4h
+  - Id: 21752
+    Title: Crack the Twin Horns
+    Targets:
+      - Mob: HORN_SCARABA2
+        Count: 30
+  - Id: 21753
+    Title: Crack the Twin Horns (Standby)
+    TimeLimit: 4h
+  - Id: 21755
+    Title: Crunch the Antlers
+    Targets:
+      - Mob: ANTLER_SCARABA
+        Count: 30
+  - Id: 21756
+    Title: Crunch the Antlers (Standby)
+    TimeLimit: 4h
+  - Id: 21758
+    Title: Break the Rake Horns
+    Targets:
+      - Mob: RAKE_SCARABA
+        Count: 30
+  - Id: 21759
+    Title: Break the Rake Horns (Standby)
+    TimeLimit: 4h
+  - Id: 21761
+    Title: "Morroc's Torment"
+    Targets:
+      - Mob: FIRE_CONDOR
+        Count: 15
+      - Mob: FIRE_FRILLDORA
+        Count: 15
+  - Id: 21762
+    Title: "Morroc's Torment (Standby)"
+    TimeLimit: 4h
+  - Id: 21764
+    Title: "Morroc's Trickery"
+    Targets:
+      - Mob: FIRE_SAND_MAN
+        Count: 15
+      - Mob: FIRE_GOLEM
+        Count: 15
+  - Id: 21765
+    Title: "Morroc's Trickery (Standby)"
+    TimeLimit: 4h
+  - Id: 21767
+    Title: The Fluffy Little One
+    Targets:
+      - Mob: MIMING
+        Count: 20
+  - Id: 21768
+    Title: The Fluffy Little One (Standby)
+    TimeLimit: 4h
+  - Id: 21770
+    Title: The Little Prankster
+    Targets:
+      - Mob: LITTLE_FATUM
+        Count: 20
+  - Id: 21771
+    Title: The Little Prankster (Standby)
+    TimeLimit: 4h
+  - Id: 21774
+    Title: "The Angel's Form"
+    Targets:
+      - Mob: MOROCC_1
+        Count: 30
+  - Id: 21775
+    Title: "The Angel's Form (Standby)"
+    TimeLimit: 4h
+  - Id: 21777
+    Title: Blessing of Rest
+    Targets:
+      - Mob: MOROCC_2
+        Count: 30
+  - Id: 21778
+    Title: Blessing of Rest (Standby)
+    TimeLimit: 4h
+  - Id: 21780
+    Title: The Joy of Servitude
+    Targets:
+      - Mob: MOROCC_3
+        Count: 30
+  - Id: 21781
+    Title: The Joy of Servitude (Standby)
+    TimeLimit: 4h
+  - Id: 21783
+    Title: Purity Made Flesh
+    Targets:
+      - Mob: MOROCC_4
+        Count: 30
+  - Id: 21784
+    Title: Purity Made Flesh (Standby)
+    TimeLimit: 4h
+  - Id: 21786
+    Title: Elusive Carat Hunt
+    Targets:
+      - Mob: C5_CARAT
+        Count: 1
+  - Id: 21787
+    Title: Elusive Carat Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21788
+    Title: Furious Majoruros Hunt
+    Targets:
+      - Mob: C4_MAJORUROS
+        Count: 1
+  - Id: 21789
+    Title: Furious Majoruros Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21790
+    Title: Solid Raydric Hunt
+    Targets:
+      - Mob: C2_RAYDRIC
+        Count: 1
+  - Id: 21791
+    Title: Solid Raydric Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21792
+    Title: Swift Raydric Hunt
+    Targets:
+      - Mob: C1_RAYDRIC
+        Count: 1
+  - Id: 21793
+    Title: Swift Raydric Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21794
+    Title: Furious Wanderer Hunt
+    Targets:
+      - Mob: C4_WANDER_MAN
+        Count: 1
+  - Id: 21795
+    Title: Furious Wanderer Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21796
+    Title: Swift Zombie Slaughter Hunt
+    Targets:
+      - Mob: C1_ZOMBIE_SLAUGHTER
+        Count: 1
+  - Id: 21797
+    Title: Swift Zombie Slaughter Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21798
+    Title: Swift Banshee Hunt
+    Targets:
+      - Mob: C1_BANSHEE
+        Count: 1
+  - Id: 21799
+    Title: Swift Banshee Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21800
+    Title: Necromancer Ringleader Hunt
+    Targets:
+      - Mob: C3_NECROMANCER
+        Count: 1
+  - Id: 21801
+    Title: Necromancer Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21802
+    Title: Furious Nightmare Terror Hunt
+    Targets:
+      - Mob: C4_NIGHTMARE_TERROR
+        Count: 1
+  - Id: 21803
+    Title: Furious Nightmare Terror Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21804
+    Title: Ancient Mimic Ringleader Hunt
+    Targets:
+      - Mob: C3_ANCIENT_MIMIC
+        Count: 1
+  - Id: 21805
+    Title: Ancient Mimic Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21806
+    Title: Solid Death Word Hunt
+    Targets:
+      - Mob: C2_DEATHWORD
+        Count: 1
+  - Id: 21807
+    Title: Solid Death Word Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21808
+    Title: Furious Venatu Hunt
+    Targets:
+      - Mob: C4_VENATU_1
+        Count: 1
+  - Id: 21809
+    Title: Furious Venatu Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21810
+    Title: Swift Dimik Hunt
+    Targets:
+      - Mob: C1_DIMIK_1
+        Count: 1
+  - Id: 21811
+    Title: Swift Dimik Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21812
+    Title: Furious Ferus Hunt
+    Targets:
+      - Mob: C4_FERUS_
+        Count: 1
+  - Id: 21813
+    Title: Furious Ferus Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21814
+    Title: Solid Acidus Hunt
+    Targets:
+      - Mob: C2_ACIDUS_
+        Count: 1
+  - Id: 21815
+    Title: Solid Acidus Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21816
+    Title: Elusive Lady Solace Hunt
+    Targets:
+      - Mob: C5_SOLACE
+        Count: 1
+  - Id: 21817
+    Title: Elusive Lady Solace Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21818
+    Title: Dame of Sentinel Ringleader Hunt
+    Targets:
+      - Mob: C3_OBSERVATION
+        Count: 1
+  - Id: 21819
+    Title: Dame of Sentinel Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21820
+    Title: Laurell Weinder Ringleader Hunt
+    Targets:
+      - Mob: C3_RAWREL
+        Count: 1
+  - Id: 21821
+    Title: Laurell Weinder Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21822
+    Title: Solid Cecil Damon Hunt
+    Targets:
+      - Mob: C2_SHECIL
+        Count: 1
+  - Id: 21823
+    Title: Solid Cecil Damon Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21824
+    Title: Swift Hill Wind Hunt
+    Targets:
+      - Mob: C1_HILL_WIND_1
+        Count: 1
+  - Id: 21825
+    Title: Swift Hill Wind Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21826
+    Title: Solid Kobold Hunt
+    Targets:
+      - Mob: C2_KOBOLD_1
+        Count: 1
+  - Id: 21827
+    Title: Solid Kobold Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21828
+    Title: Swift Kobold Archer Hunt
+    Targets:
+      - Mob: C1_KOBOLD_ARCHER
+        Count: 1
+  - Id: 21829
+    Title: Swift Kobold Archer Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21830
+    Title: Solid Snowier Hunt
+    Targets:
+      - Mob: C2_SNOWIER
+        Count: 1
+  - Id: 21831
+    Title: Solid Snowier Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21832
+    Title: Swift Ice Titan Hunt
+    Targets:
+      - Mob: C1_ICE_TITAN
+        Count: 1
+  - Id: 21833
+    Title: Swift Ice Titan Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21834
+    Title: Isilla Ringleader Hunt
+    Targets:
+      - Mob: C3_ISILLA
+        Count: 1
+  - Id: 21835
+    Title: Isilla Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21836
+    Title: Echio Ringleader Hunt
+    Targets:
+      - Mob: C3_ECHIO
+        Count: 1
+  - Id: 21837
+    Title: Echio Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21838
+    Title: Swift Agav Hunt
+    Targets:
+      - Mob: C1_AGAV
+        Count: 1
+  - Id: 21839
+    Title: Swift Agav Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21840
+    Title: Elusive Luciola Vespa Hunt
+    Targets:
+      - Mob: C5_LUCIOLA_VESPA
+        Count: 1
+  - Id: 21841
+    Title: Elusive Luciola Vespa Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21842
+    Title: Solid Dark Pinguicula Hunt
+    Targets:
+      - Mob: C2_PINGUICULA_D
+        Count: 1
+  - Id: 21843
+    Title: Solid Dark Pinguicula Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21844
+    Title: Swift Centipede Hunt
+    Targets:
+      - Mob: C1_CENTIPEDE
+        Count: 1
+  - Id: 21845
+    Title: Swift Centipede Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21846
+    Title: Dolomedes Ringleader Hunt
+    Targets:
+      - Mob: C3_DOLOMEDES
+        Count: 1
+  - Id: 21847
+    Title: Dolomedes Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21848
+    Title: Elusive Antler Scaraba Hunt
+    Targets:
+      - Mob: C5_ANTLER_SCARABA
+        Count: 1
+  - Id: 21849
+    Title: Elusive Antler Scaraba Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21850
+    Title: Miming Ringleader Hunt
+    Targets:
+      - Mob: C3_MIMING
+        Count: 1
+  - Id: 21851
+    Title: Miming Ringleader Hunt (Standby)
+    TimeLimit: 4h
+  - Id: 21852
+    Title: Furious Little Fatum Hunt
+    Targets:
+      - Mob: C4_LITTLE_FATUM
+        Count: 1
+  - Id: 21853
+    Title: Furious Little Fatum Hunt (Standby)
+    TimeLimit: 4h

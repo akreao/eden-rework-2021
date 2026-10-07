@@ -1,0 +1,10 @@
+-- Eden Group 2021 rework: the Administrators' signs, as kRO's client has them
+-- (kRO signboardlist.lub, moc_para01 rows 21-24). Captions are the English of
+-- ROenglishRE's Sign_Data.lub. Added over the client's own table by the app;
+-- a sign on the same cell replaces the client's.
+SignBoardList = {
+	{ "moc_para01", 110, 79, 10, 3, "item\\C_Popping_Poring_Aura.bmp", "  Basic Equipment Support", "#0x00FFFFFF" },
+	{ "moc_para01", 110, 83, 10, 3, "item\\t_sword_of_kingdom.bmp", "  Intermediate / Advanced Weapon Support", "#0x00FFFFFF" },
+	{ "moc_para01", 110, 87, 10, 3, "item\\md_geffen_shield.bmp", "  Advanced Armor Support", "#0x00FFFFFF" },
+	{ "moc_para01", 110, 91, 10, 3, "item\\suffragium.bmp", "  Shadow Equipment Rental", "#0x00FFFFFF" },
+}
