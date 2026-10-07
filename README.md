@@ -37,21 +37,20 @@ first.
 | `eden-rework-2021/` | The mod, exactly as it goes in a player's mods folder. |
 | `CHANGELOG.md` | One `## <version>` section per release; it becomes the release notes. |
 | `scripts/build-release.py` | Checks the mod against the app's limits and builds the release zip. |
-| `.github/workflows/` | `check.yml` runs the check on every push; `release.yml` publishes a release for a tag. |
+| `.github/workflows/` | `check.yml` runs the check on every push; `release.yml` publishes a release when `mod.json` has a new version. |
 
 ## Making a release
 
 1. Change the mod, raise `version` in `eden-rework-2021/mod.json`, and add a
    `## <version>` section to `CHANGELOG.md`.
-2. `python3 scripts/build-release.py --check`, commit and push.
-3. Tag the commit `v<version>` and push the tag:
-   `git tag v0.2.6 && git push origin v0.2.6`.
+2. `python3 scripts/build-release.py --check`, commit, and push to `main`.
 
-The release workflow checks that the tag matches `mod.json`, builds
-`eden-rework-2021-<version>.zip` from the tagged commit, and publishes it as a
-full release with that version's changelog section. The app offers players
-the newest full release; publish a pre-release by hand to test with a few
-people first.
+When `main` carries a version that has no release yet, the release workflow
+builds `eden-rework-2021-<version>.zip` from that commit, tags it
+`v<version>`, and publishes it as a full release with that version's
+changelog section. Pushes that don't raise the version publish nothing. The
+app offers players the newest full release; publish a pre-release by hand to
+test with a few people first.
 
 ## Getting listed in the app
 
