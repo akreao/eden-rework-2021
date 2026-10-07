@@ -4,6 +4,11 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.2.7
+- The Eden Group Mark now takes you to the Eden Group's entrance hall.
+- Secretary Lime Evenor no longer says the Mark returns you to your save
+  point; she says it brings you back to the Eden Group, once every 20 minutes.
+
 ## 0.2.6
 - Mission board menus work again for areas with a colon in their name
   (Prontera Fields 1~39 and others). Titles now read "Prontera Fields - 1~39".

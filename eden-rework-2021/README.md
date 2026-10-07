@@ -11,6 +11,8 @@ Turning the mod off brings back stock Eden.
 | `npc/eden_paradise_gear.txt` | Instructors Ur and Boya, Administrators BK, Michael, Thorn and Emil (gear quests 17528-17537). Hides the old Eden Team gear NPCs. |
 | `npc/eden_paradise_missions.txt` | Six mission boards (each placed twice), the champion hunt board and Sogil, the Logistics Officer, cave shortcuts Rigel, Aker, Ayla and Minmin, and the mission field NPCs. Hides the old mission boards and 100-140 mission NPCs. |
 | `npc/eden_paradise_warps.txt` | Adds the portal at 48,39 beside the Eden door, as kRO has it; it replaces the door's click dialog (kRO client navigation table); the door itself is map graphics and stays. Also moves two stock warps' landing spots to kRO's. |
+| `npc/eden_lime_evenor.txt` | A copy of stock Secretary Lime Evenor (stock one hidden) whose Eden Group Mark line says what the Mark does. |
+| `db/item_db.yml` | The Eden Group Mark (22508) warps to moc_para01 30,16, the Eden Group's entrance hall. |
 | `npc/odin_past.txt` | Odin's Past (odin_past) spawns, including Valkyries Reginleif and Ingrid. |
 | `db/quest_db.yml` | The quests those NPCs hand out, with their cooldowns. |
 | `db/mob_db.yml`, `db/mob_skill_db.txt` | Odin's Past monsters and their skills. |

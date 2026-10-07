@@ -1,0 +1,11 @@
+# Eden Group Mark (22508): warp to the Eden Group's entrance hall,
+# moc_para01 30,16, instead of rAthena's 171,115. Delay and flags stay stock.
+
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 22508
+    Script: |
+      warp "moc_para01",30,16;

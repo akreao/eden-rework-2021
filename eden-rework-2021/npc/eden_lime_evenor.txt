@@ -1,0 +1,205 @@
+//===== rAthena Script =======================================
+//= Eden Group: Secretary Lime Evenor
+//===== Description: =========================================
+//= Part of the Ragnarok Offline mod "eden-rework-2021".
+//= A copy of stock Lime Evenor (npc/re/quests/eden/eden_common.txt),
+//= which is hidden while the mod is on. The one change: the Eden Group
+//= Mark (22508) is described as what it does, a trip back to the Eden
+//= Group (moc_para01 30,16, set in the mod's db/item_db.yml) with a
+//= 20-minute delay, not a return to the save point.
+//============================================================
+
+moc_para01,27,35,5	script	Secretary Lime Evenor#2021	4_F_EDEN_OFFICER,{
+	if (checkweight(1201,1) == 0 || (MaxWeight - Weight) < 2000) {
+		mes "- Wait a minute !! -";
+		mes "- Currently you're carrying -";
+		mes "- too many items with you. -";
+		mes "- Please try again -";
+		mes "- after you lose some weight. -";
+		close;
+	}
+	if (countitem(6219) > 0) {
+		mes "[Lime Evenor]";
+		mes "Thanks to many adventurers visiting our Eden Group, we've recently prepared a new version of Eden Group Mark for our visitors.";
+		mes "And it is also possible to exchange old version of Eden Group Mark into a new one.";
+		next;
+		mes "[Lime Evenor]";
+		mes "This new version of Eden Group Mark will bring you straight back to the Eden Group, once every 20 minutes.";
+		mes "Would you like to exchange yours?";
+		next;
+		if (select("Sure:I'm good.") == 2){
+			mes "[Lime Evenor]";
+			mes "What possible reason would you have... to not exchange?";
+			close;
+		}
+		delitem 6219,1;
+		getitem 22508,1;
+		mes "[Lime Evenor]";
+		mes "There you go. Come back again~";
+		close;
+	}
+	mes "[Lime Evenor]";
+	mes "People who follow their dreams and romances listen to me. We are representatives of the paradise called 'The garden of Eden' called the Eden group . There is no place like this anywhere.";
+	mes "Hello. Can I help you?";
+	next;
+	while (1) {
+		switch (select("What is Eden group?:Join the Eden Group.:Register new mission.:Search for missions.:Cancel.")) {
+		case 1:
+			mes "[Lime Evenor]";
+			mes "Eden Group is a group that helps people who are suffering from distresses in Midgard.";
+			next;
+			mes "[Lime Evenor]";
+			mes "If people need help, we put up the case on the bulletin board and introduce it to our members who are eager to help those in need.";
+			next;
+			mes "[Lime Evenor]";
+			mes "Eden members will review the missions and help those who post them up.";
+			mes "Members do these missions for rewards.";
+			next;
+			mes "[Lime Evenor]";
+			mes "If you are not too familiar with Midgard, this is a great way to explore the world.";
+			mes "Or, if you are mature enough, you can travel the world and make new friends while doing missions. Your honorable name will be spread out among lands.";
+			next;
+			break;
+		case 2:
+			if (!callfunc("F_HasEdenGroupMark")) {
+				mes "[Lime Evenor]";
+				mes "You can be a Eden's member by simply registering with me.";
+				mes "Would you like to join Eden Group?";
+				next;
+				switch (select("Yes, I want to join.:No, I don't want to join.")) {
+				case 1:
+					mes "[Lime Evenor]";
+					mes "Aright. Excellent! Please write down your name here.";
+					input .@input$;
+					next;
+					mes "[Lime Evenor]";
+					mes "Are you done?";
+					mes "Let me see.";
+					next;
+					mes "[Lime Evenor]";
+					mes "Your name is ^3131FFBo"+.@input$+"Ba^000000...? Is that right?";
+					mes "Huh? Isn't it??";
+					next;
+					emotion ET_SWEAT;
+					mes "[Lime Evenor]";
+					mes "Hmm, that isn't what you wrote?";
+					mes "Ok, hmm, it seems a bit hard to read.";
+					next;
+					mes "[Lime Evenor]";
+					mes "Would you please write your name again? Please write it ^3131FFClearly^000000.";
+					input .@input$;
+					next;
+					mes "[Lime Evenor]";
+					mes "Ah~ ha. You are ^3131FF"+strcharinfo(0)+"^000000.";
+					mes "I got it right this time.";
+					next;
+					emotion ET_BEST;
+					mes "[Lime Evenor]";
+					mes "We already put your name on the list.";
+					mes "Welcome to Eden's group new member!";
+					next;
+					mes "[Lime Evenor]";
+					mes "Hopefully you can do great work as an Eden's member.";
+					getitem 22508,1; //Para_Team_Mark_
+					next;
+					break;
+				case 2:
+					mes "[Lime Evenor]";
+					mes "Do you still have questions about Eden Group?";
+					next;
+					break;
+				}
+			} else {
+				mes "[Lime Evenor]";
+				mes "You are already a member of Eden Group.";
+				next;
+			}
+			break;
+		case 3:
+			mes "[Lime Evenor]";
+			mes "Do you want to register some missions that you want us to do?";
+			next;
+			if(select("Yes, I want to register.:No, I don't.") == 1) {
+				mes "[Lime Evenor]";
+				mes "Alrigh. Please write down your name on it.";
+				input .@input$;
+				next;
+				mes "[Lime Evenor]";
+				mes "^3131FF"+strcharinfo(0)+"^000000.. Is that your name?";
+				mes "Hmm, your handwriting is not clear. I can't read. it";
+				next;
+				mes "[Lime Evenor]";
+				mes "^3131FF"+strcharinfo(0)+"^000000, tell me what you want to register for.";
+				mes "Which map should we go to?";
+				input .@input$;
+				next;
+				mes "[Lime Evenor]";
+				mes "^3131FFMission Map: "+.@inputstr$+"^000000";
+				mes "hum, I will note that.";
+				next;
+				mes "[Lime Evenor]";
+				mes "Please let me know what kind of missions your are lookng for.";
+				mes "It should be briefly like 'Hunt 10 Porings.'";
+				input .@input$;
+				next;
+				mes "[Lime Evenor]";
+				mes "Are you done?";
+				mes "Let me check.";
+				next;
+				mes "[Lime Evenor]";
+				mes "Huh...........";
+				next;
+				mes "[Lime Evenor]";
+				mes "Hum.. huh??..................";
+				next;
+				emotion ET_THINK;
+				mes "[Lime Evenor]";
+				mes "I think you should complete one of our missions first before you take up a new mission.";
+				next;
+				emotion ET_HNG;
+				mes "[Lime Evenor]";
+				mes "^3131FFClient: Lime Evenor^000000";
+				mes "^3131FFMission: Practice your handwriting for one month.^000000";
+				mes "You've got really bad penmanship!";
+				next;
+				mes "[Lime Evenor]";
+				mes "^3131FFMission:"+.@input$+"^000000";
+				mes "Anyway, you are done registering for a new mission.";
+				next;
+				mes "[Lime Evenor]";
+				mes "Missions are fully booked. You have to wait for an spot to clear up.";
+				mes "Please kindly wait until your turn.";
+				next;
+			}
+			break;
+		case 4:
+			if (callfunc("F_HasEdenGroupMark")) {
+				mes "[Lime Evenor]";
+				mes "Would like to try some missions as an Eden member?";
+				next;
+				mes "[Lime Evenor]";
+				mes "Check the right side of the bulletin board, there are various kinds of missions waiting for you.";
+				mes "Please carefully read the mission list and the qualifications and choose one of them.";
+				next;
+			}
+			else {
+				mes "[Lime Evenor]";
+				mes "You need to join Eden Group first if you want to do some missions.";
+				close;
+			}
+			break;
+		case 5:
+			mes "[Lime Evenor]";
+			mes "If you have any questions please come back again.";
+			close;
+		}
+	}
+	close;
+}
+
+-	script	#eden_rework_lime	-1,{
+	end;
+OnInit:
+	disablenpc "Secretary Lime Evenor";
+	end;
+}
