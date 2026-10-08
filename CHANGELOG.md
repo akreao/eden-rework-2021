@@ -4,6 +4,10 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.2.8
+- The Paradise Cap, Paradise Hat and their Advanced versions now show on
+  your character.
+
 ## 0.2.7
 - The Eden Group Mark now takes you to the Eden Group's entrance hall.
 - Secretary Lime Evenor no longer says the Mark returns you to your save

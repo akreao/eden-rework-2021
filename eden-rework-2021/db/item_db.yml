@@ -9,3 +9,14 @@ Body:
   - Id: 22508
     Script: |
       warp "moc_para01",30,16;
+  # Paradise caps had no View, so nothing showed on the character. View ids
+  # are the ClassNum the client's itemInfo gives each one (ROenglishRE's
+  # itemInfo.lua; not yet checked against kRO's itemInfo_true.lub).
+  - Id: 400137
+    View: 1529
+  - Id: 400138
+    View: 465
+  - Id: 400139
+    View: 1529
+  - Id: 400140
+    View: 465
