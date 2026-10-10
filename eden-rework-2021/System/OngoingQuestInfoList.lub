@@ -2561,7 +2561,7 @@ QuestInfoList = {
 	[21295] = { -- iRO, corrected
 		Title = "Clam-Digging Experience",
 		Description = {
-			"<NAVI>[Fisher Ain]<INFO>hugel,100,149,0,101,0</INFO></NAVI> of Hugel suggests that, since you have come to Hugel, a seaside resort, you should experience life in a fishing village firsthand by gathering clams. Catch clams on the beach at <NAVI>[Hugel Field 06]<INFO>hu_fild06,200,364,0,101,0</INFO></NAVI> and bring back the Clam Flesh so he can prepare a delicious dish for you.",
+			"<NAVI>[Fisher Ain]<INFO>hugel,100,149,0,101,0</INFO></NAVI> of Hugel suggests that, since you have come to Hugel, a seaside resort, you should experience life in a fishing village firsthand by gathering clams. Hunt Shellfish on the beach at <NAVI>[Hugel Field 06]<INFO>hu_fild06,200,364,0,101,0</INFO></NAVI> and bring back the Clam Flesh so he can prepare a delicious dish for you.",
 		},
 		Summary = "5 Clam Flesh",
 		IconName = "ico_dq.bmp",

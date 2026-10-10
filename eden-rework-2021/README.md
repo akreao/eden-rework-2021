@@ -14,8 +14,8 @@ Turning the mod off brings back stock Eden.
 | `npc/eden_lime_evenor.txt` | A copy of stock Secretary Lime Evenor (stock one hidden) whose Eden Group Mark line says what the Mark does. |
 | `db/item_db.yml` | The Eden Group Mark (22508) warps to moc_para01 30,16, the Eden Group's entrance hall. The four Paradise caps get the headgear View their client itemInfo gives them (1529, 465), so they show on the character. |
 | `npc/odin_past.txt` | Odin's Past (odin_past) spawns, including Valkyries Reginleif and Ingrid. |
-| `db/quest_db.yml` | The quests those NPCs hand out, with their cooldowns. |
-| `db/mob_db.yml`, `db/mob_skill_db.txt` | Odin's Past monsters and their skills. |
+| `db/quest_db.yml` | The quests those NPCs hand out, with their cooldowns. Area hunts use the map name from the quest text as the tracker label, shortened where the client's 23-character limit forces it. |
+| `db/mob_db.yml`, `db/mob_skill_db.txt` | Odin's Past monsters and their skills. `mob_db.yml` also sets JapaneseName to the English Name for 43 hunted monsters, because the quest tracker shows JapaneseName (Green Iguana instead of Grove). |
 | `data/luafiles514/lua files/SignBoardList.lub` | kRO's signs over the four Administrators (110,79 / 83 / 87 / 91), in English, so they match on any client. iRO's client also has two old signs at 112,79 and 112,83 that a mod can't remove; they float beside BK and Michael. |
 | `System/OngoingQuestInfoList.lub` | English quest-window text for 762 Eden quests and cooldowns, loaded after the English translation. |
 
@@ -36,7 +36,7 @@ for the NPCs and tables, and the app for the quest text.
 ## Checking it
 
 - The map server log shows `Loading '526' entries in 'db/import/quest_db.yml'`
-  and `Loading '10' entries in 'db/import/mob_db.yml'`.
+  and `Loading '53' entries in 'db/import/mob_db.yml'`.
 - In Eden (moc_para01), the new boards stand at y=38 and y=98 and the old
   mission boards are gone.
 

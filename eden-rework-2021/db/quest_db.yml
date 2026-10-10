@@ -33,21 +33,21 @@ Body:
       - Id: 1
         Count: 60
         Location: ecl_fild01
-        MapName: The Land Where Flowers Bloomed
+        MapName: Blooming Flower Land
   - Id: 19002
     Title: Grand Bath Meditatio
     Targets:
       - Id: 1
         Count: 60
         Location: ba_bath
-        MapName: Grand Bath Meditatio
+        MapName: Meditatio Grand Bath
   - Id: 19004
     Title: "Library: Corridor of Memories"
     Targets:
       - Id: 1
         Count: 60
         Location: ba_lib
-        MapName: "Library: Corridor of Memories"
+        MapName: Corridor of Memories
   - Id: 19006
     Title: Sewage Treatment Plant
     Targets:
@@ -61,14 +61,14 @@ Body:
       - Id: 1
         Count: 60
         Location: ba_pw01
-        MapName: First Power Plant
+        MapName: Magic Power Plant 1
   - Id: 19010
     Title: "Dragon's Nest, 2F"
     Targets:
       - Id: 1
         Count: 60
         Location: lasa_dun02
-        MapName: "Dragon's Nest, 2F"
+        MapName: "Dragon's Lair Floor 2"
   - Id: 19012
     Title: Bifrost Tower
     Targets:
@@ -82,14 +82,14 @@ Body:
       - Id: 1
         Count: 120
         Location: lasa_dun03
-        MapName: "Dragon's Nest, 3F"
+        MapName: "Dragon's Lair Floor 3"
   - Id: 19016
     Title: Prontera Underground Prison
     Targets:
       - Id: 1
         Count: 120
         Location: prt_prison
-        MapName: Prontera Underground Prison
+        MapName: Underground Prison
   - Id: 19018
     Title: Invaded Prontera
     Targets:
@@ -105,7 +105,7 @@ Body:
       - Id: 1
         Count: 120
         Location: rockmi1
-        MapName: Rock Ridge Mine
+        MapName: Rock Ridge Mine Floor 1
   - Id: 19022
     Title: Second Floor Corridor
     Targets:
@@ -139,7 +139,7 @@ Body:
       - Id: 1
         Count: 160
         Location: ba_lost
-        MapName: "Breeding Ground: Lost Valley"
+        MapName: Lost Valley
   - Id: 19032
     Title: "Twisted Clock Tower, 3F"
     Targets:
@@ -158,7 +158,7 @@ Body:
       - Id: 1
         Count: 80
         Location: sp_rudus2
-        MapName: "Ludus Disposal Site, 2F"
+        MapName: Rudus Disposal Floor 2
   - Id: 19038
     Title: East Juperos Ruins
     Targets:
@@ -177,84 +177,84 @@ Body:
       - Id: 1
         Count: 160
         Location: ba_2whs01
-        MapName: "Tartarus Storage, Upper Level"
+        MapName: Tartaros Storage Upper
   - Id: 19044
     Title: "Oz Labyrinth, 1F"
     Targets:
       - Id: 1
         Count: 80
         Location: oz_dun01
-        MapName: "Oz Labyrinth, 1F"
+        MapName: Oz Labyrinth 1F
   - Id: 19046
     Title: "Ludus Disposal Site, 3F"
     Targets:
       - Id: 1
         Count: 160
         Location: sp_rudus3
-        MapName: "Ludus Disposal Site, 3F"
+        MapName: Rudus Disposal Floor 3
   - Id: 19048
     Title: "Nogg Road, 3F"
     Targets:
       - Id: 1
         Count: 160
         Location: mag_dun03
-        MapName: "Nogg Road, 3F"
+        MapName: Juno Norgroad Floor 3
   - Id: 19050
     Title: "Tartarus Storage, Lower Level"
     Targets:
       - Id: 1
         Count: 160
         Location: ba_2whs02
-        MapName: "Tartarus Storage, Lower Level"
+        MapName: Tartaros Storage Lower
   - Id: 19052
     Title: "Glast Heim Abyss, 1F"
     Targets:
       - Id: 1
         Count: 160
         Location: gl_cas01_
-        MapName: "Glast Heim Abyss, 1F"
+        MapName: Glast Heim Abyss 1F
   - Id: 19054
     Title: Grey Wolf Forest (West)
     Targets:
       - Id: 1
         Count: 80
         Location: gw_fild01
-        MapName: Grey Wolf Forest (West)
+        MapName: Gray Wolf Forest 01
   - Id: 19056
     Title: Grey Wolf Forest (East)
     Targets:
       - Id: 1
         Count: 80
         Location: gw_fild02
-        MapName: Grey Wolf Forest (East)
+        MapName: Gray Wolf Forest 02
   - Id: 19058
     Title: "Einbech Mine, 3F"
     Targets:
       - Id: 1
         Count: 160
         Location: ein_dun03
-        MapName: "Einbech Mine, 3F"
+        MapName: Einbech Mine Floor 3
   - Id: 19060
     Title: Ancient Odin Temple
     Targets:
       - Id: 1
         Count: 240
         Location: odin_past
-        MapName: Ancient Odin Temple
+        MapName: "Ancient Odin's Temple"
   - Id: 19062
     Title: "Abyss Lake Underground Cave, 4F"
     Targets:
       - Id: 1
         Count: 240
         Location: abyss_04
-        MapName: "Abyss Lake Underground Cave, 4F"
+        MapName: Abyss Lake Cave Floor 4
   - Id: 19064
     Title: Second Power Plant
     Targets:
       - Id: 1
         Count: 240
         Location: ba_pw03
-        MapName: Second Power Plant
+        MapName: Magic Power Plant 2
   - Id: 21015
     Title: The Undead War
     Targets:

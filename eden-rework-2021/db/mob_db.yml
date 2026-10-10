@@ -457,3 +457,94 @@ Body:
       - Item: Ingrid_Card
         Rate: 1
         StealProtected: true
+
+  # Quest tracker names. The tracker shows a monster's JapaneseName, which
+  # for these hunted monsters differs from the English Name used in the quest
+  # text and above the monster in game (Grove vs Green Iguana). Set it to
+  # the Name so all three agree.
+  - Id: 1025  # SNAKE
+    JapaneseName: "Boa"
+  - Id: 1194  # ARCLOUSE
+    JapaneseName: "Arclouze"
+  - Id: 1208  # WANDER_MAN
+    JapaneseName: "Wanderer"
+  - Id: 1219  # KNIGHT_OF_ABYSS
+    JapaneseName: "Abysmal Knight"
+  - Id: 1317  # FUR_SEAL
+    JapaneseName: "Seal"
+  - Id: 1403  # ANTIQUE_FIRELOCK
+    JapaneseName: "Firelock Soldier"
+  - Id: 1404  # MIYABI_NINGYO
+    JapaneseName: "Miyabi Doll"
+  - Id: 1410  # LIVE_PEACH_TREE
+    JapaneseName: "Enchanted Peach Tree"
+  - Id: 1412  # EVIL_CLOUD_HERMIT
+    JapaneseName: "Taoist Hermit"
+  - Id: 1416  # WICKED_NYMPH
+    JapaneseName: "Evil Nymph"
+  - Id: 1512  # HYEGUN
+    JapaneseName: "Yao Jun"
+  - Id: 1516  # INCREASE_SOIL
+    JapaneseName: "Mi Gao"
+  - Id: 1517  # LI_ME_MANG_RYANG
+    JapaneseName: "Jing Guai"
+  - Id: 1617  # WASTE_STOVE
+    JapaneseName: "Old Stove"
+  - Id: 1628  # MOLE
+    JapaneseName: "Holden"
+  - Id: 1634  # SEYREN
+    JapaneseName: "Seyren Windsor"
+  - Id: 1635  # EREMES
+    JapaneseName: "Eremes Guile"
+  - Id: 1636  # HARWORD
+    JapaneseName: "Howard Alt-Eisen"
+  - Id: 1637  # MAGALETA
+    JapaneseName: "Margaretha Sorin"
+  - Id: 1638  # SHECIL
+    JapaneseName: "Cecil Damon"
+  - Id: 1639  # KATRINN
+    JapaneseName: "Kathryne Keyron"
+  - Id: 1652  # YGNIZEM
+    JapaneseName: "Egnigem Cenia"
+  - Id: 1653  # WHIKEBAIN
+    JapaneseName: "Wickebine Tres"
+  - Id: 1654  # ARMAIA
+    JapaneseName: "Armeyer Dinze"
+  - Id: 1655  # EREND
+    JapaneseName: "Errende Ebecee"
+  - Id: 1656  # KAVAC
+    JapaneseName: "Kavach Icarus"
+  - Id: 1657  # RAWREL
+    JapaneseName: "Laurell Weinder"
+  - Id: 1687  # GREEN_IGUANA
+    JapaneseName: "Grove"
+  - Id: 1698  # DEATHWORD
+    JapaneseName: "Death Word"
+  - Id: 1700  # OBSERVATION
+    JapaneseName: "Dame of Sentinel"
+  - Id: 1701  # SHELTER
+    JapaneseName: "Mistress of Shelter"
+  - Id: 1702  # RETRIBUTION
+    JapaneseName: "Baroness of Retribution"
+  - Id: 1703  # SOLACE
+    JapaneseName: "Lady Solace"
+  - Id: 1720  # HYDRO
+    JapaneseName: "Hydrolancer"
+  - Id: 1882  # VAVAYAGA
+    JapaneseName: "Baba-Yaga"
+  - Id: 1883  # UZHAS
+    JapaneseName: "Kikimora"
+  - Id: 2083  # HORN_SCARABA
+    JapaneseName: "One-Horned Scaraba"
+  - Id: 2084  # HORN_SCARABA2
+    JapaneseName: "Two-Horned Scaraba"
+  - Id: 3021  # FIRE_SAND_MAN
+    JapaneseName: "Fire Sandman"
+  - Id: 3247  # CENERE_G
+    JapaneseName: "Green Cenere"
+  - Id: 3248  # REPAIR_ROBOT_T
+    JapaneseName: "Repair Robot Turbo"
+  - Id: 3249  # EXPLORATION_ROVER_T
+    JapaneseName: "Explorer Robot Turbo"
+  - Id: 3255  # GHOUL_H
+    JapaneseName: "Smelly Ghoul"
