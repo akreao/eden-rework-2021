@@ -13,6 +13,8 @@ Turning the mod off brings back stock Eden.
 | `npc/eden_paradise_warps.txt` | Adds the portal at 48,39 beside the Eden door, as kRO has it; it replaces the door's click dialog (kRO client navigation table); the door itself is map graphics and stays. Also moves two stock warps' landing spots to kRO's, and enters the Paramarket by kRO's portal at 106,43 instead of the Market Group Hustler (hidden). Adds kRO's two portals between Odin Temple 3 and Odin's Past (276,236 and back from 291,235), which rAthena lacks. |
 | `npc/eden_lime_evenor.txt` | A copy of stock Secretary Lime Evenor (stock one hidden) whose Eden Group Mark line says what the Mark does. |
 | `npc/eden_neede.txt` | A copy of stock Office Assistant Neede (stock one hidden) whose emote for Lime shows over the mod's Lime. |
+| `npc/eden_paramarket.txt` | The Paramarket as kRO has run it since its 2019 renewal: every shop open every day, kRO's shop NPCs and positions (adds Seth, Zerenia, Peary and Milk), and hazyforest's stock and prices (unverified). Hides the stock shop NPCs it replaces. |
+| `npc/eden_consumable_converter.txt` | Nyang Time on the 2nd floor (29,171), kRO's consumable converter: premium consumables into their 60-minute True versions. Also the optional premium drops. |
 | `db/item_db.yml` | The Eden Group Mark (22508) warps to moc_para01 30,16, the Eden Group's entrance hall. The four Paradise caps get the headgear View their client itemInfo gives them (1529, 465), so they show on the character. |
 | `npc/odin_past.txt` | Odin's Past (odin_past) spawns, including Valkyries Reginleif and Ingrid. |
 | `db/quest_db.yml` | The quests those NPCs hand out, with their cooldowns. Area hunts use the map name from the quest text as the tracker label, shortened where the client's 23-character limit forces it. |
@@ -25,8 +27,10 @@ Turning the mod off brings back stock Eden.
 - **Permanent shadow gear** (off): Emil's shadow gear is permanent instead of rented.
 - **Shadow gear rental (hours)** (72): rental length while it is rented.
 - **Eden Coin multiplier** (1, up to 100): multiplies the Eden Coins mission board rewards give.
+- **Premium consumable drops** (off): any monster kill can give one of Nyang Time's premium consumables. Not in kRO.
+- **Premium drop chance** (10 in 10,000, so 0.1%; up to 10,000): the chance per kill.
 
-Emil's script and the mission boards read these through `F_ModSetting`, and they change on **Apply**.
+Emil's script, the mission boards and the premium drops read these through `F_ModSetting`, and they change on **Apply**.
 
 ## Installing
 

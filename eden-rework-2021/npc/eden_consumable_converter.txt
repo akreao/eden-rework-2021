@@ -1,0 +1,122 @@
+//===== rAthena Script =======================================
+//= Eden Group: Nyang Time (consumable converter) and premium drops
+//===== Description: =========================================
+//= Part of the Ragnarok Offline mod "eden-rework-2021".
+//= Nyang Time (kRO: 냥타임) on the 2nd floor turns premium
+//= consumables into their 60-minute "True" versions. kRO's current
+//= client (Dec 2025) links the inputs to her at moc_para01 29,171.
+//= kRO has a second one in Malangdo (208,163), which is not Eden
+//= and not added here.
+//=
+//= Ratios: hazyforest eden:map. Inven ro/1951/3475 (2016) confirms
+//= the life potions (60 -> 10), Red Booster (30 -> 5) and ASPD
+//= Potion (40 -> 10). The rest are [unverified].
+//= Left out: Tyr's Blessing, Mental Potion and the Battle Manual
+//= upgrades (the client doesn't link them to her), and the fly-wing
+//= boxes (rAthena already stacks the box she would convert).
+//=
+//= Premium drops (setting "premium_drops", off by default): each
+//= monster a player kills has a premium_drop_rate in 10,000 chance
+//= (default 10 = 0.1%; 1 = 0.01%, a card's rate) to give one of
+//= her inputs.
+//= Not kRO: an option for servers without a cash shop.
+//============================================================
+
+moc_para01,29,171,4	script	Nyang Time#eden2021	554,{	// sprite and name from hazyforest/kRO NAVI [unverified: English name, facing]
+	if (checkweight(1201,1) == 0 || MaxWeight - Weight < 1000) {
+		mes "[Nyang Time]";
+		mes "Meow, your bag is too full!";
+		mes "Make some room and come back.";
+		close;
+	}
+	mes "[Nyang Time]";
+	mes "Meow! Bring me premium consumables and I'll concentrate them.";
+	mes "The ^0000FFTrue^000000 versions last a full hour and make you run faster for 10 minutes.";
+	next;
+	.@size = getarraysize(.in);
+	for (.@i = 0; .@i < .@size; .@i++)
+		.@menu$ += .need[.@i] + " " + getitemname(.in[.@i]) + ":";
+	.@menu$ += "Field Manual + Bubble Gum:Never mind";
+	.@s = select(.@menu$) - 1;
+	if (.@s == .@size + 1)
+		close;
+
+	if (.@s == .@size) {
+		// [Not for Sale] Field Manual + [Not for Sale] Bubble Gum + 200z -> Battle Manual & Bubble Gum [unverified: ratio and fee]
+		.@max = min(countitem(12263), countitem(12264), Zeny / 200);
+		mes "[Nyang Time]";
+		mes "One " + getitemname(12263) + ", one " + getitemname(12264) + " and 200 zeny make one " + getitemname(22979) + ".";
+		if (.@max < 1) {
+			mes "You don't have enough for even one.";
+			close;
+		}
+		mes "You can make up to " + .@max + ". How many?";
+		next;
+		input .@amount, 0, .@max;
+		if (.@amount < 1)
+			close;
+		if (checkweight(22979, .@amount) == 0) {
+			mes "[Nyang Time]";
+			mes "You can't carry that many.";
+			close;
+		}
+		delitem 12263, .@amount;
+		delitem 12264, .@amount;
+		Zeny -= .@amount * 200;
+		getitem 22979, .@amount;
+		mes "[Nyang Time]";
+		mes "Here you go, meow!";
+		close;
+	}
+
+	.@in = .in[.@s];
+	.@out = .out[.@s];
+	.@need = .need[.@s];
+	.@max = countitem(.@in) / .@need;
+	mes "[Nyang Time]";
+	mes .@need + " " + getitemname(.@in) + " make one " + getitemname(.@out) + ".";
+	if (.@max < 1) {
+		mes "You need at least " + .@need + ".";
+		close;
+	}
+	mes "You can make up to " + .@max + ". How many?";
+	next;
+	input .@amount, 0, .@max;
+	if (.@amount < 1)
+		close;
+	if (checkweight(.@out, .@amount) == 0) {
+		mes "[Nyang Time]";
+		mes "You can't carry that many.";
+		close;
+	}
+	delitem .@in, .@amount * .@need;
+	getitem .@out, .@amount;
+	mes "[Nyang Time]";
+	mes "Here you go, meow!";
+	close;
+
+OnInit:
+	// input, True output, inputs per output
+	setarray .in,   14534, 14535, 12832, 23203,  23204,  12883, 14766,  23475,  12796, 12684;
+	setarray .out,  22817, 22818, 22816, 100005, 100006, 22819, 100007, 100008, 22821, 22820;
+	setarray .need,     6,     6,     6,      6,      6,     2,      2,      2,      6,     4;
+	// 23203, 23204: [unverified: 6]; 12883, 14766, 23475: [unverified: 2]
+	end;
+}
+
+-	script	#eden2021_premium_drops	-1,{
+OnNPCKillEvent:
+	if (!callfunc("F_ModSetting", "eden-rework-2021", "premium_drops", 0))
+		end;
+	if (rand(10000) >= callfunc("F_ModSetting", "eden-rework-2021", "premium_drop_rate", 10))
+		end;
+	.@item = .drops[rand(getarraysize(.drops))];
+	getitem .@item, 1;
+	dispbottom "You found " + getitemname(.@item) + ". Nyang Time in the Eden Group can concentrate it.";
+	end;
+
+OnInit:
+	// Nyang Time's inputs, equally likely: the ten consumables, Field Manual, Bubble Gum
+	setarray .drops, 14534, 14535, 12832, 23203, 23204, 12883, 14766, 23475, 12796, 12684, 12263, 12264;
+	end;
+}

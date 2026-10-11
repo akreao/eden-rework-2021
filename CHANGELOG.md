@@ -4,6 +4,18 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.3.0
+- Nyang Time is back on the Eden Group's 2nd floor. She turns premium
+  consumables (life and mana potions, Almighty, boosters and more) into True
+  versions that last an hour.
+- New optional setting: premium consumables can drop from any monster, at a
+  0.1% chance per kill by default. You can change the chance in the mod's
+  settings.
+- The Paramarket is now kRO's current market: every shop is open every day,
+  with new shops for Einbech stones, refine tickets, dragon orbs, coin
+  exchange, MVP loot, Illusion gear, butterfly wings and Malangdo boxes.
+  Prices follow kRO's but aren't confirmed yet.
+
 ## 0.2.9
 - Quest tracker names now match the names in the quest text, for both
   monsters and hunting areas.

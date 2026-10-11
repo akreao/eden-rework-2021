@@ -1,0 +1,294 @@
+//===== rAthena Script =======================================
+//= Eden Group: Paramarket (paramk) as kRO runs it now
+//===== Description: =========================================
+//= Part of the Ragnarok Offline mod "eden-rework-2021".
+//= rAthena's npc/re/merchants/eden_market.txt is kRO's 2014 Paramarket:
+//= a Wednesday holiday, weekend-only shops, stock refilled at midnight.
+//= kRO renewed it on 2019-10-16 (ro.gnjoy.com notice seq=7177): new
+//= stock, and "no more waiting for the right day of the week". This file
+//= replaces the stock shop NPCs that changed and leaves the rest
+//= (guards, customers, food stalls, Gecko, Mist, Nelsha, signs) alone.
+//=
+//= Sources:
+//=  - NPC names and positions: kRO client (Dec 2025 build),
+//=    navigation/navi_npc_krpri.lub, every "paramk" row. hazyforest's
+//=    /navi coordinates agree for every shop.
+//=  - Stock and prices: https://hazyforest.com/eden:paramarket only.
+//=    The kRO notices it cites list no prices, so every price below is
+//=    [unverified: price and stock list, hazyforest only].
+//=  - kRO sells some items in limited numbers, refilled at maintenance.
+//=    The amounts aren't published, so these shops have unlimited
+//=    stock. [unverified: stock limits]
+//=  - English NPC names for the four NPCs rAthena lacks (Seth, Zerenia,
+//=    Peary, Milk) are romanised from kRO. [unverified: iRO names]
+//=    Their sprites are stand-ins. [unverified: sprites]
+//============================================================
+
+-	script	#eden_rw_paramarket	-1,{
+	end;
+OnInit:
+	// Stock shop NPCs this file replaces. Hidden, not unloaded, so turning
+	// the mod off restores them untouched.
+	setarray .@npc$,
+		"Market Group Guide#info",
+		"Leria#coin", "Heimhunter#hei", "Zephet#key",
+		"Miffy#wp01", "Coco#arm01", "Minho Doh#cst01", "Lapelt#hat01",
+		"Head Pharmacist#ptn01", "Johanna#ptn02", "Brewer Wyn#ptn03",
+		"Lucky Day Napeed#itm01", "Manager Parayo#itm02",
+		"Whiteberry#seed01", "Blackphone#seed02",
+		"Pomegranate#mora01", "Cocktail Master#mora01",
+		"Hans #ref01", "Dus the Smith#ref02", "Aurora#jew01",
+		"Dye the Alchemist#alc01", "Earl the Alchemist#alc02",
+		"Manbok#fod01", "Madoha#mag01", "Magiha#mag02",
+		"Hwaran#plt01", "Tamer Tete#unm02";
+	for (.@i = 0; .@i < getarraysize(.@npc$); .@i++)
+		disablenpc .@npc$[.@i];
+	end;
+}
+
+// A shop NPC: greeting, then the shop. getarg(0) = name, getarg(1) = line,
+// getarg(2) = shop.
+function	script	F_EdenRwPmShop	{
+	mes "[" + getarg(0) + "]";
+	mes getarg(1);
+	close2;
+	callshop getarg(2), 1;
+	end;
+}
+
+// An exchange NPC: pick what to pay with, then that currency's item shop.
+// getarg(0) = name, getarg(1) = shop name prefix, getarg(2..) = currency items.
+function	script	F_EdenRwPmExchange	{
+	.@n = getargcount() - 2;
+	for (.@i = 0; .@i < .@n; .@i++)
+		.@menu$ += getitemname(getarg(.@i + 2)) + ":";
+	mes "[" + getarg(0) + "]";
+	mes "What will you trade in?";
+	next;
+	.@s = select(.@menu$ + "Cancel") - 1;
+	if (.@s == .@n)
+		close;
+	close2;
+	callshop getarg(1) + getarg(.@s + 2), 0;
+	end;
+}
+
+// Shops
+-	shop	eden_rw_pm_forge	FAKE_NPC,998:2000,1003:2000,1002:3000,999:3000,25728:200000,25730:800000
+-	shop	eden_rw_pm_refine	FAKE_NPC,984:80000,985:80000,988:350000,989:700000,6635:50000000,990:10000,991:10000,992:10000,993:10000
+-	shop	eden_rw_pm_hammer	FAKE_NPC,100381:1000000,100382:1000000,100383:1000000,100384:1000000,100385:1000000,100386:1000000,100387:1000000
+-	shop	eden_rw_pm_jewel	FAKE_NPC,969:250000,7289:50000,7290:50000,7291:50000,7292:50000,7293:50000,7294:50000,7295:50000,7296:50000,7297:50000
+-	shop	eden_rw_pm_alc1	FAKE_NPC,971:20000,972:20000,970:30000,7136:20000,7135:20000
+-	shop	eden_rw_pm_alc2	FAKE_NPC,1061:5000,905:1000,1059:1000,7033:1000,929:4000,1000:10000,921:500,507:200,508:500,509:1000,510:3500,511:200,576:2000,1033:1000,1032:1000,6244:1500,1051:1000,6217:15000
+-	shop	eden_rw_pm_cook	FAKE_NPC,7476:50000,7477:80000,7478:120000,7479:160000,100075:50000,100076:80000,100077:120000,100078:160000
+-	shop	eden_rw_pm_mag	FAKE_NPC,715:4500,716:4500,14512:100000,14513:100000,14514:100000,23194:300000,23193:300000,23191:300000,23192:300000
+-	shop	eden_rw_pm_elem	FAKE_NPC,12118:50000,12119:30000,12120:30000,12121:30000,12114:80000,12115:80000,12116:80000,12117:80000
+-	shop	eden_rw_pm_mvp	FAKE_NPC,6326:300000,7211:300000,7566:300000,6649:300000,968:300000,25508:300000,7510:300000,7754:300000,7020:300000,7450:300000,7109:300000,751:300000,7036:300000,7513:300000,750:300000,7019:300000,1030:300000,25622:300000,7300:300000,7018:300000,7169:300000,7562:300000,6091:300000,7114:300000,7113:300000,7451:300000,25629:300000,7108:300000,23817:100000
+-	shop	eden_rw_pm_inst	FAKE_NPC,25786:900000,25787:20000,6608:300000,6607:20000,6755:2000000,7642:30000,22687:30000,23016:300000
+-	shop	eden_rw_pm_mora	FAKE_NPC,11526:5000,11525:5000,11520:50000,12574:20000
+-	shop	eden_rw_pm_wing	FAKE_NPC,12510:30000,12509:30000,12508:30000,12507:30000
+-	shop	eden_rw_pm_illwp	FAKE_NPC,2039:100000000,2051:100000000,26109:100000000,21050:100000000,26007:100000000,13469:100000000,16063:100000000,32005:100000000,28022:100000000,28023:100000000,18149:100000000,18174:100000000,28244:100000000,28254:100000000,32301:100000000,13337:100000000,13338:100000000,1326:100000000,1846:100000000,16065:100000000,28612:100000000,28626:100000000,28725:100000000,28745:100000000,28762:100000000
+-	shop	eden_rw_pm_illhead	FAKE_NPC,19209:30000000,19210:30000000,19223:30000000,19247:30000000,19344:30000000
+-	shop	eden_rw_pm_illgarm	FAKE_NPC,15195:30000000,20838:30000000,20840:30000000,20847:30000000
+-	shop	eden_rw_pm_illacc	FAKE_NPC,28922:80000000,22133:30000000,22190:80000000,28508:50000000,28509:50000000
+-	shop	eden_rw_pm_cos	FAKE_NPC,19604:50000000,19603:50000000,20506:50000000,19602:50000000,25736:6000000,6707:4000000
+-	shop	eden_rw_pm_prem	FAKE_NPC,678:150000,12016:50000,505:10000,12679:100000,12676:30000,12680:50000,22816:1500000,22817:900000,22818:1500000,22820:2000000,100007:2000000,100008:2000000,100316:2000000,100317:1000000,100006:2000000
+-	shop	eden_rw_pm_pet	FAKE_NPC,25377:-1,537:-1,643:-1,10013:-1,10014:-1,6113:-1,6114:-1,6115:-1,6110:-1,6100:-1,6098:-1,6112:-1,6104:-1,6108:-1,6111:-1,6095:-1,7824:-1,6097:-1,6107:-1,6105:-1,6099:-1,25231:-1,25232:-1,25233:-1,6106:-1,11616:-1,6109:-1
+-	shop	eden_rw_pm_arm1	FAKE_NPC,2301:-1,2303:-1,2305:-1,2307:-1,2309:-1,2335:-1,2323:-1,2325:-1,2321:-1,2332:-1,2501:-1,2503:-1,2505:-1,2401:-1,2403:-1,2405:-1
+-	shop	eden_rw_pm_arm2	FAKE_NPC,2239:-1,2203:-1,2201:-1,2243:-1,2242:-1,2205:-1,2220:-1,2226:-1,2222:-1,5114:-1,2216:-1,5092:-1,2218:-1,2211:-1,2212:-1,2208:-1,2232:-1
+-	shop	eden_rw_pm_std	FAKE_NPC,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+
+// Exchanges: one item shop per currency.
+-	itemshop	eden_rw_pm_ein25809	FAKE_NPC,25809,25810:3,25811:3,25812:3,25813:3
+-	itemshop	eden_rw_pm_ein25810	FAKE_NPC,25810,25809:3,25811:3,25812:3,25813:3
+-	itemshop	eden_rw_pm_ein25811	FAKE_NPC,25811,25809:3,25810:3,25812:3,25813:3
+-	itemshop	eden_rw_pm_ein25812	FAKE_NPC,25812,25809:3,25810:3,25811:3,25813:3
+-	itemshop	eden_rw_pm_ein25813	FAKE_NPC,25813,25809:3,25810:3,25811:3,25812:3
+-	itemshop	eden_rw_pm_orb25759	FAKE_NPC,25759,25760:3,25761:3,25762:3,25763:3,25764:3
+-	itemshop	eden_rw_pm_orb25760	FAKE_NPC,25760,25759:3,25761:3,25762:3,25763:3,25764:3
+-	itemshop	eden_rw_pm_orb25761	FAKE_NPC,25761,25759:3,25760:3,25762:3,25763:3,25764:3
+-	itemshop	eden_rw_pm_orb25762	FAKE_NPC,25762,25759:3,25760:3,25761:3,25763:3,25764:3
+-	itemshop	eden_rw_pm_orb25763	FAKE_NPC,25763,25759:3,25760:3,25761:3,25762:3,25764:3
+-	itemshop	eden_rw_pm_orb25764	FAKE_NPC,25764,25759:3,25760:3,25761:3,25762:3,25763:3
+-	itemshop	eden_rw_pm_coin6304	FAKE_NPC,6304,6080:10,6081:10,6380:10
+-	itemshop	eden_rw_pm_coin6080	FAKE_NPC,6080,6304:10,6081:10,6380:10
+-	itemshop	eden_rw_pm_coin6081	FAKE_NPC,6081,6304:10,6080:10,6380:10
+-	itemshop	eden_rw_pm_coin6380	FAKE_NPC,6380,6304:10,6080:10,6081:10
+-	itemshop	eden_rw_pm_tk6229	FAKE_NPC,6230,6229:2
+-	itemshop	eden_rw_pm_tk6233	FAKE_NPC,6234,6233:2
+-	itemshop	eden_rw_pm_tk6228	FAKE_NPC,6229,6228:2
+-	itemshop	eden_rw_pm_tk6232	FAKE_NPC,6233,6232:2
+-	itemshop	eden_rw_pm_tk6993	FAKE_NPC,6228,6993:3
+-	itemshop	eden_rw_pm_tk6994	FAKE_NPC,6232,6994:3
+-	itemshop	eden_rw_pm_tk6238	FAKE_NPC,6993,6238:5
+-	itemshop	eden_rw_pm_tk6239	FAKE_NPC,6994,6239:5
+-	itemshop	eden_rw_pm_tk6584	FAKE_NPC,6238,6584:5
+-	itemshop	eden_rw_pm_tk6585	FAKE_NPC,6239,6585:5
+-	itemshop	eden_rw_pm_malang1	FAKE_NPC,12636,14629:30000,14681:30000,14695:30000,22826:30000,22868:30000,22905:30000,22953:30000,23001:30000,23058:30000,23086:30000
+-	itemshop	eden_rw_pm_malang2	FAKE_NPC,12636,22827:5000,22529:1000,23150:1000,23151:1000,22973:10000,22974:10000,22975:10000,22976:10000,22977:10000,22978:10000
+
+// Guide: the stock one talks about the Wednesday holiday.
+paramk,101,22,3	script	Market Group Guide#eden_rw	4_F_ZONDAGIRL,{
+	mes "[Guide]";
+	mes "Hello. Welcome to Eden Market Group, the official marketplace run by the continental merchant coalition, supported by the Eden Group.";
+	next;
+	mes "[Guide]";
+	mes "Every shop is open every day.";
+	mes "Some goods are only made in small batches, so they can sell out until the next delivery.";
+	close;
+OnTimer60000:
+	npctalk "Welcome. This is the Eden Market Group.";
+OnInit:
+	initnpctimer;
+	end;
+}
+
+// Miners' Union and smiths (kRO 49,103 / 53,104 / 57,103 / 59,100)
+paramk,49,103,3	script	Hans#eden_rw	1_M_SIGNMCNT,{
+	callfunc "F_EdenRwPmShop", "Hans", "Ores for forging. Freshly mined.", "eden_rw_pm_forge";
+}
+paramk,53,104,3	script	Dus the Smith#eden_rw	2_M_OLDBLSMITH,{
+	callfunc "F_EdenRwPmShop", "Dus the Smith", "Refining materials and anvils.", "eden_rw_pm_refine";
+}
+paramk,57,103,3	script	Seth#eden_rw	4_M_DWARF,{
+	callfunc "F_EdenRwPmExchange", "Seth", "eden_rw_pm_ein", 25809, 25810, 25811, 25812, 25813;
+}
+paramk,59,100,3	script	Zerenia#eden_rw	4_F_JOB_BLACKSMITH,{
+	mes "[Zerenia]";
+	mes "I trade refine tickets up a grade, and sell hammers you can swap for Lv3 and Lv4 weapon refine tickets.";
+	next;
+	switch (select("Trade refine tickets:Buy hammers:Cancel")) {
+	case 1:
+		setarray .@t, 6229, 6233, 6228, 6232, 6993, 6994, 6238, 6239, 6584, 6585;
+		for (.@i = 0; .@i < getarraysize(.@t); .@i++)
+			.@menu$ += getitemname(.@t[.@i]) + ":";
+		.@s = select(.@menu$ + "Cancel") - 1;
+		if (.@s == getarraysize(.@t))
+			close;
+		close2;
+		callshop "eden_rw_pm_tk" + .@t[.@s], 0;
+		end;
+	case 2:
+		close2;
+		callshop "eden_rw_pm_hammer", 1;
+		end;
+	}
+	close;
+}
+
+// Gems, alchemy, food, magic (kRO 69,102 .. 100,102)
+paramk,69,102,3	script	Aurora#eden_rw	4_F_02,{
+	callfunc "F_EdenRwPmShop", "Aurora", "Gold and uncut gemstones.", "eden_rw_pm_jewel";
+}
+paramk,75,102,3	script	Dye the Alchemist#eden_rw	4_M_ALCHE_C,{
+	mes "[Dye the Alchemist]";
+	mes "Alchemy supplies. What do you need?";
+	next;
+	switch (select("Reagents and bottles:Herbs and ingredients:Cancel")) {
+	case 1:
+		close2;
+		callshop "eden_rw_pm_alc1", 1;
+		end;
+	case 2:
+		close2;
+		callshop "eden_rw_pm_alc2", 1;
+		end;
+	}
+	close;
+}
+paramk,80,103,3	script	Earl the Alchemist#eden_rw	4_TOWER_16,{
+	callfunc "F_EdenRwPmExchange", "Earl the Alchemist", "eden_rw_pm_orb", 25759, 25760, 25761, 25762, 25763, 25764;
+}
+paramk,87,101,3	script	Manbok#eden_rw	1_M_03,{
+	callfunc "F_EdenRwPmShop", "Manbok", "Cookbooks, and mixed dishes ready to eat.", "eden_rw_pm_cook";
+}
+paramk,95,102,3	script	Madoha#eden_rw	4_M_SAGE_A,{
+	callfunc "F_EdenRwPmShop", "Madoha", "Gemstones and magic scrolls.", "eden_rw_pm_mag";
+}
+paramk,100,102,3	script	Magiha#eden_rw	4_M_SAGE_C,{
+	callfunc "F_EdenRwPmShop", "Magiha", "Resist potions and elemental converters.", "eden_rw_pm_elem";
+}
+
+// Coins, MVP and instance loot, pets (kRO 108,101 .. 126,100)
+paramk,108,101,3	script	Peary#eden_rw	4_M_BIBI,{
+	callfunc "F_EdenRwPmExchange", "Peary", "eden_rw_pm_coin", 6304, 6080, 6081, 6380;
+}
+paramk,116,100,3	script	Hwaran#eden_rw	4_F_RUSGREEN,{
+	callfunc "F_EdenRwPmShop", "Hwaran", "Trophies from the fiercest monsters.", "eden_rw_pm_mvp";
+}
+paramk,119,102,3	script	Heimhunter#eden_rw	4_GEFFEN_11,{
+	callfunc "F_EdenRwPmShop", "Heimhunter", "Things brought back from dungeons nobody else goes into.", "eden_rw_pm_inst";
+}
+paramk,126,100,3	script	Tamer Tete#eden_rw	4_M_DST_CHILD,{
+	callfunc "F_EdenRwPmShop", "Tamer Tete", "Food and gear for your pet.", "eden_rw_pm_pet";
+}
+
+// Mora and wings (kRO 65,86 / 59,18)
+paramk,65,86,3	script	Cocktail Master#eden_rw	4_M_RAFLE_VI,{
+	callfunc "F_EdenRwPmShop", "Cocktail Master", "Specialties from Mora.", "eden_rw_pm_mora";
+}
+paramk,59,18,3	script	Milk#eden_rw	1_F_MERCHANT_01,{
+	callfunc "F_EdenRwPmShop", "Milk", "Butterfly Wings that take you home to a town.", "eden_rw_pm_wing";
+}
+
+// Weapons, armor, costumes (kRO 65,31 .. 94,32). Nelsha at 70,31 is stock.
+paramk,65,31,3	script	Miffy#eden_rw	4_F_LGTGIRL,{
+	callfunc "F_EdenRwPmShop", "Miffy", "Illusion weapons. Rare, and priced like it.", "eden_rw_pm_illwp";
+}
+paramk,78,31,3	script	Coco#eden_rw	4_F_SITDOWN,{
+	mes "[Coco]";
+	mes "Illusion armor, from the dungeons of illusion.";
+	next;
+	switch (select("Headgear:Armor and garments:Shoes and accessories:Cancel")) {
+	case 1:
+		close2;
+		callshop "eden_rw_pm_illhead", 1;
+		end;
+	case 2:
+		close2;
+		callshop "eden_rw_pm_illgarm", 1;
+		end;
+	case 3:
+		close2;
+		callshop "eden_rw_pm_illacc", 1;
+		end;
+	}
+	close;
+}
+paramk,90,31,3	script	Minho Doh#eden_rw	4W_M_01,{
+	callfunc "F_EdenRwPmShop", "Minho Doh", "Invisible costumes, and beauty coupons.", "eden_rw_pm_cos";
+}
+paramk,94,32,3	script	Lapelt#eden_rw	4_M_LGTMAN,{
+	mes "[Lapelt]";
+	mes "Welcome! This is 'Handsome Friends', a clothier that will make you fashionable!";
+	next;
+	switch (select("Clothes and shoes.:Hats and glasses.:Cancel.")) {
+	case 1:
+		close2;
+		callshop "eden_rw_pm_arm1", 1;
+		end;
+	case 2:
+		close2;
+		callshop "eden_rw_pm_arm2", 1;
+		end;
+	}
+	close;
+}
+
+// Consumables (kRO 100,30 / 118,31)
+paramk,100,30,3	script	Head Pharmacist#eden_rw	4_F_SCIENCE,{
+	callfunc "F_EdenRwPmShop", "Head Pharmacist", "Potions for serious adventurers.", "eden_rw_pm_prem";
+}
+paramk,118,31,3	script	Manager Parayo#eden_rw	4_F_KHELLISIA,{
+	callfunc "F_EdenRwPmShop", "Manager Parayo", "Everyday goods for every adventurer.", "eden_rw_pm_std";
+}
+
+// Malangdo (kRO 126,34 / 129,33), paid in Malangdo Special Cans.
+// [unverified: can amounts; 30,000 cans per costume enchant box is
+// what hazyforest lists]
+paramk,126,34,3	script	Whiteberry#eden_rw	4_CAT_SAILOR1,{
+	callfunc "F_EdenRwPmShop", "Whiteberry", "Costume enchant stone boxes, for Malangdo Special Cans.", "eden_rw_pm_malang1";
+}
+paramk,129,33,3	script	Blackphone#eden_rw	4_M_MERCAT2,{
+	callfunc "F_EdenRwPmShop", "Blackphone", "Shadow cubes and boxes, for Malangdo Special Cans.", "eden_rw_pm_malang2";
+}
