@@ -12,11 +12,16 @@
 //= so they are replaced too:
 //=   #warp_2_din_2  107,12 -> 48,35  (rAthena: 47,37; kRO row 2279)
 //=   #warp_2_pass_2 102,92 -> 111,33 (rAthena: 109,33; kRO row 2283)
+//= The Paramarket is entered by a portal at 106,43 -> paramk 97,17
+//= (kRO navi_link "para01_to_prmk", type 200); kRO's NPC table has no
+//= entry NPC left, so the stock Market Group Hustler is hidden. The way
+//= back, paramk 97,5 -> 106,35, is already stock ("paramk#ex").
 //============================================================
 
 moc_para01,48,39,0	warp2	#eden_rw_pass	1,1,moc_para01,106,14
 moc_para01,107,12,0	warp2	#eden_rw_din_2	1,1,moc_para01,48,35
 moc_para01,102,92,0	warp2	#eden_rw_pass_2	1,1,moc_para01,111,33
+moc_para01,106,43,0	warp2	#eden_rw_paramk	1,1,paramk,97,17
 
 -	script	#eden_rework_warps	-1,{
 	end;
@@ -26,5 +31,15 @@ OnInit:
 	disablenpc "#warp_2_pass";
 	disablenpc "#warp_2_din_2";
 	disablenpc "#warp_2_pass_2";
+	disablenpc "Market Group Hustler#ent";
 	end;
 }
+
+// Odin's Past (odin_past) has no way in on rAthena, so the Lv190 board hunt
+// "Ancient Odin Temple" (19060) couldn't be finished. kRO's navigation table
+// has a plain portal each way (navi_link_krpri.lub rows 2512 and 2502,
+// type 200 = warp): odin_tem03 276,236 -> odin_past 291,230, and back
+// odin_past 291,235 -> odin_tem03 280,241. All four cells are walkable in
+// kRO's .gat files. Not quest-gated (iRO, confirmed by Steven 2026-10-11).
+odin_tem03,276,236,0	warp2	#eden_rw_odin_past	1,1,odin_past,291,230
+odin_past,291,235,0	warp2	#eden_rw_odin_back	1,1,odin_tem03,280,241

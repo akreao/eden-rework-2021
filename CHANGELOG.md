@@ -4,6 +4,19 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.2.9
+- Quest tracker names now match the names in the quest text, for both
+  monsters and hunting areas.
+- Mission board titles now match the titles in your quest log.
+- The champion board reads more clearly, and its NPC is now Diligent Sogil.
+- New setting: Eden Coin multiplier (1 to 100, default 1) for mission
+  rewards.
+- Paramarket is entered through a portal in the Eden Group hall, as in kRO,
+  with a Paramarket sign above it.
+- Odin's Past can now be reached from Odin Temple 3, with a portal back.
+- Office Assistant Neede's emote now shows over Secretary Lime Evenor.
+- Clearer "report to" lines on mission NPCs, and typo fixes in Eden dialog.
+
 ## 0.2.8
 - The Paradise Cap, Paradise Hat and their Advanced versions now show on
   your character.

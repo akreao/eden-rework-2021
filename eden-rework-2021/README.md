@@ -9,22 +9,24 @@ Turning the mod off brings back stock Eden.
 | File | What it does |
 |---|---|
 | `npc/eden_paradise_gear.txt` | Instructors Ur and Boya, Administrators BK, Michael, Thorn and Emil (gear quests 17528-17537). Hides the old Eden Team gear NPCs. |
-| `npc/eden_paradise_missions.txt` | Six mission boards (each placed twice), the champion hunt board and Sogil, the Logistics Officer, cave shortcuts Rigel, Aker, Ayla and Minmin, and the mission field NPCs. Hides the old mission boards and 100-140 mission NPCs. |
-| `npc/eden_paradise_warps.txt` | Adds the portal at 48,39 beside the Eden door, as kRO has it; it replaces the door's click dialog (kRO client navigation table); the door itself is map graphics and stays. Also moves two stock warps' landing spots to kRO's. |
+| `npc/eden_paradise_missions.txt` | Six mission boards (each placed twice), the champion hunt board and Diligent Sogil, the Logistics Officer, cave shortcuts Rigel, Aker, Ayla and Minmin, and the mission field NPCs. Hides the old mission boards and 100-140 mission NPCs. |
+| `npc/eden_paradise_warps.txt` | Adds the portal at 48,39 beside the Eden door, as kRO has it; it replaces the door's click dialog (kRO client navigation table); the door itself is map graphics and stays. Also moves two stock warps' landing spots to kRO's, and enters the Paramarket by kRO's portal at 106,43 instead of the Market Group Hustler (hidden). Adds kRO's two portals between Odin Temple 3 and Odin's Past (276,236 and back from 291,235), which rAthena lacks. |
 | `npc/eden_lime_evenor.txt` | A copy of stock Secretary Lime Evenor (stock one hidden) whose Eden Group Mark line says what the Mark does. |
+| `npc/eden_neede.txt` | A copy of stock Office Assistant Neede (stock one hidden) whose emote for Lime shows over the mod's Lime. |
 | `db/item_db.yml` | The Eden Group Mark (22508) warps to moc_para01 30,16, the Eden Group's entrance hall. The four Paradise caps get the headgear View their client itemInfo gives them (1529, 465), so they show on the character. |
 | `npc/odin_past.txt` | Odin's Past (odin_past) spawns, including Valkyries Reginleif and Ingrid. |
 | `db/quest_db.yml` | The quests those NPCs hand out, with their cooldowns. Area hunts use the map name from the quest text as the tracker label, shortened where the client's 23-character limit forces it. |
-| `db/mob_db.yml`, `db/mob_skill_db.txt` | Odin's Past monsters and their skills. `mob_db.yml` also sets JapaneseName to the English Name for 43 hunted monsters, because the quest tracker shows JapaneseName (Green Iguana instead of Grove). |
-| `data/luafiles514/lua files/SignBoardList.lub` | kRO's signs over the four Administrators (110,79 / 83 / 87 / 91), in English, so they match on any client. iRO's client also has two old signs at 112,79 and 112,83 that a mod can't remove; they float beside BK and Michael. |
+| `db/mob_db.yml`, `db/mob_skill_db.txt` | Odin's Past monsters and their skills. `mob_db.yml` also sets JapaneseName to the English Name for 43 hunted monsters, because the quest tracker shows JapaneseName (Green Iguana instead of Grove), and gives 32 look-alike monsters the board's labels (Venatu (Purple), Sky Deleter) so two-target hunts read differently. |
+| `data/luafiles514/lua files/SignBoardList.lub` | kRO's signs over the four Administrators (110,79 / 83 / 87 / 91) and the Paramarket portal (105,41), in English, so they match on any client. iRO's client also has two old signs at 112,79 and 112,83 that a mod can't remove; they float beside BK and Michael. |
 | `System/OngoingQuestInfoList.lub` | English quest-window text for 762 Eden quests and cooldowns, loaded after the English translation. |
 
 ## Settings
 
 - **Permanent shadow gear** (off): Emil's shadow gear is permanent instead of rented.
 - **Shadow gear rental (hours)** (72): rental length while it is rented.
+- **Eden Coin multiplier** (1, up to 100): multiplies the Eden Coins mission board rewards give.
 
-Both are read by Emil's script through `F_ModSetting`, and change on **Apply**.
+Emil's script and the mission boards read these through `F_ModSetting`, and they change on **Apply**.
 
 ## Installing
 
@@ -36,7 +38,7 @@ for the NPCs and tables, and the app for the quest text.
 ## Checking it
 
 - The map server log shows `Loading '526' entries in 'db/import/quest_db.yml'`
-  and `Loading '53' entries in 'db/import/mob_db.yml'`.
+  and `Loading '85' entries in 'db/import/mob_db.yml'`.
 - In Eden (moc_para01), the new boards stand at y=38 and y=98 and the old
   mission boards are gone.
 

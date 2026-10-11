@@ -388,8 +388,8 @@ moc_para01,110,83,3	script	Administrator Michael#para	4_M_RUSMAN1,{
 		mes .@name$;
 		mes "Thorn sent you round? I look after";
 		mes "the job weapons, the advanced ones";
-		mes "included. Come back when you're ready.";
-		mes "Now go and see ^0000FFAdministrator BK^000000";
+		mes "included. Come back for those later.";
+		mes "For now, go and see ^0000FFAdministrator BK^000000";
 		mes "for gear you can use today.";
 		close;
 	}
@@ -671,6 +671,10 @@ moc_para01,110,91,3	script	Administrator Emil#para	1_F_GYPSY,{
 			mes "Make some room in your inventory first.";
 			close;
 		}
+		mes "The advanced set is the five pieces";
+		mes "and your job's shadow weapon,";
+		mes "for ^0000FF20 Eden Group Coins^000000.";
+		next;
 		if (select("Pay 20 Eden Group Coins:Not now") == 2)
 			close;
 		delitem 25223, 20;

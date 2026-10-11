@@ -1,0 +1,60 @@
+//===== rAthena Script =======================================
+//= Eden Group: Office Assistant Neede
+//===== Description: =========================================
+//= Part of the Ragnarok Offline mod "eden-rework-2021".
+//= A copy of stock Neede (npc/re/quests/eden/eden_common.txt),
+//= which is hidden while the mod is on. The one change: Lime's
+//= emote goes to the mod's Lime (eden_lime_evenor.txt), since the
+//= stock Lime it used to target is hidden.
+//============================================================
+
+moc_para01,20,35,5	script	Office Assistant Neede#2021	814,{
+	mes "[Neede]";
+	mes "I became a Eden's member several years ago, but it feels like it was yesterday.";
+	mes "I have been doing lots of work, so I didn't even notice how many years I spent here.";
+	next;
+	mes "[Neede]";
+	mes "It reminds me that it was like a war everyday.";
+	next;
+	mes "[Neede]";
+	mes "The chief of ^3131FFthe restaurant on the right side^000000";
+	mes "uses too much seasoning every time he cooks, the smell is all over the lobby. We have to open the window regularly because we can't stand the smell!";
+	next;
+	mes "[Neede]";
+	mes "And, do you see the ^3131FFgymnasium^000000 on the cross of ^3131FFthe north side of the lobby^000000? They always shout when they exercise, I can even hear them from here!";
+	next;
+	emotion ET_ANGER;
+	mes "[Neede]";
+	mes "Besides, the weird girl from ^3131FFthe second floor^000000 is crying all the time. Her cries drive me crazy.";
+	next;
+	mes "[Neede]";
+	mes "Ah, that weird girl is actually our boss...";
+	next;
+	mes "[Neede]";
+	mes "I don't know what she has been up to. But she cries and shouts all the time. Oh, sometimes I hear 'Bang!', loud booming sounds... I don't know where it came from.";
+	next;
+	emotion ET_HUK;
+	mes "[Neede]";
+	mes "Wait!";
+	mes "Shh! It is a secret, you can't tell anybody!";
+	next;
+	mes "[Neede]";
+	emotion ET_OHNO;
+	mes "I don't trust Evenor. She never shows her feelings... she's going to snitch on me to my boss.";
+	next;
+	emotion ET_HNG, getnpcid(0, "Secretary Lime Evenor#2021");
+	mes "[Lime Evenor]";
+	mes "I am not that kind of girl.";
+	next;
+	emotion ET_KEK;
+	mes "[Neede]";
+	mes "Huh? Did you hear that? Gosh~!";
+	close;
+}
+
+-	script	#eden_rework_neede	-1,{
+	end;
+OnInit:
+	disablenpc "Office Assistant Neede";
+	end;
+}

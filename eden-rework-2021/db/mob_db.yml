@@ -548,3 +548,71 @@ Body:
     JapaneseName: "Explorer Robot Turbo"
   - Id: 3255  # GHOUL_H
     JapaneseName: "Smelly Ghoul"
+  # Monsters that share a name get the board's label as their tracker name,
+  # so a two-target hunt doesn't read "Venatu 0/20, Venatu 0/20". Labels follow
+  # the mission board text; the ones marked [unverified] follow its guessed
+  # mapping too. 23 characters at most (the tracker's limit).
+  - Id: 1124  # GOBLIN_3 [unverified]
+    JapaneseName: "Goblin (Axe)"
+  - Id: 1123  # GOBLIN_2 [unverified]
+    JapaneseName: "Goblin (Flail)"
+  - Id: 1125  # GOBLIN_4 [unverified]
+    JapaneseName: "Goblin (Hammer)"
+  - Id: 1122  # GOBLIN_1 [unverified]
+    JapaneseName: "Goblin (Dagger)"
+  - Id: 1126  # GOBLIN_5 [unverified]
+    JapaneseName: "Goblin (Morning Star)"
+  - Id: 1156  # PETIT_
+    JapaneseName: "Sky Petite"
+  - Id: 1155  # PETIT
+    JapaneseName: "Earth Petite"
+  - Id: 1718  # NOVUS_ [unverified]
+    JapaneseName: "Yellow Novus"
+  - Id: 1715  # NOVUS [unverified]
+    JapaneseName: "Red Novus"
+  - Id: 1384  # DELETER
+    JapaneseName: "Sky Deleter"
+  - Id: 1385  # DELETER_
+    JapaneseName: "Earth Deleter"
+  - Id: 1133  # KOBOLD_1 [unverified]
+    JapaneseName: "Kobold (Axe)"
+  - Id: 1134  # KOBOLD_2 [unverified]
+    JapaneseName: "Kobold (Hammer)"
+  - Id: 1135  # KOBOLD_3 [unverified]
+    JapaneseName: "Kobold (Mace)"
+  - Id: 1676  # VENATU_1 [unverified]
+    JapaneseName: "Venatu (Purple)"
+  - Id: 1677  # VENATU_2 [unverified]
+    JapaneseName: "Venatu (Green)"
+  - Id: 1678  # VENATU_3 [unverified]
+    JapaneseName: "Venatu (Orange)"
+  - Id: 1679  # VENATU_4 [unverified]
+    JapaneseName: "Venatu (Blue)"
+  - Id: 1670  # DIMIK_1 [unverified]
+    JapaneseName: "Dimik (Green)"
+  - Id: 1671  # DIMIK_2 [unverified]
+    JapaneseName: "Dimik (Blue)"
+  - Id: 1672  # DIMIK_3 [unverified]
+    JapaneseName: "Dimik (Orange)"
+  - Id: 1673  # DIMIK_4 [unverified]
+    JapaneseName: "Dimik (Red)"
+  - Id: 1754  # SKEGGIOLD [unverified]
+    JapaneseName: "Skeggiold (Brown)"
+  - Id: 1755  # SKEGGIOLD_ [unverified]
+    JapaneseName: "Skeggiold (Blue)"
+  - Id: 1714  # FERUS [unverified]
+    JapaneseName: "Red Ferus"
+  - Id: 1717  # FERUS_ [unverified]
+    JapaneseName: "Green Ferus"
+  - Id: 1713  # ACIDUS [unverified]
+    JapaneseName: "Yellow Acidus"
+  - Id: 1716  # ACIDUS_ [unverified]
+    JapaneseName: "Blue Acidus"
+  - Id: 1918  # MOROCC_1 [unverified]
+    JapaneseName: "Incarnation (Valkyrie)"
+  - Id: 1919  # MOROCC_2 [unverified]
+    JapaneseName: "Incarnation (Mud)"
+  - Id: 1920  # MOROCC_3 [unverified]
+    JapaneseName: "Incarnation (Exorcist)"
+  - Id: 1921  # MOROCC_4 [unverified]
+    JapaneseName: "Incarnation (Ghost)"
