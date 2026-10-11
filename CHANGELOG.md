@@ -4,6 +4,13 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.3.1
+- Paramarket trades paid in items now open a barter window that shows each
+  price in the item you pay with: Malangdo Cans at Whiteberry and
+  Blackphone, Einbech stones at Seth, dragon orbs at Earl, coins at Peary
+  and refine tickets at Zerenia. Before, the shop window showed those
+  prices as Zeny and your total as points.
+
 ## 0.3.0
 - Nyang Time is back on the Eden Group's 2nd floor. She turns premium
   consumables (life and mana potions, Almighty, boosters and more) into True
