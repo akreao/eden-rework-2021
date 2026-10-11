@@ -127,7 +127,8 @@ L_Browse:
 					continue;
 				.@row[getarraysize(.@row)] = .@i;
 				.@s = callsub(S_State, .@i);
-				.@t$ = replacestr(.q_title$[.@i], ":", " -");	// a ":" would split the menu entry
+				.@t$ = (.q_menu$[.@i] != "" ? .q_menu$[.@i] : .q_title$[.@i]);
+				.@t$ = replacestr(.@t$, ":", " -");	// a ":" would split the menu entry
 				if (.@s == 1)
 					.@menu$ += "^999999[Lv" + .q_lv[.@i] + "] " + .@t$ + "^000000:";
 				else if (.@s == 2)
@@ -377,6 +378,18 @@ S_Row:
 		.first[getarg(0)] = .@n;
 	.last[getarg(0)] = .@n + 1;
 	.rows = .@n + 1;
+	return;
+
+// Shortens a mission's name in the board menu, which wraps (and overlaps
+// the next entry) past about 40 characters. The mission page still shows
+// the full quest log title. getarg(0) = quest id, 1 = short name.
+// The short names are the mod's own, not kRO text.
+S_Menu:
+	.@n = inarray(.q_id, getarg(0));
+	if (.@n < 1)
+		debugmes "Eden Mission Board: no row for quest " + getarg(0);
+	else
+		.q_menu$[.@n] = getarg(1);
 	return;
 
 OnInit:
@@ -723,6 +736,40 @@ OnInit:
 	callsub S_Row, 7, 21848, 21849, 130, "Other Regions", "Elusive Antler Scaraba Hunt", "Hunt 1 Elusive Antler Scaraba, found on dic_dun02", 47475, 156024, 0, "", "";
 	callsub S_Row, 7, 21850, 21851, 130, "Other Regions", "Miming Ringleader Hunt", "Hunt 1 Miming Ringleader, found on bif_fild01", 69225, 187110, 0, "", "";
 	callsub S_Row, 7, 21852, 21853, 130, "Other Regions", "Furious Little Fatum Hunt", "Hunt 1 Furious Little Fatum, found on bif_fild02", 73125, 193050, 0, "", "";
+	// Board menu names for the titles too long for one line.
+	callsub S_Menu, 21037, "Overrun with Mushrooms";
+	callsub S_Menu, 21571, "The Dumpling Child Ringleader";
+	callsub S_Menu, 19028, "Twisted Clock Tower Floor 2";
+	callsub S_Menu, 19032, "Twisted Clock Tower Floor 3";
+	callsub S_Menu, 21292, "Laughter from Underground";
+	callsub S_Menu, 21286, "Cleaning Clock Tower Floor 1";
+	callsub S_Menu, 21385, "Grassland Brawl - Desert Wolf";
+	callsub S_Menu, 21307, "Why Is That Moving?!";
+	callsub S_Menu, 21274, "Stabilizing the Cemetery";
+	callsub S_Menu, 21142, "For a Peaceful Pilgrimage";
+	callsub S_Menu, 21118, "The Ground Petite Is Cute";
+	callsub S_Menu, 21389, "The Unreasonable Yeti";
+	callsub S_Menu, 21153, "Turtle Horde Extermination 1";
+	callsub S_Menu, 21109, "Marionette and Deviruchi Hunt";
+	callsub S_Menu, 21296, "Water Pipe Damage Culprits";
+	callsub S_Menu, 21249, "Playground Stabilization - Hornets";
+	callsub S_Menu, 21250, "Playground Stabilization - Rockers";
+	callsub S_Menu, 19062, "Hugel Abyss Lake Cave Floor 4";
+	callsub S_Menu, 21067, "By Night or by Day, I Hear It";
+	callsub S_Menu, 21148, "The Stone That Swallows Stones";
+	callsub S_Menu, 21136, "Cleaning the Sunken Ship Floor 1";
+	callsub S_Menu, 21138, "Cleaning the Sunken Ship Floor 2";
+	callsub S_Menu, 21059, "Broom, Cauldron and Old Woman";
+	callsub S_Menu, 19036, "Waste Disposal Rudus Floor 2";
+	callsub S_Menu, 19046, "Waste Disposal Rudus Floor 3";
+	callsub S_Menu, 21061, "Losers, Winners, Left Behind";
+	callsub S_Menu, 21228, "Collecting Biology Samples";
+	callsub S_Menu, 21319, "Such a Large Swimming Pool?!";
+	callsub S_Menu, 21112, "Galloping Through Nightmares";
+	callsub S_Menu, 21371, "Cleansing the Eastern Sanctuary";
+	callsub S_Menu, 21369, "Cleansing the Western Sanctuary";
+	callsub S_Menu, 21373, "Cleansing the Southern Sanctuary";
+	callsub S_Menu, 21130, "Making What Isn't There";
 	end;
 }
 

@@ -4,6 +4,11 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.3.2
+- Long mission names on the mission boards no longer spill onto a second
+  line and cover the next mission. The board list shows a shorter name;
+  the mission page and your quest log still show the full title.
+
 ## 0.3.1
 - Paramarket trades paid in items now open a barter window that shows each
   price in the item you pay with: Malangdo Cans at Whiteberry and
