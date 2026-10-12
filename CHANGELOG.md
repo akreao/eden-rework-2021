@@ -4,6 +4,13 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.3.3
+- Works on the current app again. 0.3.1 and 0.3.2 needed an app update
+  that isn't out yet, so the Paramarket's item trades (Whiteberry,
+  Blackphone, Seth, Earl, Peary and Zerenia's tickets) are back to the
+  0.3.0 shop window. That window still shows their prices as Zeny.
+- Keeps the shorter mission names on the mission boards from 0.3.2.
+
 ## 0.3.2
 - Long mission names on the mission boards no longer spill onto a second
   line and cover the next mission. The board list shows a shorter name;
