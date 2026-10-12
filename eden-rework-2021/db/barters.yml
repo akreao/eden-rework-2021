@@ -1,0 +1,619 @@
+# Eden Group 2021 rework: the Paramarket's trades paid in items, as barter
+# shops. The barter window shows each price in the item it is paid in; an
+# item shop shows it as Zeny. The NPCs in npc/eden_paramarket.txt open these
+# with callshop. Added to the server's barters through db/import, which the
+# Ragnarok Offline rAthena fork reads from 2026-10 on.
+# Prices are hazyforest's only: [unverified: price and stock list,
+# hazyforest only]. Stock is unlimited: [unverified: stock limits]
+
+Header:
+  Type: BARTER_DB
+  Version: 2
+
+Body:
+  - Name: eden_rw_pm_ein25809
+    Items:
+      - Index: 0
+        Item: Ein_RINDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_REDIUM
+            Amount: 3
+      - Index: 1
+        Item: Ein_ODIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_REDIUM
+            Amount: 3
+      - Index: 2
+        Item: Ein_PURDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_REDIUM
+            Amount: 3
+      - Index: 3
+        Item: Ein_WHIDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_REDIUM
+            Amount: 3
+  - Name: eden_rw_pm_ein25810
+    Items:
+      - Index: 0
+        Item: Ein_REDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_RINDIUM
+            Amount: 3
+      - Index: 1
+        Item: Ein_ODIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_RINDIUM
+            Amount: 3
+      - Index: 2
+        Item: Ein_PURDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_RINDIUM
+            Amount: 3
+      - Index: 3
+        Item: Ein_WHIDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_RINDIUM
+            Amount: 3
+  - Name: eden_rw_pm_ein25811
+    Items:
+      - Index: 0
+        Item: Ein_REDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_ODIUM
+            Amount: 3
+      - Index: 1
+        Item: Ein_RINDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_ODIUM
+            Amount: 3
+      - Index: 2
+        Item: Ein_PURDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_ODIUM
+            Amount: 3
+      - Index: 3
+        Item: Ein_WHIDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_ODIUM
+            Amount: 3
+  - Name: eden_rw_pm_ein25812
+    Items:
+      - Index: 0
+        Item: Ein_REDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_PURDIUM
+            Amount: 3
+      - Index: 1
+        Item: Ein_RINDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_PURDIUM
+            Amount: 3
+      - Index: 2
+        Item: Ein_ODIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_PURDIUM
+            Amount: 3
+      - Index: 3
+        Item: Ein_WHIDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_PURDIUM
+            Amount: 3
+  - Name: eden_rw_pm_ein25813
+    Items:
+      - Index: 0
+        Item: Ein_REDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_WHIDIUM
+            Amount: 3
+      - Index: 1
+        Item: Ein_RINDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_WHIDIUM
+            Amount: 3
+      - Index: 2
+        Item: Ein_ODIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_WHIDIUM
+            Amount: 3
+      - Index: 3
+        Item: Ein_PURDIUM
+        RequiredItems:
+          - Index: 0
+            Item: Ein_WHIDIUM
+            Amount: 3
+  - Name: eden_rw_pm_orb25759
+    Items:
+      - Index: 0
+        Item: Dragenergy_Blue
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Green
+            Amount: 3
+      - Index: 1
+        Item: Dragenergy_Red
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Green
+            Amount: 3
+      - Index: 2
+        Item: Dragenergy_Gold
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Green
+            Amount: 3
+      - Index: 3
+        Item: Dragenergy_Purple
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Green
+            Amount: 3
+      - Index: 4
+        Item: Dragenergy_Silver
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Green
+            Amount: 3
+  - Name: eden_rw_pm_orb25760
+    Items:
+      - Index: 0
+        Item: Dragenergy_Green
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Blue
+            Amount: 3
+      - Index: 1
+        Item: Dragenergy_Red
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Blue
+            Amount: 3
+      - Index: 2
+        Item: Dragenergy_Gold
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Blue
+            Amount: 3
+      - Index: 3
+        Item: Dragenergy_Purple
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Blue
+            Amount: 3
+      - Index: 4
+        Item: Dragenergy_Silver
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Blue
+            Amount: 3
+  - Name: eden_rw_pm_orb25761
+    Items:
+      - Index: 0
+        Item: Dragenergy_Green
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Red
+            Amount: 3
+      - Index: 1
+        Item: Dragenergy_Blue
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Red
+            Amount: 3
+      - Index: 2
+        Item: Dragenergy_Gold
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Red
+            Amount: 3
+      - Index: 3
+        Item: Dragenergy_Purple
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Red
+            Amount: 3
+      - Index: 4
+        Item: Dragenergy_Silver
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Red
+            Amount: 3
+  - Name: eden_rw_pm_orb25762
+    Items:
+      - Index: 0
+        Item: Dragenergy_Green
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Gold
+            Amount: 3
+      - Index: 1
+        Item: Dragenergy_Blue
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Gold
+            Amount: 3
+      - Index: 2
+        Item: Dragenergy_Red
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Gold
+            Amount: 3
+      - Index: 3
+        Item: Dragenergy_Purple
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Gold
+            Amount: 3
+      - Index: 4
+        Item: Dragenergy_Silver
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Gold
+            Amount: 3
+  - Name: eden_rw_pm_orb25763
+    Items:
+      - Index: 0
+        Item: Dragenergy_Green
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Purple
+            Amount: 3
+      - Index: 1
+        Item: Dragenergy_Blue
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Purple
+            Amount: 3
+      - Index: 2
+        Item: Dragenergy_Red
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Purple
+            Amount: 3
+      - Index: 3
+        Item: Dragenergy_Gold
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Purple
+            Amount: 3
+      - Index: 4
+        Item: Dragenergy_Silver
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Purple
+            Amount: 3
+  - Name: eden_rw_pm_orb25764
+    Items:
+      - Index: 0
+        Item: Dragenergy_Green
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Silver
+            Amount: 3
+      - Index: 1
+        Item: Dragenergy_Blue
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Silver
+            Amount: 3
+      - Index: 2
+        Item: Dragenergy_Red
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Silver
+            Amount: 3
+      - Index: 3
+        Item: Dragenergy_Gold
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Silver
+            Amount: 3
+      - Index: 4
+        Item: Dragenergy_Purple
+        RequiredItems:
+          - Index: 0
+            Item: Dragenergy_Silver
+            Amount: 3
+  - Name: eden_rw_pm_coin6304
+    Items:
+      - Index: 0
+        Item: Manuk_Coin
+        RequiredItems:
+          - Index: 0
+            Item: Sapa_Feat_Cert
+            Amount: 10
+      - Index: 1
+        Item: Splendide_Coin
+        RequiredItems:
+          - Index: 0
+            Item: Sapa_Feat_Cert
+            Amount: 10
+      - Index: 2
+        Item: Mora_Coin
+        RequiredItems:
+          - Index: 0
+            Item: Sapa_Feat_Cert
+            Amount: 10
+  - Name: eden_rw_pm_coin6080
+    Items:
+      - Index: 0
+        Item: Sapa_Feat_Cert
+        RequiredItems:
+          - Index: 0
+            Item: Manuk_Coin
+            Amount: 10
+      - Index: 1
+        Item: Splendide_Coin
+        RequiredItems:
+          - Index: 0
+            Item: Manuk_Coin
+            Amount: 10
+      - Index: 2
+        Item: Mora_Coin
+        RequiredItems:
+          - Index: 0
+            Item: Manuk_Coin
+            Amount: 10
+  - Name: eden_rw_pm_coin6081
+    Items:
+      - Index: 0
+        Item: Sapa_Feat_Cert
+        RequiredItems:
+          - Index: 0
+            Item: Splendide_Coin
+            Amount: 10
+      - Index: 1
+        Item: Manuk_Coin
+        RequiredItems:
+          - Index: 0
+            Item: Splendide_Coin
+            Amount: 10
+      - Index: 2
+        Item: Mora_Coin
+        RequiredItems:
+          - Index: 0
+            Item: Splendide_Coin
+            Amount: 10
+  - Name: eden_rw_pm_coin6380
+    Items:
+      - Index: 0
+        Item: Sapa_Feat_Cert
+        RequiredItems:
+          - Index: 0
+            Item: Mora_Coin
+            Amount: 10
+      - Index: 1
+        Item: Manuk_Coin
+        RequiredItems:
+          - Index: 0
+            Item: Mora_Coin
+            Amount: 10
+      - Index: 2
+        Item: Splendide_Coin
+        RequiredItems:
+          - Index: 0
+            Item: Mora_Coin
+            Amount: 10
+  - Name: eden_rw_pm_tk6229
+    Items:
+      - Index: 0
+        Item: Guarantee_Weapon_8Up
+        RequiredItems:
+          - Index: 0
+            Item: Guarantee_Weapon_7Up
+            Amount: 2
+  - Name: eden_rw_pm_tk6233
+    Items:
+      - Index: 0
+        Item: Guarantee_Armor_8Up
+        RequiredItems:
+          - Index: 0
+            Item: Guarantee_Armor_7Up
+            Amount: 2
+  - Name: eden_rw_pm_tk6228
+    Items:
+      - Index: 0
+        Item: Guarantee_Weapon_9Up
+        RequiredItems:
+          - Index: 0
+            Item: Guarantee_Weapon_8Up
+            Amount: 2
+  - Name: eden_rw_pm_tk6232
+    Items:
+      - Index: 0
+        Item: Guarantee_Armor_9Up
+        RequiredItems:
+          - Index: 0
+            Item: Guarantee_Armor_8Up
+            Amount: 2
+  - Name: eden_rw_pm_tk6993
+    Items:
+      - Index: 0
+        Item: Guarantee_Weapon_10Up
+        RequiredItems:
+          - Index: 0
+            Item: Guarantee_Weapon_9Up
+            Amount: 3
+  - Name: eden_rw_pm_tk6994
+    Items:
+      - Index: 0
+        Item: Guarantee_Armor_10Up
+        RequiredItems:
+          - Index: 0
+            Item: Guarantee_Armor_9Up
+            Amount: 3
+  - Name: eden_rw_pm_tk6238
+    Items:
+      - Index: 0
+        Item: Guarantee_Weapon_11Up
+        RequiredItems:
+          - Index: 0
+            Item: Guarantee_Weapon_10Up
+            Amount: 5
+  - Name: eden_rw_pm_tk6239
+    Items:
+      - Index: 0
+        Item: Guarantee_Armor_11Up
+        RequiredItems:
+          - Index: 0
+            Item: Guarantee_Armor_10Up
+            Amount: 5
+  - Name: eden_rw_pm_tk6584
+    Items:
+      - Index: 0
+        Item: Guarantee_Weapon_12Up
+        RequiredItems:
+          - Index: 0
+            Item: Guarantee_Weapon_11Up
+            Amount: 5
+  - Name: eden_rw_pm_tk6585
+    Items:
+      - Index: 0
+        Item: Guarantee_Armor_12Up
+        RequiredItems:
+          - Index: 0
+            Item: Guarantee_Armor_11Up
+            Amount: 5
+  - Name: eden_rw_pm_malang1
+    Items:
+      - Index: 0
+        Item: Enchant_Stone_Box
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 30000
+      - Index: 1
+        Item: Enchant_Stone_Box2
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 30000
+      - Index: 2
+        Item: Enchant_Stone_Box3
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 30000
+      - Index: 3
+        Item: Enchant_Stone_Box4
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 30000
+      - Index: 4
+        Item: Enchant_Stone_Box5
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 30000
+      - Index: 5
+        Item: Enchant_Stone_Box6
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 30000
+      - Index: 6
+        Item: Enchant_Stone_Box7
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 30000
+      - Index: 7
+        Item: Enchant_Stone_Box8
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 30000
+      - Index: 8
+        Item: Enchant_Stone_Box9
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 30000
+      - Index: 9
+        Item: Enchant_Stone_Box10
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 30000
+  - Name: eden_rw_pm_malang2
+    Items:
+      - Index: 0
+        Item: Shadow_Cube
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 5000
+      - Index: 1
+        Item: Shadow_Mix_Recipe
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 1000
+      - Index: 2
+        Item: Lapine_DdukddakBox
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 1000
+      - Index: 3
+        Item: EnchantStone_Recipe
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 1000
+      - Index: 4
+        Item: Shadow_Cube_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 10000
+      - Index: 5
+        Item: Shadow_Cube_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 10000
+      - Index: 6
+        Item: Shadow_Cube_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 10000
+      - Index: 7
+        Item: Shadow_Cube_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 10000
+      - Index: 8
+        Item: Shadow_Cube_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 10000
+      - Index: 9
+        Item: Shadow_Cube_Earing
+        RequiredItems:
+          - Index: 0
+            Item: Malang_Sp_Can
+            Amount: 10000

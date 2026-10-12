@@ -4,6 +4,13 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.3.4
+- Needs app 1.5.9 or newer.
+- Paramarket trades paid in items open a barter window again, showing each
+  price in the item you pay with: Malangdo Cans at Whiteberry and
+  Blackphone, Einbech stones at Seth, dragon orbs at Earl, coins at Peary
+  and refine tickets at Zerenia.
+
 ## 0.3.3
 - Works on the current app again. 0.3.1 and 0.3.2 needed an app update
   that isn't out yet, so the Paramarket's item trades (Whiteberry,

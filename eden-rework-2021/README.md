@@ -15,6 +15,7 @@ Turning the mod off brings back stock Eden.
 | `npc/eden_neede.txt` | A copy of stock Office Assistant Neede (stock one hidden) whose emote for Lime shows over the mod's Lime. |
 | `npc/eden_paramarket.txt` | The Paramarket as kRO has run it since its 2019 renewal: every shop open every day, kRO's shop NPCs and positions (adds Seth, Zerenia, Peary and Milk), and hazyforest's stock and prices (unverified). Hides the stock shop NPCs it replaces. |
 | `npc/eden_consumable_converter.txt` | Nyang Time on the 2nd floor (29,171), kRO's consumable converter: premium consumables into their 60-minute True versions. Also the optional premium drops. |
+| `db/barters.yml` | The Paramarket's trades paid in items (Seth, Zerenia's tickets, Earl, Peary, Whiteberry, Blackphone) as barter shops, so the trade window shows each price in the item it's paid in. Needs an app whose rAthena reads `db/import/barters.yml`. |
 | `db/item_db.yml` | The Eden Group Mark (22508) warps to moc_para01 30,16, the Eden Group's entrance hall. The four Paradise caps get the headgear View their client itemInfo gives them (1529, 465), so they show on the character. |
 | `npc/odin_past.txt` | Odin's Past (odin_past) spawns, including Valkyries Reginleif and Ingrid. |
 | `db/quest_db.yml` | The quests those NPCs hand out, with their cooldowns. Area hunts use the map name from the quest text as the tracker label, shortened where the client's 23-character limit forces it. |
@@ -42,7 +43,8 @@ for the NPCs and tables, and the app for the quest text.
 ## Checking it
 
 - The map server log shows `Loading '526' entries in 'db/import/quest_db.yml'`
-  and `Loading '85' entries in 'db/import/mob_db.yml'`.
+  and `Loading '85' entries in 'db/import/mob_db.yml'`,
+  and `Loading '27' entries in 'db/import/barters.yml'`.
 - In Eden (moc_para01), the new boards stand at y=38 and y=98 and the old
   mission boards are gone.
 

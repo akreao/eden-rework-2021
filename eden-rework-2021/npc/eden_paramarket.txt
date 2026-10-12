@@ -56,7 +56,7 @@ function	script	F_EdenRwPmShop	{
 	end;
 }
 
-// An exchange NPC: pick what to pay with, then that currency's item shop.
+// An exchange NPC: pick what to pay with, then that currency's barter shop.
 // getarg(0) = name, getarg(1) = shop name prefix, getarg(2..) = currency items.
 function	script	F_EdenRwPmExchange	{
 	.@n = getargcount() - 2;
@@ -69,7 +69,7 @@ function	script	F_EdenRwPmExchange	{
 	if (.@s == .@n)
 		close;
 	close2;
-	callshop getarg(1) + getarg(.@s + 2), 0;
+	callshop getarg(1) + getarg(.@s + 2);
 	end;
 }
 
@@ -98,34 +98,9 @@ function	script	F_EdenRwPmExchange	{
 -	shop	eden_rw_pm_arm2	FAKE_NPC,2239:-1,2203:-1,2201:-1,2243:-1,2242:-1,2205:-1,2220:-1,2226:-1,2222:-1,5114:-1,2216:-1,5092:-1,2218:-1,2211:-1,2212:-1,2208:-1,2232:-1
 -	shop	eden_rw_pm_std	FAKE_NPC,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
 
-// Exchanges: one item shop per currency.
--	itemshop	eden_rw_pm_ein25809	FAKE_NPC,25809,25810:3,25811:3,25812:3,25813:3
--	itemshop	eden_rw_pm_ein25810	FAKE_NPC,25810,25809:3,25811:3,25812:3,25813:3
--	itemshop	eden_rw_pm_ein25811	FAKE_NPC,25811,25809:3,25810:3,25812:3,25813:3
--	itemshop	eden_rw_pm_ein25812	FAKE_NPC,25812,25809:3,25810:3,25811:3,25813:3
--	itemshop	eden_rw_pm_ein25813	FAKE_NPC,25813,25809:3,25810:3,25811:3,25812:3
--	itemshop	eden_rw_pm_orb25759	FAKE_NPC,25759,25760:3,25761:3,25762:3,25763:3,25764:3
--	itemshop	eden_rw_pm_orb25760	FAKE_NPC,25760,25759:3,25761:3,25762:3,25763:3,25764:3
--	itemshop	eden_rw_pm_orb25761	FAKE_NPC,25761,25759:3,25760:3,25762:3,25763:3,25764:3
--	itemshop	eden_rw_pm_orb25762	FAKE_NPC,25762,25759:3,25760:3,25761:3,25763:3,25764:3
--	itemshop	eden_rw_pm_orb25763	FAKE_NPC,25763,25759:3,25760:3,25761:3,25762:3,25764:3
--	itemshop	eden_rw_pm_orb25764	FAKE_NPC,25764,25759:3,25760:3,25761:3,25762:3,25763:3
--	itemshop	eden_rw_pm_coin6304	FAKE_NPC,6304,6080:10,6081:10,6380:10
--	itemshop	eden_rw_pm_coin6080	FAKE_NPC,6080,6304:10,6081:10,6380:10
--	itemshop	eden_rw_pm_coin6081	FAKE_NPC,6081,6304:10,6080:10,6380:10
--	itemshop	eden_rw_pm_coin6380	FAKE_NPC,6380,6304:10,6080:10,6081:10
--	itemshop	eden_rw_pm_tk6229	FAKE_NPC,6230,6229:2
--	itemshop	eden_rw_pm_tk6233	FAKE_NPC,6234,6233:2
--	itemshop	eden_rw_pm_tk6228	FAKE_NPC,6229,6228:2
--	itemshop	eden_rw_pm_tk6232	FAKE_NPC,6233,6232:2
--	itemshop	eden_rw_pm_tk6993	FAKE_NPC,6228,6993:3
--	itemshop	eden_rw_pm_tk6994	FAKE_NPC,6232,6994:3
--	itemshop	eden_rw_pm_tk6238	FAKE_NPC,6993,6238:5
--	itemshop	eden_rw_pm_tk6239	FAKE_NPC,6994,6239:5
--	itemshop	eden_rw_pm_tk6584	FAKE_NPC,6238,6584:5
--	itemshop	eden_rw_pm_tk6585	FAKE_NPC,6239,6585:5
--	itemshop	eden_rw_pm_malang1	FAKE_NPC,12636,14629:30000,14681:30000,14695:30000,22826:30000,22868:30000,22905:30000,22953:30000,23001:30000,23058:30000,23086:30000
--	itemshop	eden_rw_pm_malang2	FAKE_NPC,12636,22827:5000,22529:1000,23150:1000,23151:1000,22973:10000,22974:10000,22975:10000,22976:10000,22977:10000,22978:10000
+// Trades paid in items (Ein, orbs, coins, refine tickets, Malangdo Cans)
+// are barter shops in db/barters.yml, so the window names the item each
+// price is paid in.
 
 // Guide: the stock one talks about the Wednesday holiday.
 paramk,101,22,3	script	Market Group Guide#eden_rw	4_F_ZONDAGIRL,{
@@ -166,7 +141,7 @@ paramk,59,100,3	script	Zerenia#eden_rw	4_F_JOB_BLACKSMITH,{
 		if (.@s == getarraysize(.@t))
 			close;
 		close2;
-		callshop "eden_rw_pm_tk" + .@t[.@s], 0;
+		callshop "eden_rw_pm_tk" + .@t[.@s];
 		end;
 	case 2:
 		close2;
