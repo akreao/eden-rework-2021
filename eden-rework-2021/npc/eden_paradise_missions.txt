@@ -175,8 +175,9 @@ L_Mission:
 		.@r$ += ", Job EXP " + callfunc("F_InsertComma", .q_jexp[.@i]);
 	if (.q_coin[.@i])
 		.@r$ += ", " + callsub(S_Coins, .@i) + " " + getitemname(25223);
-	if (.q_rewards$[.@i] != "") {
-		explode(.@p$, .q_rewards$[.@i], ",");
+	.@rw$ = callsub(S_Rewards, .@i);
+	if (.@rw$ != "") {
+		explode(.@p$, .@rw$, ",");
 		for (.@k = 0; .@k < getarraysize(.@p$); .@k += 2)
 			.@r$ += ", " + .@p$[.@k + 1] + " " + getitemname(atoi(.@p$[.@k]));
 	}
@@ -304,6 +305,19 @@ S_State:
 S_Coins:
 	return .q_coin[getarg(0)] * callfunc("F_ModSetting", "eden-rework-2021", "coin_multiplier", 1);
 
+// A mission's item rewards ("item,count,..."). With the champion_tickets
+// setting on, the Lv130 and Lv140 champion hunts also give a +7 Weapon
+// Refine Ticket and a +7 Armor Refine Ticket. Not kRO: the mod adds them so
+// Zerenia's refine ticket trades in the Paramarket can be reached without
+// the cash shop.
+S_Rewards:
+	.@i = getarg(0);
+	.@r$ = .q_rewards$[.@i];
+	if (.q_board[.@i] == 7 && .q_lv[.@i] >= 130
+	&& callfunc("F_ModSetting", "eden-rework-2021", "champion_tickets", 0))
+		.@r$ += (.@r$ != "" ? "," : "") + "6230,1,6234,1";
+	return .@r$;
+
 // Pays a finished mission. 0 = done, 1 = items missing, 2 = overweight.
 S_Report:
 	.@i = getarg(0);
@@ -320,8 +334,9 @@ S_Report:
 		.@rcnt[0] = callsub(S_Coins, .@i);
 		.@n = 1;
 	}
-	if (.q_rewards$[.@i] != "") {
-		explode(.@r$, .q_rewards$[.@i], ",");
+	.@rw$ = callsub(S_Rewards, .@i);
+	if (.@rw$ != "") {
+		explode(.@r$, .@rw$, ",");
 		for (.@k = 0; .@k < getarraysize(.@r$); .@k += 2) {
 			.@rid[.@n] = atoi(.@r$[.@k]);
 			.@rcnt[.@n] = atoi(.@r$[.@k + 1]);
@@ -648,6 +663,7 @@ OnInit:
 	callsub S_Row, 6, 19064, 19065, 190, "Lv190", "Magic Power Plant 2", "Hunt 240 monsters in Second Power Plant", 63975339, 44782794, 4, "", "";
 
 	// Champion Hunt Board
+	// Lv130+ hunts can also give refine tickets: see S_Rewards.
 	// [unverified] Rune-Midgard and Schwarzwald Fields rows: hazyforest and twRO agree
 	// unless noted. The other rows are from hazyforest only.
 	// [unverified] 21501: Kafra ticket: twRO only

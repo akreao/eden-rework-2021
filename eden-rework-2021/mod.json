@@ -1,6 +1,6 @@
 {
   "name": "eden-rework-2021",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "author": "akreao",
   "description": "Eden Group as kRO reworked it in April 2021: new gear quests and Administrators, six mission boards with champion hunts and deliveries, cave shortcuts, Odin's Past, Nyang Time's consumable converter, and English quest text. Replaces the old Eden gear and mission NPCs while on.",
   "requires": { "app": ">=1.5.9", "era": "renewal" },
@@ -45,6 +45,13 @@
       "max": 10000,
       "label": "Premium drop chance (per 10,000 kills)",
       "description": "Chance per kill, out of 10,000. 10 is 0.1%; 1 is 0.01%, the same as a card. Ignored while premium drops are off."
+    },
+    {
+      "key": "champion_tickets",
+      "type": "boolean",
+      "default": false,
+      "label": "Refine tickets from champion hunts",
+      "description": "The Lv130 and Lv140 champion hunts also give a +7 Weapon and a +7 Armor Refine Ticket, so Zerenia's refine ticket trades can be used without the cash shop. Not in kRO."
     }
   ]
 }
