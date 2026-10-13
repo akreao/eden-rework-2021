@@ -5,7 +5,8 @@ workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
 ## 0.3.5
-- The Lv130 and Lv140 champion hunts on the Champion Hunt Board now also
+- New setting, "Refine tickets from champion hunts" (off by default). With
+  it on, the Lv130 and Lv140 champion hunts on the Champion Hunt Board also
   give a +7 Weapon Refine Ticket and a +7 Armor Refine Ticket. Zerenia in
   the Paramarket trades these up, so her refine ticket trades no longer
   need tickets you could only get from the cash shop. This reward is the
