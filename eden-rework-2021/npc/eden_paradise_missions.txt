@@ -648,6 +648,9 @@ OnInit:
 	callsub S_Row, 6, 19064, 19065, 190, "Lv190", "Magic Power Plant 2", "Hunt 240 monsters in Second Power Plant", 63975339, 44782794, 4, "", "";
 
 	// Champion Hunt Board
+	// The Lv130 and Lv140 hunts also give a +7 Weapon Refine Ticket and a
+	// +7 Armor Refine Ticket. Not kRO: the mod adds them so the Paramarket's
+	// refine ticket trades (Zerenia) can be reached without the cash shop.
 	// [unverified] Rune-Midgard and Schwarzwald Fields rows: hazyforest and twRO agree
 	// unless noted. The other rows are from hazyforest only.
 	// [unverified] 21501: Kafra ticket: twRO only
@@ -711,8 +714,8 @@ OnInit:
 	callsub S_Row, 7, 21814, 21815, 120, "Schwarzwald Dungeons", "Solid Acidus Hunt", "Hunt 1 Solid Acidus, found on abyss_03", 44070, 100584, 0, "", "";
 	callsub S_Row, 7, 21816, 21817, 120, "Schwarzwald Dungeons", "Elusive Lady Solace Hunt", "Hunt 1 Elusive Lady Solace, found on tha_t09", 36630, 119244, 0, "", "";
 	callsub S_Row, 7, 21818, 21819, 120, "Schwarzwald Dungeons", "Dame of Sentinel Ringleader Hunt", "Hunt 1 Dame of Sentinel Ringleader, found on tha_t12", 41670, 126225, 0, "", "";
-	callsub S_Row, 7, 21820, 21821, 130, "Schwarzwald Dungeons", "Laurell Weinder Ringleader Hunt", "Hunt 1 Laurell Weinder Ringleader, found on lhz_dun02", 43875, 162606, 0, "", "";
-	callsub S_Row, 7, 21822, 21823, 140, "Schwarzwald Dungeons", "Solid Cecil Damon Hunt", "Hunt 1 Solid Cecil Damon, found on lhz_dun03", 248505, 818976, 0, "", "";
+	callsub S_Row, 7, 21820, 21821, 130, "Schwarzwald Dungeons", "Laurell Weinder Ringleader Hunt", "Hunt 1 Laurell Weinder Ringleader, found on lhz_dun02", 43875, 162606, 0, "", "6230,1,6234,1";
+	callsub S_Row, 7, 21822, 21823, 140, "Schwarzwald Dungeons", "Solid Cecil Damon Hunt", "Hunt 1 Solid Cecil Damon, found on lhz_dun03", 248505, 818976, 0, "", "6230,1,6234,1";
 	callsub S_Row, 7, 21565, 21566, 90, "Arunafeltz", "Hunt the Solid Roween", "Hunt 1 Solid Roween, found on ra_fild12", 15210, 42800, 0, "", "";
 	callsub S_Row, 7, 21567, 21568, 90, "Arunafeltz", "Hunt the Stapo Ringleader", "Hunt 1 Stapo Ringleader, found on ve_fild07", 14160, 39870, 0, "", "";
 	callsub S_Row, 7, 21824, 21825, 100, "Arunafeltz", "Swift Hill Wind Hunt", "Hunt 1 Swift Hill Wind, found on ra_fild03", 17100, 42273, 0, "", "";
@@ -732,10 +735,10 @@ OnInit:
 	callsub S_Row, 7, 21840, 21841, 100, "Other Regions", "Elusive Luciola Vespa Hunt", "Hunt 1 Elusive Luciola Vespa, found on spl_fild03", 22095, 53607, 0, "", "";
 	callsub S_Row, 7, 21842, 21843, 110, "Other Regions", "Solid Dark Pinguicula Hunt", "Hunt 1 Solid Dark Pinguicula, found on spl_fild01", 20475, 71775, 0, "", "";
 	callsub S_Row, 7, 21844, 21845, 120, "Other Regions", "Swift Centipede Hunt", "Hunt 1 Swift Centipede, found on dic_fild01", 31200, 80487, 0, "", "";
-	callsub S_Row, 7, 21846, 21847, 130, "Other Regions", "Dolomedes Ringleader Hunt", "Hunt 1 Dolomedes Ringleader, found on dic_fild02", 50265, 153054, 0, "", "";
-	callsub S_Row, 7, 21848, 21849, 130, "Other Regions", "Elusive Antler Scaraba Hunt", "Hunt 1 Elusive Antler Scaraba, found on dic_dun02", 47475, 156024, 0, "", "";
-	callsub S_Row, 7, 21850, 21851, 130, "Other Regions", "Miming Ringleader Hunt", "Hunt 1 Miming Ringleader, found on bif_fild01", 69225, 187110, 0, "", "";
-	callsub S_Row, 7, 21852, 21853, 130, "Other Regions", "Furious Little Fatum Hunt", "Hunt 1 Furious Little Fatum, found on bif_fild02", 73125, 193050, 0, "", "";
+	callsub S_Row, 7, 21846, 21847, 130, "Other Regions", "Dolomedes Ringleader Hunt", "Hunt 1 Dolomedes Ringleader, found on dic_fild02", 50265, 153054, 0, "", "6230,1,6234,1";
+	callsub S_Row, 7, 21848, 21849, 130, "Other Regions", "Elusive Antler Scaraba Hunt", "Hunt 1 Elusive Antler Scaraba, found on dic_dun02", 47475, 156024, 0, "", "6230,1,6234,1";
+	callsub S_Row, 7, 21850, 21851, 130, "Other Regions", "Miming Ringleader Hunt", "Hunt 1 Miming Ringleader, found on bif_fild01", 69225, 187110, 0, "", "6230,1,6234,1";
+	callsub S_Row, 7, 21852, 21853, 130, "Other Regions", "Furious Little Fatum Hunt", "Hunt 1 Furious Little Fatum, found on bif_fild02", 73125, 193050, 0, "", "6230,1,6234,1";
 	// Board menu names for the titles too long for one line.
 	callsub S_Menu, 21037, "Overrun with Mushrooms";
 	callsub S_Menu, 21571, "The Dumpling Child Ringleader";
