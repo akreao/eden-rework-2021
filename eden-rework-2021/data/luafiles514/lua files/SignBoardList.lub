@@ -1,11 +1,15 @@
 -- Eden Group 2021 rework: the Administrators' signs, as kRO's client has them
 -- and its Paramarket sign (kRO signboardlist.lub, moc_para01 rows 20-24). Captions are the English of
 -- ROenglishRE's Sign_Data.lub. Added over the client's own table by the app;
--- a sign on the same cell replaces the client's.
+-- a sign on the same cell replaces the client's. A row with no icon removes
+-- the client's sign on that cell.
 SignBoardList = {
 	{ "moc_para01", 105, 41, 10, 3, "information\\over_nmtrade.bmp", "  Paramarket", "#0x00FFFFFF" },
 	{ "moc_para01", 110, 79, 10, 3, "item\\C_Popping_Poring_Aura.bmp", "  Basic Equipment Support", "#0x00FFFFFF" },
 	{ "moc_para01", 110, 83, 10, 3, "item\\t_sword_of_kingdom.bmp", "  Intermediate / Advanced Weapon Support", "#0x00FFFFFF" },
 	{ "moc_para01", 110, 87, 10, 3, "item\\md_geffen_shield.bmp", "  Advanced Armor Support", "#0x00FFFFFF" },
 	{ "moc_para01", 110, 91, 10, 3, "item\\suffragium.bmp", "  Shadow Equipment Rental", "#0x00FFFFFF" },
+	-- iRO's old Administrator signs, left where BK and Thorn stood before the rework.
+	{ "moc_para01", 112, 79, 10, 3, "" },
+	{ "moc_para01", 112, 83, 10, 3, "" },
 }

@@ -4,6 +4,10 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.3.8
+- The two old signs that floated beside Administrators BK and Michael in the
+  Eden Group are gone. Only kRO's four Administrator signs show now.
+
 ## 0.3.7
 - Needs app 1.6.6 or newer. The app now spawns Odin's Past itself, so the
   mod no longer adds its own monsters there. On 1.6.6 they had been
