@@ -4,6 +4,15 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.3.7
+- Needs app 1.6.6 or newer. The app now spawns Odin's Past itself, so the
+  mod no longer adds its own monsters there. On 1.6.6 they had been
+  spawning twice, both Valkyries included.
+- The Valkyries in Odin's Past summon their slaves again: the mod keeps
+  kRO's monster skills for Odin's Past in place of the app's.
+- Playing the Druid line? Install the regional-items mod from Find Mods for
+  English names and descriptions of the Druid-only items.
+
 ## 0.3.6
 - Needs app 1.6.4 or newer, the first with the Druid job line.
 - The Eden Group's gear now includes the Druid line. Administrator Michael

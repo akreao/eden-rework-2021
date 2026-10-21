@@ -41,5 +41,6 @@ OnInit:
 // type 200 = warp): odin_tem03 276,236 -> odin_past 291,230, and back
 // odin_past 291,235 -> odin_tem03 280,241. All four cells are walkable in
 // kRO's .gat files. Not quest-gated (iRO, confirmed by Steven 2026-10-11).
+// The server's World Sync (app 1.6.6) already has the way back, so only the
+// way in is added here.
 odin_tem03,276,236,0	warp2	#eden_rw_odin_past	1,1,odin_past,291,230
-odin_past,291,235,0	warp2	#eden_rw_odin_back	1,1,odin_tem03,280,241
