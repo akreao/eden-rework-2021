@@ -8,7 +8,7 @@ Turning the mod off brings back stock Eden.
 
 | File | What it does |
 |---|---|
-| `npc/eden_paradise_gear.txt` | Instructors Ur and Boya, Administrators BK, Michael, Thorn and Emil (gear quests 17528-17537). Hides the old Eden Team gear NPCs. |
+| `npc/eden_paradise_gear.txt` | Instructors Ur and Boya, Administrators BK, Michael, Thorn and Emil (gear quests 17528-17537). Hides the old Eden Team gear NPCs. Druids get the intermediate Druid Axe and Mace, Karnos the advanced Karnos Mace and Two-Handed Axe and the Karnos advanced shadow weapon. |
 | `npc/eden_paradise_missions.txt` | Six mission boards (each placed twice), the champion hunt board and Diligent Sogil (with the champion_tickets setting on, the Lv130 and Lv140 champion hunts also give a +7 Weapon and a +7 Armor Refine Ticket, a mod addition), the Logistics Officer, cave shortcuts Rigel, Aker, Ayla and Minmin, and the mission field NPCs. Hides the old mission boards and 100-140 mission NPCs. |
 | `npc/eden_paradise_warps.txt` | Adds the portal at 48,39 beside the Eden door, as kRO has it; it replaces the door's click dialog (kRO client navigation table); the door itself is map graphics and stays. Also moves two stock warps' landing spots to kRO's, and enters the Paramarket by kRO's portal at 106,43 instead of the Market Group Hustler (hidden). Adds kRO's two portals between Odin Temple 3 and Odin's Past (276,236 and back from 291,235), which rAthena lacks. |
 | `npc/eden_lime_evenor.txt` | A copy of stock Secretary Lime Evenor (stock one hidden) whose Eden Group Mark line says what the Mark does. |
@@ -16,7 +16,8 @@ Turning the mod off brings back stock Eden.
 | `npc/eden_paramarket.txt` | The Paramarket as kRO has run it since its 2019 renewal: every shop open every day, kRO's shop NPCs and positions (adds Seth, Zerenia, Peary and Milk), and hazyforest's stock and prices (unverified). Hides the stock shop NPCs it replaces. |
 | `npc/eden_consumable_converter.txt` | Nyang Time on the 2nd floor (29,171), kRO's consumable converter: premium consumables into their 60-minute True versions. Also the optional premium drops. |
 | `db/barters.yml` | The Paramarket's trades paid in items (Seth, Zerenia's tickets, Earl, Peary, Whiteberry, Blackphone) as barter shops, so the trade window shows each price in the item it's paid in. Needs an app whose rAthena reads `db/import/barters.yml`. |
-| `db/item_db.yml` | The Eden Group Mark (22508) warps to moc_para01 30,16, the Eden Group's entrance hall. The four Paradise caps get the headgear View their client itemInfo gives them (1529, 465), so they show on the character. |
+| `db/item_db.yml` | The Eden Group Mark (22508) warps to moc_para01 30,16, the Eden Group's entrance hall. The Karnos Mace and Two-Handed Axe get the line of their kRO bonus that the server's table leaves out. The four Paradise caps get the headgear View their client itemInfo gives them (1529, 465), so they show on the character. |
+| `db/item_combos.yml` | The Karnos advanced shadow weapon's set bonus with the five Advanced Paradise shadow pieces, from the kRO client. |
 | `npc/odin_past.txt` | Odin's Past (odin_past) spawns, including Valkyries Reginleif and Ingrid. |
 | `db/quest_db.yml` | The quests those NPCs hand out, with their cooldowns. Area hunts use the map name from the quest text as the tracker label, shortened where the client's 23-character limit forces it. |
 | `db/mob_db.yml`, `db/mob_skill_db.txt` | Odin's Past monsters and their skills. `mob_db.yml` also sets JapaneseName to the English Name for 43 hunted monsters, because the quest tracker shows JapaneseName (Green Iguana instead of Grove), and gives 32 look-alike monsters the board's labels (Venatu (Purple), Sky Deleter) so two-target hunts read differently. |

@@ -20,3 +20,43 @@ Body:
     View: 1529
   - Id: 400140
     View: 465
+  # Karnos advanced Eden weapons (the server's regional item table, app
+  # 1.6.4+): the table leaves out one line of each, added here from the
+  # kRO client text. [unverified: kRO client text only]
+  # Eden Group Karnos Mace: MATK + 5%, and 1% less variable cast time per
+  # level of Nature's Vigour.
+  - Id: 590100
+    Script: |
+      bonus bMatk,190;
+      bonus bMatkRate,5;
+      bonus bVariableCastrate,-getskilllv("KR_NATURE_VIGOUR");
+      bonus bUnbreakableWeapon;
+      if (BaseLevel >= 105) {
+         bonus2 bMagicAtkEle,Ele_Water,10;
+         bonus2 bMagicAtkEle,Ele_Wind,10;
+         bonus2 bSkillAtk,"KR_ICE_SPLASH",25;
+         bonus2 bSkillAtk,"KR_THUNDERING_ORB",25;
+      }
+      if (BaseLevel >= 110) {
+         bonus2 bMagicAtkEle,Ele_Water,15;
+         bonus2 bMagicAtkEle,Ele_Wind,15;
+         bonus2 bMagicAddSize,Size_All,15;
+      }
+  # Eden Group Karnos Two-Handed Axe: ATK + 5%, and 1% less after-attack
+  # delay per level of Wolf Instinct.
+  - Id: 620054
+    Script: |
+      bonus bAtkRate,5;
+      bonus bAspdRate,getskilllv("KR_WOLF_INSTINCT");
+      bonus bUnbreakableWeapon;
+      if (BaseLevel >= 105) {
+         bonus bShortAtkRate,10;
+         bonus2 bSkillAtk,"KR_CHOP_CHOP",25;
+      }
+      if (BaseLevel >= 110) {
+         bonus bAspdRate,10;
+         bonus2 bAddSize,Size_All,15;
+      }
+      if (BaseLevel >= 115) {
+         bonus2 bSkillAtk,"KR_CHOP_CHOP",15;
+      }

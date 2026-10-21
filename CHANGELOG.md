@@ -4,6 +4,16 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.3.6
+- Needs app 1.6.4 or newer, the first with the Druid job line.
+- The Eden Group's gear now includes the Druid line. Administrator Michael
+  gives Druids the intermediate Druid Axe or Mace and Karnos the advanced
+  Karnos Mace or Two-Handed Axe; Administrator Emil gives Karnos the advanced
+  shadow weapon.
+- The Karnos Mace and Two-Handed Axe get the part of their kRO bonus the
+  server was missing, and the Karnos shadow weapon gets its set bonus with
+  the five Advanced Paradise shadow pieces.
+
 ## 0.3.5
 - New setting, "Refine tickets from champion hunts" (off by default). With
   it on, the Lv130 and Lv140 champion hunts on the Champion Hunt Board also

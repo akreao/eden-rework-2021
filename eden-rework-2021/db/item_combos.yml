@@ -1,0 +1,35 @@
+# Eden rework: the set bonus of the Karnos Eden Group Advanced Shadow
+# Weapon with the five Advanced Paradise shadow pieces, from the kRO client
+# text (the server has the item but not its set). Written like the stock
+# advanced Paradise shadow sets. [unverified: kRO client text only]
+
+Header:
+  Type: COMBO_DB
+  Version: 1
+
+Body:
+  - Combos:
+      - Combo:
+          - S_2Para_Shield
+          - S_2Para_Armor
+          - S_2Para_Shoes
+          - S_2Para_Earing
+          - S_2Para_Pendant
+          - S_2Para_KR_Weapon
+    Script: |
+      bonus2 bMagicAtkEle,Ele_All,15;
+      bonus bShortAtkRate,15;
+      bonus bLongAtkRate,15;
+      bonus bVariableCastrate,-10;
+      bonus2 bSkillAtk,"KR_DOUBLE_SLASH",15;
+      bonus2 bSkillAtk,"KR_SHARPEN_GUST",15;
+      bonus2 bSkillAtk,"KR_ICE_SPLASH",15;
+      bonus2 bSkillAtk,"KR_THUNDERING_ORB",15;
+      bonus2 bSkillAtk,"KR_EARTH_DRILL",15;
+      bonus bMaxHPrate,15;
+      bonus2 bIgnoreDefRaceRate,RC_All,50;
+      bonus2 bIgnoreMdefRaceRate,RC_All,50;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Human,-50;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-50;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-50;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-50;
