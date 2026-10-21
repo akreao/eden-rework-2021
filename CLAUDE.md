@@ -80,8 +80,10 @@ and pick it. Restart the server for scripts and tables, and the app for client
 files. The mod's own `README.md` lists what to look for in the map-server log
 and in game.
 
-## Getting listed in the app
+## Listing in the app
 
-The app lists mods from `registry/` in its own repository. This mod would be a
-"your own repository" entry; the draft is in `README.md`. See the app's
+The mod is listed in the app's Find Mods, from
+`registry/mods/eden-rework-2021/mod.json` in the app's repository (a "your own
+repository" entry). New releases need no registry change; only listing changes
+(description, tags, icon, screenshots) do. See the app's
 `docs/MOD_REGISTRY.md`.

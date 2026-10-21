@@ -3,7 +3,8 @@
 A mod for [Ragnarok Offline](https://github.com/Flux159/ragnarokoffline.app)
 (renewal) that brings the Eden Group up to kRO's April 2021 rework: new gear
 quests and Administrators, six mission boards with champion hunts and
-deliveries, cave shortcuts, Odin's Past, and English quest text. It replaces
+deliveries, cave shortcuts, Odin's Past, the Paramarket as kRO runs it, Nyang
+Time's consumable converter, and English quest text. It replaces
 the old Eden gear and mission NPCs while it is on, and turning it off brings
 stock Eden back. No server rebuild or rAthena change is needed.
 
@@ -52,27 +53,22 @@ changelog section. Pushes that don't raise the version publish nothing. The
 app offers players the newest full release; publish a pre-release by hand to
 test with a few people first.
 
-## Getting listed in the app
+## Listed in the app
 
-The app lists mods from its repository's `registry/`. This one would be a
-"your own repository" entry, `registry/mods/eden-rework-2021/mod.json`:
+The mod is in the app's Find Mods. Its entry is
+`registry/mods/eden-rework-2021/mod.json` in the app's repository, a "your own
+repository" entry that points at this repository's releases:
 
 ```json
-{
-  "name": "eden-rework-2021",
-  "author": "akreao",
-  "description": "Eden Group as kRO reworked it in April 2021: new gear quests and Administrators, six mission boards with champion hunts and deliveries, cave shortcuts, Odin's Past, and English quest text. Replaces the old Eden gear and mission NPCs while on. Renewal only.",
-  "tags": ["quest", "eden", "npc", "kro", "renewal", "missions"],
-  "homepage": "https://github.com/akreao/eden-rework-2021",
-  "requires": { "era": "renewal" },
-  "source": {
-    "github": "akreao/eden-rework-2021",
-    "asset": "eden-rework-2021-*.zip"
-  }
+"source": {
+  "github": "akreao/eden-rework-2021",
+  "asset": "eden-rework-2021-*.zip"
 }
 ```
 
-opened as a pull request there with the regenerated `registry/index.json`
+A new release reaches players as an update with no change there. Only the
+listing itself (description, tags, icon, screenshots) needs a pull request to
+the app's `registry/`, with the regenerated `registry/index.json`
 (`python3 scripts/mod-index.py`). See the app's `docs/MOD_REGISTRY.md`.
 
 ## Licence
