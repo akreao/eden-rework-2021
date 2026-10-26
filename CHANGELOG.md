@@ -4,6 +4,12 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.3.9
+- Needs app 1.7.3 or newer, where Druids and Karnos can equip the Paradise
+  Mace.
+- The Paradise Dagger and Paradise Mace descriptions now list the Druid line
+  among the jobs that can use them.
+
 ## 0.3.8
 - The two old signs that floated beside Administrators BK and Michael in the
   Eden Group are gone. Only kRO's four Administrator signs show now.
