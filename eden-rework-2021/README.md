@@ -4,7 +4,7 @@ Eden Group as kRO reworked it in April 2021, for Ragnarok Offline (renewal).
 Everything is in this folder: no server rebuild, no rAthena changes.
 Turning the mod off brings back stock Eden.
 
-**Playing the Druid line?** Install the regional-items mod from Find Mods too. The English translation doesn't cover the Druid-only items, so without it their names and descriptions aren't in English. The items work either way.
+**Playing the Druid line?** The mod names its own Druid and Karnos Paradise weapons. For the other Druid-only items, install Lil Art's regional-items mod: the English translation doesn't cover them, so without it their names and descriptions aren't in English. The items work either way.
 
 ## What is in the mod
 
@@ -23,7 +23,7 @@ Turning the mod off brings back stock Eden.
 | `db/quest_db.yml` | The quests those NPCs hand out, with their cooldowns. Area hunts use the map name from the quest text as the tracker label, shortened where the client's 23-character limit forces it. |
 | `db/mob_db.yml`, `db/mob_skill_db.txt` | The Valkyries' slaves in Odin's Past, and kRO's skills for the Odin's Past monsters (the server's World Sync spawns them; its Valkyries summon nothing without these). `mob_db.yml` also sets JapaneseName to the English Name for 43 hunted monsters, because the quest tracker shows JapaneseName (Green Iguana instead of Grove), and gives 32 look-alike monsters the board's labels (Venatu (Purple), Sky Deleter) so two-target hunts read differently. |
 | `data/luafiles514/lua files/SignBoardList.lub` | kRO's signs over the four Administrators (110,79 / 83 / 87 / 91) and the Paramarket portal (105,41), in English, so they match on any client. Two blank rows also remove iRO's old signs at 112,79 and 112,83, which would otherwise float beside BK and Michael. |
-| `System/itemInfo.lua` | The Paradise Dagger and Paradise Mace tooltips list the Druid line, which the English text left out. |
+| `System/itemInfo.lua` | The Paradise Dagger and Paradise Mace tooltips list the Druid line, which the English text left out. English names and descriptions for the Druid and Karnos Paradise weapons (Druid Axe and Mace, Karnos Mace and Two-Handed Axe, Karnos advanced shadow weapon), which have no English client text. |
 | `System/OngoingQuestInfoList.lub` | English quest-window text for 762 Eden quests and cooldowns, loaded after the English translation. |
 
 ## Settings

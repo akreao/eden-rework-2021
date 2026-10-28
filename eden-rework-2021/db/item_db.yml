@@ -42,6 +42,10 @@ Body:
          bonus2 bMagicAtkEle,Ele_Wind,15;
          bonus2 bMagicAddSize,Size_All,15;
       }
+      if (BaseLevel >= 115) {
+         bonus2 bSkillAtk,"KR_ICE_SPLASH",15;
+         bonus2 bSkillAtk,"KR_THUNDERING_ORB",15;
+      }
   # Eden Group Karnos Two-Handed Axe: ATK + 5%, and 1% less after-attack
   # delay per level of Wolf Instinct.
   - Id: 620054

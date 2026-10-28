@@ -1,6 +1,6 @@
 {
   "name": "eden-rework-2021",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "author": "akreao",
   "description": "Eden Group as kRO reworked it in April 2021: new gear quests and Administrators, six mission boards with champion hunts and deliveries, cave shortcuts, Odin's Past, Nyang Time's consumable converter, and English quest text. Replaces the old Eden gear and mission NPCs while on.",
   "requires": { "app": ">=1.7.3", "era": "renewal" },

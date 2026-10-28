@@ -4,6 +4,14 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.3.10
+- The Paradise Druid Axe and Mace, the Paradise Karnos Mace and Two-Handed
+  Axe, and the Karnos Advanced Paradise Shadow Weapon now have English names
+  and descriptions. Without the regional-items mod they showed as
+  "undefined".
+- The Paradise Karnos Mace gets its Base Level 115 bonus again: Ice Splash
+  and Thundering Orb deal another 15% damage.
+
 ## 0.3.9
 - Needs app 1.7.3 or newer, where Druids and Karnos can equip the Paradise
   Mace.
