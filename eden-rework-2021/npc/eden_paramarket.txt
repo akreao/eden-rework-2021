@@ -27,6 +27,9 @@
 -	script	#eden_rw_paramarket	-1,{
 	end;
 OnInit:
+	// Stock NPCs stay visible while the mod stands down (eden_stand_down.txt).
+	if (callfunc("F_Eden_StandDown"))
+		end;
 	// Stock shop NPCs this file replaces. Hidden, not unloaded, so turning
 	// the mod off restores them untouched.
 	setarray .@npc$,
@@ -114,6 +117,8 @@ paramk,101,22,3	script	Market Group Guide#eden_rw	4_F_ZONDAGIRL,{
 OnTimer60000:
 	npctalk "Welcome. This is the Eden Market Group.";
 OnInit:
+	if (callfunc("F_Eden_StandDown"))
+		end;
 	initnpctimer;
 	end;
 }

@@ -1,0 +1,80 @@
+//===== Eden Group 2021 rework: stand down for World Sync Extras =====
+//= World Sync Extras (Lil Art) has its own take on parts of the Eden
+//= Group: its Gramps stands on the Logistics Officer's cell
+//= (moc_para01 29,35), its town quests share the mission boards' quest
+//= ids, and it has its own crates and ghost fires for two of the board
+//= missions. With both mods on, NPCs stack on one cell and players get
+//= two half-linked versions of the same content.
+//=
+//= So while World Sync Extras is on, this mod stands down completely
+//= (Steven, 2026-11-03): every NPC and warp it adds is disabled, the
+//= stock Eden NPCs it would hide stay visible, and its premium drops
+//= stop (a disabled NPC's OnNPCKillEvent doesn't run). The server is
+//= then stock Eden plus World Sync Extras, as if this mod were off.
+//= Its tables (items, quests, monsters, barters) still load, since a
+//= script can't unload them; nothing uses them while its NPCs are off.
+//============================================================
+
+// Returns 1 while World Sync Extras is switched on. F_ModSetting only
+// lists switched-on mods and gives the fallback otherwise, so any one of
+// its settings answering something other than -1 means it is on. Several
+// keys, so a renamed setting on their side doesn't hide it.
+function	script	F_Eden_StandDown	{
+	setarray .@key$, "city_investment", "town_quests_2021", "gramps_turn_ins", "iro_systems", "placeholders", "npc_mover";
+	for (.@i = 0; .@i < getarraysize(.@key$); .@i++)
+		if (callfunc("F_ModSetting", "world-sync-extras", .@key$[.@i], -1) != -1)
+			return 1;
+	return 0;
+}
+
+-	script	#eden_rework_stand_down	-1,{
+	end;
+OnInit:
+	if (!callfunc("F_Eden_StandDown"))
+		end;
+	setarray .@npc$,
+		// eden_consumable_converter.txt
+		"Nyang Time#eden2021", "#eden2021_premium_drops",
+		// eden_lime_evenor.txt, eden_neede.txt
+		"Secretary Lime Evenor#2021", "Office Assistant Neede#2021",
+		// eden_paradise_gear.txt
+		"Instructor Ur#para", "Instructor Boya#para",
+		"Administrator BK#para", "Administrator Michael#para", "Administrator Thorn#para", "Administrator Emil#para",
+		// eden_paradise_missions.txt
+		"1~39 Mission Board#edmb1a", "40~69 Mission Board#edmb2a", "70~99 Mission Board#edmb3a",
+		"100~110 Mission Board#edmb4a", "120~140 Mission Board#edmb5a", "Advanced Mission Board#edmb6a",
+		"1~39 Mission Board#edmb1b", "40~69 Mission Board#edmb2b", "70~99 Mission Board#edmb3b",
+		"100~110 Mission Board#edmb4b", "120~140 Mission Board#edmb5b", "Advanced Mission Board#edmb6b",
+		"Champion Hunt Board#edmb7a", "Champion Hunt Board#edmb7b",
+		"Diligent Sogil#edmb7ra", "Diligent Sogil#edmb7rb",
+		"Logistics Officer#edmb1", "Logistics Officer#edmb2",
+		"Rigel#edmb", "Aker#edmb", "Ayla#edmb", "Minmin#edmb",
+		"Will-o'-Wisp#edmb1", "Will-o'-Wisp#edmb2", "Will-o'-Wisp#edmb3", "Will-o'-Wisp#edmb4",
+		"Will-o'-Wisp#edmb5", "Will-o'-Wisp#edmb6", "Will-o'-Wisp#edmb7", "Will-o'-Wisp#edmb8",
+		"Old Crate#edmb1", "Old Crate#edmb2", "Old Crate#edmb3", "Old Crate#edmb4", "Old Crate#edmb5",
+		// eden_paradise_warps.txt
+		"#eden_rw_pass", "#eden_rw_din_2", "#eden_rw_pass_2", "#eden_rw_paramk", "#eden_rw_odin_past",
+		// eden_paramarket.txt
+		"Market Group Guide#eden_rw", "Hans#eden_rw", "Dus the Smith#eden_rw", "Seth#eden_rw",
+		"Zerenia#eden_rw", "Aurora#eden_rw", "Dye the Alchemist#eden_rw", "Earl the Alchemist#eden_rw",
+		"Manbok#eden_rw", "Madoha#eden_rw", "Magiha#eden_rw", "Peary#eden_rw", "Hwaran#eden_rw",
+		"Heimhunter#eden_rw", "Tamer Tete#eden_rw", "Cocktail Master#eden_rw", "Milk#eden_rw",
+		"Miffy#eden_rw", "Coco#eden_rw", "Minho Doh#eden_rw", "Lapelt#eden_rw",
+		"Head Pharmacist#eden_rw", "Manager Parayo#eden_rw", "Whiteberry#eden_rw", "Blackphone#eden_rw";
+	for (.@i = 0; .@i < getarraysize(.@npc$); .@i++)
+		disablenpc .@npc$[.@i];
+	debugmes "Eden Group 2021 rework: World Sync Extras is on, so this mod's NPCs are off and stock Eden is back. Switch World Sync Extras off to use the rework.";
+
+	// World Sync Extras hides its own crates (Alberta) and ghost fires
+	// (Payon) when it finds ours, because ours served its quests too.
+	// Ours are off now, so once every OnInit has run, show theirs again.
+	// getnpcid skips any name their version doesn't have.
+	sleep 1;
+	for (.@i = 1; .@i <= 5; .@i++)
+		if (getnpcid(0, "Old Crate#iqalb" + .@i))
+			enablenpc "Old Crate#iqalb" + .@i;
+	for (.@i = 1; .@i <= 16; .@i++)
+		if (getnpcid(0, "Ghost Fire#iqpay" + .@i))
+			enablenpc "Ghost Fire#iqpay" + .@i;
+	end;
+}

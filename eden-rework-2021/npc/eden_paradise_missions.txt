@@ -1014,6 +1014,9 @@ treasure01,173,50,0	duplicate(Old Crate#edmb)	Old Crate#edmb5	4_WOODBOX
 -	script	#eden_rework_missions	-1,{
 	end;
 OnInit:
+	// Stock NPCs stay visible while the mod stands down (eden_stand_down.txt).
+	if (callfunc("F_Eden_StandDown"))
+		end;
 	// The old boards (11-25.txt to 91-99.txt), their reward NPCs, and the
 	// old 100-140 mission NPCs (eden_100_111.txt to eden_131_140.txt).
 	setarray .@old$, "Mission [11 - 25]#Tuto", "Spike",

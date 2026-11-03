@@ -200,6 +200,9 @@ moc_para01,27,35,5	script	Secretary Lime Evenor#2021	4_F_EDEN_OFFICER,{
 -	script	#eden_rework_lime	-1,{
 	end;
 OnInit:
+	// Stock NPCs stay visible while the mod stands down (eden_stand_down.txt).
+	if (callfunc("F_Eden_StandDown"))
+		end;
 	disablenpc "Secretary Lime Evenor";
 	end;
 }

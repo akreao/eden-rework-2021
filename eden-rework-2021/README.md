@@ -4,6 +4,8 @@ Eden Group as kRO reworked it in April 2021, for Ragnarok Offline (renewal).
 Everything is in this folder: no server rebuild, no rAthena changes.
 Turning the mod off brings back stock Eden.
 
+**Using World Sync Extras?** While Lil Art's World Sync Extras is switched on, this mod stands down: its NPCs are off and stock Eden is back, as if the mod were off. The two mods put NPCs on the same cells (its Gramps stands where the Logistics Officer does) and share quests. Switch World Sync Extras off to use the rework.
+
 **Playing the Druid line?** The mod names its own Druid and Karnos Paradise weapons. For the other Druid-only items, install Lil Art's regional-items mod: the English translation doesn't cover them, so without it their names and descriptions aren't in English. The items work either way.
 
 ## What is in the mod
@@ -17,6 +19,7 @@ Turning the mod off brings back stock Eden.
 | `npc/eden_neede.txt` | A copy of stock Office Assistant Neede (stock one hidden) whose emote for Lime shows over the mod's Lime. |
 | `npc/eden_paramarket.txt` | The Paramarket as kRO has run it since its 2019 renewal: every shop open every day, kRO's shop NPCs and positions (adds Seth, Zerenia, Peary and Milk), and hazyforest's stock and prices (unverified). Hides the stock shop NPCs it replaces. |
 | `npc/eden_consumable_converter.txt` | Nyang Time on the 2nd floor (29,171), kRO's consumable converter: premium consumables into their 60-minute True versions. Also the optional premium drops. |
+| `npc/eden_stand_down.txt` | While World Sync Extras is on, switches off every NPC and warp the mod adds and leaves the stock Eden NPCs visible (the other files skip their hiding). Shows World Sync Extras' own crates and ghost fires again, which it hides when it finds the mod's. |
 | `db/barters.yml` | The Paramarket's trades paid in items (Seth, Zerenia's tickets, Earl, Peary, Whiteberry, Blackphone) as barter shops, so the trade window shows each price in the item it's paid in. Needs an app whose rAthena reads `db/import/barters.yml`. |
 | `db/item_db.yml` | The Eden Group Mark (22508) warps to moc_para01 30,16, the Eden Group's entrance hall. The Karnos Mace and Two-Handed Axe get the line of their kRO bonus that the server's table leaves out. The four Paradise caps get the headgear View their client itemInfo gives them (1529, 465), so they show on the character. |
 | `db/item_combos.yml` | The Karnos advanced shadow weapon's set bonus with the five Advanced Paradise shadow pieces, from the kRO client. |
@@ -50,6 +53,8 @@ for the NPCs and tables, and the app for the quest text.
   and `Loading '27' entries in 'db/import/barters.yml'`.
 - In Eden (moc_para01), the new boards stand at y=38 and y=98 and the old
   mission boards are gone.
+- With World Sync Extras on, the log shows `Eden Group 2021 rework: World Sync
+  Extras is on, so this mod's NPCs are off` and Eden looks stock.
 
 ## Sources
 

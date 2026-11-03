@@ -55,6 +55,9 @@ moc_para01,20,35,5	script	Office Assistant Neede#2021	814,{
 -	script	#eden_rework_neede	-1,{
 	end;
 OnInit:
+	// Stock NPCs stay visible while the mod stands down (eden_stand_down.txt).
+	if (callfunc("F_Eden_StandDown"))
+		end;
 	disablenpc "Office Assistant Neede";
 	end;
 }

@@ -26,6 +26,9 @@ moc_para01,106,43,0	warp2	#eden_rw_paramk	1,1,paramk,97,17
 -	script	#eden_rework_warps	-1,{
 	end;
 OnInit:
+	// Stock NPCs stay visible while the mod stands down (eden_stand_down.txt).
+	if (callfunc("F_Eden_StandDown"))
+		end;
 	// Only the click dialog: #warp_2_pass is an invisible NPC (111,
 	// HIDDEN_NPC) on the door, which is part of the map, so it stays.
 	disablenpc "#warp_2_pass";
