@@ -699,6 +699,9 @@ moc_para01,110,91,3	script	Administrator Emil#para	1_F_GYPSY,{
 -	script	#eden_rework_gear	-1,{
 	end;
 OnInit:
+	// Stock NPCs stay visible while the mod stands down (eden_stand_down.txt).
+	if (callfunc("F_Eden_StandDown"))
+		end;
 	// Every NPC of the old gear quests in eden_quests.txt, except the Chef.
 	setarray .@old$, "Instructor Boya#para01", "Talking Dog#para03", "Timid Cat#para04",
 		"Eden Member Karl#para05", "Eden Member Cloud#para06", "Eden Member Hooksha", "Eden Member Callandiva",

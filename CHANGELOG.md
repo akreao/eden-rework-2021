@@ -4,6 +4,17 @@ Each `## <version>` section is that version's release notes: the release
 workflow publishes it as the GitHub Release text, which the Ragnarok Offline
 app shows players under "What's new". Write it for players.
 
+## 0.3.11
+- Stands down while Lil Art's World Sync Extras is switched on. The two mods
+  put NPCs on the same cells (its Gramps stood on top of the Logistics
+  Officer in the Eden Group) and share several quests, so with both on you
+  got two half-linked versions of the same content. Now, with World Sync
+  Extras on, Eden is stock, as if this mod were off: no new boards,
+  Administrators or Paramarket, and the old Eden NPCs are back. Switch World
+  Sync Extras off to play the rework.
+- With the rework standing down, World Sync Extras' own Alberta crates and
+  Payon ghost fires show again for its town quests.
+
 ## 0.3.10
 - The Paradise Druid Axe and Mace, the Paradise Karnos Mace and Two-Handed
   Axe, and the Karnos Advanced Paradise Shadow Weapon now have English names
